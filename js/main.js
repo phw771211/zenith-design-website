@@ -46,11 +46,17 @@ window.addEventListener("scroll", () => {
         : "rgba(0,0,0,0.06)";
 });
 
-// Contact form (placeholder — wire up to your backend or Formspree)
-document.getElementById("contact-form").addEventListener("submit", function(e) {
-    e.preventDefault();
-    const btn = this.querySelector("button[type=submit]");
-    btn.textContent = "Sent!";
-    btn.disabled = true;
-    setTimeout(() => { btn.textContent = "Send Message"; btn.disabled = false; this.reset(); }, 3000);
-});
+// Works carousel arrows
+const worksGrid = document.querySelector(".works-grid");
+const arrowPrev = document.querySelector(".works-arrow-prev");
+const arrowNext = document.querySelector(".works-arrow-next");
+
+if (worksGrid && arrowPrev && arrowNext) {
+    const scrollAmount = () => worksGrid.offsetWidth * 0.52;
+    arrowNext.addEventListener("click", () => {
+        worksGrid.scrollBy({ left: scrollAmount(), behavior: "smooth" });
+    });
+    arrowPrev.addEventListener("click", () => {
+        worksGrid.scrollBy({ left: -scrollAmount(), behavior: "smooth" });
+    });
+}
