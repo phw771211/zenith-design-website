@@ -1,0 +1,69 @@
+{
+  "nav": {
+    "about": "について",
+    "services": "サービス",
+    "works": "ポートフォリオ",
+    "contact": "お問い合わせ"
+  },
+  "hero": {
+    "sub": "東京ベースの創意制作プロ",
+    "title": "デザインが<br>世界を変える。",
+    "desc": "UI/UX、グラフィック、プロダクトデザインを通じて、意味のあるデジタルおよびビジュアル体験を創造します。",
+    "btnWork": "ポートフォリオを見る",
+    "btnTouch": "お問い合わせ"
+  },
+  "about": {
+    "label": "私たちについて",
+    "title": "デザインの明確性。",
+    "text1": "Zenith Design は、UI/UX、グラフィック、プロダクトデザインを専門とする東京ベースの制作スタジオです。ブランドやスタートアップと協力して、目的を持ち、美しく、機能的なデザインソリューションを作成します。",
+    "text2": "当社の学際的なチームは戦略的思考とビジュアルクラフトマンシップを組み合わせており、ユーザーに共鳴し、市場で際立つ作品を提供します。",
+    "stat1": "5+",
+    "label1": "年の経験",
+    "stat2": "80+",
+    "label2": "納品済みプロジェクト",
+    "stat3": "30+",
+    "label3": "満足したクライアント"
+  },
+  "services": {
+    "label": "サービス内容",
+    "title": "サービス内容",
+    "service1": "UI / UX デザイン",
+    "desc1": "ユーザーリサーチ、ワイヤーフレーミング、プロトタイピング、人を中心とした インターフェースデザイン。",
+    "service2": "グラフィックデザイン",
+    "desc2": "ブランドアイデンティティ、ビジュアルシステム、印刷、デジタル通信。",
+    "service3": "プロダクトデザイン",
+    "desc3": "コンセプトから使いやすさ のテストまで、ローンチ準備のできたデザイン。"
+  },
+  "works": {
+    "label": "ポートフォリオ",
+    "title": "主要事例",
+    "tag1": "UI/UX デザイン",
+    "projectTitle": "プロジェクトタイトル",
+    "projectDesc": "プロジェクトと解決されたデザイン課題の簡潔な説明。",
+    "tag2": "グラフィックデザイン",
+    "tag3": "プロダクトデザイン"
+  },
+  "contact": {
+    "label": "お問い合わせ",
+    "title": "一緒に働きましょう。",
+    "emailLabel": "メール",
+    "emailValue": "hello@zenith-designjp.com",
+    "websiteLabel": "ウェブサイト",
+    "websiteValue": "zenith-designjp.com",
+    "locationLabel": "場所",
+    "locationValue": "東京、日本",
+    "namePlaceholder": "お名前",
+    "emailPlaceholder": "メールアドレス",
+    "subjectPlaceholder": "件名",
+    "messagePlaceholder": "プロジェクトについて教えてください...",
+    "btnSend": "メッセージを送信"
+  },
+  "footer": {
+    "copyright": "© 2025 Zenith Design。著作権所有。"
+  },
+  "languages": {
+    "en": "English",
+    "zh": "简体中文",
+    "ja": "日本語"
+  }
+}

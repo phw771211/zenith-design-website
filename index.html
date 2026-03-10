@@ -16,38 +16,46 @@
                 <span class="logo-text">Zenith Design</span>
             </a>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#works">Works</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about" data-i18n="nav.about">About</a></li>
+                <li><a href="#services" data-i18n="nav.services">Services</a></li>
+                <li><a href="#works" data-i18n="nav.works">Works</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
             </ul>
+            <div class="language-selector">
+                <button class="lang-toggle" id="lang-toggle" aria-label="language" title="Select Language">🌐</button>
+                <div class="lang-dropdown" id="lang-dropdown">
+                    <button class="lang-option" data-lang="en">🇬🇧 English</button>
+                    <button class="lang-option" data-lang="zh">🇨🇳 简体中文</button>
+                    <button class="lang-option" data-lang="ja">🇯🇵 日本語</button>
+                </div>
+            </div>
             <button class="nav-toggle" id="nav-toggle" aria-label="menu">&#9776;</button>
         </nav>
     </header>
 
     <section class="hero">
         <div class="hero-content container">
-            <p class="hero-sub">Tokyo-based Creative Studio</p>
-            <h1 class="hero-title">Design that<br>moves the world.</h1>
-            <p class="hero-desc">We craft meaningful digital and visual experiences through UI/UX, Graphic, and Product Design.</p>
-            <a href="#works" class="btn btn-primary">View Our Work</a>
-            <a href="#contact" class="btn btn-outline">Get in Touch</a>
+            <p class="hero-sub" data-i18n="hero.sub">Tokyo-based Creative Studio</p>
+            <h1 class="hero-title" data-i18n="hero.title">Design that<br>moves the world.</h1>
+            <p class="hero-desc" data-i18n="hero.desc">We craft meaningful digital and visual experiences through UI/UX, Graphic, and Product Design.</p>
+            <a href="#works" class="btn btn-primary" data-i18n="hero.btnWork">View Our Work</a>
+            <a href="#contact" class="btn btn-outline" data-i18n="hero.btnTouch">Get in Touch</a>
         </div>
     </section>
 
     <section class="section" id="about">
         <div class="container">
-            <span class="section-label">Who We Are</span>
-            <h2 class="section-title">Clarity through design.</h2>
+            <span class="section-label" data-i18n="about.label">Who We Are</span>
+            <h2 class="section-title" data-i18n="about.title">Clarity through design.</h2>
             <div class="about-grid">
                 <div class="about-text">
-                    <p>Zenith Design is a Tokyo-based creative studio specializing in UI/UX, graphic, and product design. We partner with brands and startups to create purposeful, beautiful, and functional design solutions.</p>
-                    <p>Our multidisciplinary team blends strategic thinking with visual craftsmanship — delivering work that resonates with users and stands apart in the market.</p>
+                    <p data-i18n="about.text1">Zenith Design is a Tokyo-based creative studio specializing in UI/UX, graphic, and product design. We partner with brands and startups to create purposeful, beautiful, and functional design solutions.</p>
+                    <p data-i18n="about.text2">Our multidisciplinary team blends strategic thinking with visual craftsmanship — delivering work that resonates with users and stands apart in the market.</p>
                 </div>
                 <div class="about-stats">
-                    <div class="stat"><span class="stat-number">5+</span><span class="stat-label">Years of Experience</span></div>
-                    <div class="stat"><span class="stat-number">80+</span><span class="stat-label">Projects Delivered</span></div>
-                    <div class="stat"><span class="stat-number">30+</span><span class="stat-label">Happy Clients</span></div>
+                    <div class="stat"><span class="stat-number" data-i18n="about.stat1">5+</span><span class="stat-label" data-i18n="about.label1">Years of Experience</span></div>
+                    <div class="stat"><span class="stat-number" data-i18n="about.stat2">80+</span><span class="stat-label" data-i18n="about.label2">Projects Delivered</span></div>
+                    <div class="stat"><span class="stat-number" data-i18n="about.stat3">30+</span><span class="stat-label" data-i18n="about.label3">Happy Clients</span></div>
                 </div>
             </div>
         </div>
@@ -55,23 +63,23 @@
 
     <section class="section section-dark" id="services">
         <div class="container">
-            <span class="section-label">What We Do</span>
-            <h2 class="section-title">Our Services</h2>
+            <span class="section-label" data-i18n="services.label">What We Do</span>
+            <h2 class="section-title" data-i18n="services.title">Our Services</h2>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">&#9633;</div>
-                    <h3>UI / UX Design</h3>
-                    <p>User research, wireframing, prototyping, and interface design that places people at the center.</p>
+                    <h3 data-i18n="services.service1">UI / UX Design</h3>
+                    <p data-i18n="services.desc1">User research, wireframing, prototyping, and interface design that places people at the center.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">&#9651;</div>
-                    <h3>Graphic Design</h3>
-                    <p>Brand identity, visual systems, print, and digital communication that leaves a lasting impression.</p>
+                    <h3 data-i18n="services.service2">Graphic Design</h3>
+                    <p data-i18n="services.desc2">Brand identity, visual systems, print, and digital communication that leaves a lasting impression.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">&#9711;</div>
-                    <h3>Product Design</h3>
-                    <p>End-to-end product thinking — from concept and usability testing to launch-ready design.</p>
+                    <h3 data-i18n="services.service3">Product Design</h3>
+                    <p data-i18n="services.desc3">End-to-end product thinking — from concept and usability testing to launch-ready design.</p>
                 </div>
             </div>
         </div>
@@ -79,31 +87,31 @@
 
     <section class="section" id="works">
         <div class="container">
-            <span class="section-label">Portfolio</span>
-            <h2 class="section-title">Selected Works</h2>
+            <span class="section-label" data-i18n="works.label">Portfolio</span>
+            <h2 class="section-title" data-i18n="works.title">Selected Works</h2>
             <div class="works-grid">
                 <div class="work-card">
                     <div class="work-img placeholder-img"></div>
                     <div class="work-info">
-                        <span class="work-tag">UI/UX Design</span>
-                        <h3>Project Title Here</h3>
-                        <p>Short description of the project and the design challenge solved.</p>
+                        <span class="work-tag" data-i18n="works.tag1">UI/UX Design</span>
+                        <h3 data-i18n="works.projectTitle">Project Title Here</h3>
+                        <p data-i18n="works.projectDesc">Short description of the project and the design challenge solved.</p>
                     </div>
                 </div>
                 <div class="work-card">
                     <div class="work-img placeholder-img"></div>
                     <div class="work-info">
-                        <span class="work-tag">Graphic Design</span>
-                        <h3>Project Title Here</h3>
-                        <p>Short description of the project and the design challenge solved.</p>
+                        <span class="work-tag" data-i18n="works.tag2">Graphic Design</span>
+                        <h3 data-i18n="works.projectTitle">Project Title Here</h3>
+                        <p data-i18n="works.projectDesc">Short description of the project and the design challenge solved.</p>
                     </div>
                 </div>
                 <div class="work-card">
                     <div class="work-img placeholder-img"></div>
                     <div class="work-info">
-                        <span class="work-tag">Product Design</span>
-                        <h3>Project Title Here</h3>
-                        <p>Short description of the project and the design challenge solved.</p>
+                        <span class="work-tag" data-i18n="works.tag3">Product Design</span>
+                        <h3 data-i18n="works.projectTitle">Project Title Here</h3>
+                        <p data-i18n="works.projectDesc">Short description of the project and the design challenge solved.</p>
                     </div>
                 </div>
             </div>
@@ -112,29 +120,29 @@
 
     <section class="section section-dark" id="contact">
         <div class="container">
-            <span class="section-label">Get In Touch</span>
-            <h2 class="section-title">Let's work together.</h2>
+            <span class="section-label" data-i18n="contact.label">Get In Touch</span>
+            <h2 class="section-title" data-i18n="contact.title">Let's work together.</h2>
             <div class="contact-grid">
                 <div class="contact-info">
                     <div class="contact-item">
-                        <span class="contact-label">Email</span>
-                        <a href="mailto:hello@zenith-designjp.com">hello@zenith-designjp.com</a>
+                        <span class="contact-label" data-i18n="contact.emailLabel">Email</span>
+                        <a href="mailto:hello@zenith-designjp.com" data-i18n="contact.emailValue">hello@zenith-designjp.com</a>
                     </div>
                     <div class="contact-item">
-                        <span class="contact-label">Website</span>
-                        <a href="https://zenith-designjp.com" target="_blank">zenith-designjp.com</a>
+                        <span class="contact-label" data-i18n="contact.websiteLabel">Website</span>
+                        <a href="https://zenith-designjp.com" target="_blank" data-i18n="contact.websiteValue">zenith-designjp.com</a>
                     </div>
                     <div class="contact-item">
-                        <span class="contact-label">Location</span>
-                        <span>Tokyo, Japan</span>
+                        <span class="contact-label" data-i18n="contact.locationLabel">Location</span>
+                        <span data-i18n="contact.locationValue">Tokyo, Japan</span>
                     </div>
                 </div>
                 <form class="contact-form" id="contact-form">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <input type="text" name="subject" placeholder="Subject">
-                    <textarea name="message" placeholder="Tell us about your project..." rows="5" required></textarea>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <input type="text" name="name" data-i18n="contact.namePlaceholder" placeholder="Your Name" required>
+                    <input type="email" name="email" data-i18n="contact.emailPlaceholder" placeholder="Your Email" required>
+                    <input type="text" name="subject" data-i18n="contact.subjectPlaceholder" placeholder="Subject">
+                    <textarea name="message" data-i18n="contact.messagePlaceholder" placeholder="Tell us about your project..." rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary" data-i18n="contact.btnSend">Send Message</button>
                 </form>
             </div>
         </div>
@@ -143,10 +151,12 @@
     <footer class="footer">
         <div class="container footer-inner">
             <img src="images/Zenith Design Logo Mark.png" alt="Zenith Design Logo" class="footer-logo-img">
-            <span class="footer-copy">&copy; 2025 Zenith Design. All rights reserved.</span>
+            <span class="footer-copy" data-i18n="footer.copyright">&copy; 2025 Zenith Design. All rights reserved.</span>
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/i18next@23.7.6/dist/umd/i18next.min.js"></script>
+    <script src="js/i18n-init.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

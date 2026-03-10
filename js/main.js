@@ -11,6 +11,33 @@ navLinks.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", () => navLinks.classList.remove("open"));
 });
 
+// Language selector toggle
+const langToggle = document.getElementById("lang-toggle");
+const langDropdown = document.getElementById("lang-dropdown");
+
+if (langToggle && langDropdown) {
+    langToggle.addEventListener("click", (e) => {
+        e.stopPropagation();
+        langDropdown.classList.toggle("active");
+    });
+
+    // Language option click
+    document.querySelectorAll(".lang-option").forEach(option => {
+        option.addEventListener("click", (e) => {
+            e.preventDefault();
+            const lang = option.dataset.lang;
+            changeLanguage(lang);
+        });
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener("click", (e) => {
+        if (!langToggle.contains(e.target) && !langDropdown.contains(e.target)) {
+            langDropdown.classList.remove("active");
+        }
+    });
+}
+
 // Shrink header on scroll
 const header = document.querySelector(".header");
 window.addEventListener("scroll", () => {

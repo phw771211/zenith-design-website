@@ -1,0 +1,69 @@
+{
+  "nav": {
+    "about": "关于",
+    "services": "服务",
+    "works": "作品",
+    "contact": "联系"
+  },
+  "hero": {
+    "sub": "东京创意工作室",
+    "title": "设计改变<br>世界。",
+    "desc": "我们通过UI/UX、平面和产品设计，打造富有意义的数字和视觉体验。",
+    "btnWork": "查看作品",
+    "btnTouch": "取得联系"
+  },
+  "about": {
+    "label": "我们是谁",
+    "title": "通过设计实现清晰。",
+    "text1": "Zenith Design 是一家位于东京的创意工作室，专门从事UI/UX、平面和产品设计。我们与品牌和初创公司合作，创建有目的、美观和功能性的设计解决方案。",
+    "text2": "我们的多学科团队融合战略思维和视觉工艺——打造能与用户产生共鸣并在市场中脱颖而出的作品。",
+    "stat1": "5+",
+    "label1": "年经验",
+    "stat2": "80+",
+    "label2": "已完成项目",
+    "stat3": "30+",
+    "label3": "满意客户"
+  },
+  "services": {
+    "label": "我们的服务",
+    "title": "我们的服务",
+    "service1": "UI / UX 设计",
+    "desc1": "用户研究、线框图、原型和界面设计，以用户为中心。",
+    "service2": "平面设计",
+    "desc2": "品牌识别、视觉系统、印刷和数字通信，留下深刻印象。",
+    "service3": "产品设计",
+    "desc3": "端到端产品思维——从概念和可用性测试到发布就绪的设计。"
+  },
+  "works": {
+    "label": "作品集",
+    "title": "精选作品",
+    "tag1": "UI/UX 设计",
+    "projectTitle": "项目标题",
+    "projectDesc": "项目和已解决设计挑战的简短描述。",
+    "tag2": "平面设计",
+    "tag3": "产品设计"
+  },
+  "contact": {
+    "label": "取得联系",
+    "title": "让我们携手合作。",
+    "emailLabel": "电子邮件",
+    "emailValue": "hello@zenith-designjp.com",
+    "websiteLabel": "网站",
+    "websiteValue": "zenith-designjp.com",
+    "locationLabel": "位置",
+    "locationValue": "东京，日本",
+    "namePlaceholder": "您的名字",
+    "emailPlaceholder": "您的电子邮件",
+    "subjectPlaceholder": "主题",
+    "messagePlaceholder": "告诉我们您的项目...",
+    "btnSend": "发送信息"
+  },
+  "footer": {
+    "copyright": "© 2025 Zenith Design。版权所有。"
+  },
+  "languages": {
+    "en": "English",
+    "zh": "简体中文",
+    "ja": "日本語"
+  }
+}

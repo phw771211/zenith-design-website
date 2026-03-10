@@ -1,0 +1,69 @@
+{
+  "nav": {
+    "about": "About",
+    "services": "Services",
+    "works": "Works",
+    "contact": "Contact"
+  },
+  "hero": {
+    "sub": "Tokyo-based Creative Studio",
+    "title": "Design that<br>moves the world.",
+    "desc": "We craft meaningful digital and visual experiences through UI/UX, Graphic, and Product Design.",
+    "btnWork": "View Our Work",
+    "btnTouch": "Get in Touch"
+  },
+  "about": {
+    "label": "Who We Are",
+    "title": "Clarity through design.",
+    "text1": "Zenith Design is a Tokyo-based creative studio specializing in UI/UX, graphic, and product design. We partner with brands and startups to create purposeful, beautiful, and functional design solutions.",
+    "text2": "Our multidisciplinary team blends strategic thinking with visual craftsmanship — delivering work that resonates with users and stands apart in the market.",
+    "stat1": "5+",
+    "label1": "Years of Experience",
+    "stat2": "80+",
+    "label2": "Projects Delivered",
+    "stat3": "30+",
+    "label3": "Happy Clients"
+  },
+  "services": {
+    "label": "What We Do",
+    "title": "Our Services",
+    "service1": "UI / UX Design",
+    "desc1": "User research, wireframing, prototyping, and interface design that places people at the center.",
+    "service2": "Graphic Design",
+    "desc2": "Brand identity, visual systems, print, and digital communication that leaves a lasting impression.",
+    "service3": "Product Design",
+    "desc3": "End-to-end product thinking — from concept and usability testing to launch-ready design."
+  },
+  "works": {
+    "label": "Portfolio",
+    "title": "Selected Works",
+    "tag1": "UI/UX Design",
+    "projectTitle": "Project Title Here",
+    "projectDesc": "Short description of the project and the design challenge solved.",
+    "tag2": "Graphic Design",
+    "tag3": "Product Design"
+  },
+  "contact": {
+    "label": "Get In Touch",
+    "title": "Let's work together.",
+    "emailLabel": "Email",
+    "emailValue": "hello@zenith-designjp.com",
+    "websiteLabel": "Website",
+    "websiteValue": "zenith-designjp.com",
+    "locationLabel": "Location",
+    "locationValue": "Tokyo, Japan",
+    "namePlaceholder": "Your Name",
+    "emailPlaceholder": "Your Email",
+    "subjectPlaceholder": "Subject",
+    "messagePlaceholder": "Tell us about your project...",
+    "btnSend": "Send Message"
+  },
+  "footer": {
+    "copyright": "© 2025 Zenith Design. All rights reserved."
+  },
+  "languages": {
+    "en": "English",
+    "zh": "简体中文",
+    "ja": "日本語"
+  }
+}
