@@ -12,6 +12,7 @@
 </head>
 <body>
 
+    <!-- ── NAV ── -->
     <header class="header">
         <nav class="nav container">
             <a href="#" class="nav-logo">
@@ -20,12 +21,12 @@
             </a>
             <div class="nav-right">
                 <ul class="nav-links">
-                    <li><a href="#about" data-i18n="nav.about">About</a></li>
-                    <li><a href="#services" data-i18n="nav.services">Services</a></li>
+                    <li><a href="#approach" data-i18n="nav.approach">Approach</a></li>
                     <li><a href="#works" data-i18n="nav.works">Works</a></li>
+                    <li><a href="#services" data-i18n="nav.services">Services</a></li>
                 </ul>
                 <div class="language-selector">
-                    <button class="lang-toggle" id="lang-toggle" aria-label="language" title="Select Language">🌐</button>
+                    <button class="lang-toggle" id="lang-toggle" aria-label="language">🌐</button>
                     <div class="lang-dropdown" id="lang-dropdown">
                         <button class="lang-option" data-lang="en">🇬🇧 English</button>
                         <button class="lang-option" data-lang="zh">🇨🇳 简体中文</button>
@@ -38,31 +39,25 @@
         </nav>
     </header>
 
-    <!-- Hero -->
+    <!-- ── HERO ── -->
     <section class="hero">
-        <div class="hero-content container">
-            <div class="hero-visual">
-                <img src="images/hero-3d-model.png" alt="" class="hero-3d-img">
-            </div>
-            <p class="hero-region" data-i18n="hero.region">Big in Japan</p>
-            <p class="hero-company" data-i18n="hero.company">Pinghung Wu</p>
+        <div class="hero-visual">
+            <img src="images/hero-3d-model.png" alt="" class="hero-3d-img">
+        </div>
+        <div class="hero-text container">
             <h1 class="hero-title" data-i18n="hero.title">Crafting Digital Experiences<br>that Drive Growth.</h1>
             <p class="hero-desc" data-i18n="hero.desc">We are a boutique UI/UX design agency dedicated to building intuitive, beautiful, and user-centric products.</p>
-            <div class="hero-btns">
-                <a href="#works" class="btn btn-primary" data-i18n="hero.btnWork">View Our Work</a>
-                <a href="#contact" class="btn btn-dark" data-i18n="hero.btnTouch">Get in Touch</a>
-            </div>
         </div>
     </section>
 
-    <!-- Approach -->
-    <section class="section-approach">
+    <!-- ── APPROACH ── -->
+    <section class="section-approach" id="approach">
         <div class="container">
             <div class="approach-header">
                 <h2 class="approach-title" data-i18n="approach.title">Our approach<br>to perfect result</h2>
                 <div class="approach-actions">
-                    <a href="#contact" class="btn btn-primary" data-i18n="approach.btnStart">Start a project</a>
-                    <a href="#works" class="btn btn-dark" data-i18n="approach.btnWork">See our work</a>
+                    <a href="#contact" class="btn btn-white" data-i18n="approach.btnStart">Start a project</a>
+                    <a href="#works" class="btn btn-charcoal" data-i18n="approach.btnWork">See our work</a>
                 </div>
             </div>
             <div class="approach-grid">
@@ -91,7 +86,7 @@
                     <h3 data-i18n="approach.step5">Refinement</h3>
                     <p data-i18n="approach.desc5">Iterative refinement based on user feedback.</p>
                 </div>
-                <div class="approach-card approach-card-highlight">
+                <div class="approach-card approach-card-teal">
                     <span class="approach-stage">Stage 06.</span>
                     <h3 data-i18n="approach.step6">Full Execution</h3>
                     <p data-i18n="approach.desc6">Complete handoff and implementation support.</p>
@@ -100,35 +95,7 @@
         </div>
     </section>
 
-    <!-- About -->
-    <section class="section-about" id="about">
-        <div class="container">
-            <span class="section-label" data-i18n="about.label">Who We Are</span>
-            <h2 class="section-title" data-i18n="about.title">Clarity through design.</h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p data-i18n="about.text1">Zenith Design is a Tokyo-based creative studio specializing in UI/UX, graphic, and product design. We partner with brands and startups to create purposeful, beautiful, and functional design solutions.</p>
-                    <p data-i18n="about.text2">Our multidisciplinary team blends strategic thinking with visual craftsmanship — delivering work that resonates with users and stands apart in the market.</p>
-                </div>
-                <div class="about-stats">
-                    <div class="stat">
-                        <span class="stat-number" data-i18n="about.stat1">5+</span>
-                        <span class="stat-label" data-i18n="about.label1">Years of Experience</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number" data-i18n="about.stat2">80+</span>
-                        <span class="stat-label" data-i18n="about.label2">Projects Delivered</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number" data-i18n="about.stat3">30+</span>
-                        <span class="stat-label" data-i18n="about.label3">Happy Clients</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services -->
+    <!-- ── SERVICES ── -->
     <section class="section-services" id="services">
         <div class="container">
             <div class="services-layout">
@@ -168,47 +135,44 @@
         </div>
     </section>
 
-    <!-- Works -->
+    <!-- ── WORKS ── -->
     <section class="section-works" id="works">
         <div class="container">
-            <div class="works-header">
-                <div>
-                    <span class="section-label" data-i18n="works.label">Portfolio</span>
-                    <h2 class="section-title" data-i18n="works.title">Our latest projects</h2>
-                </div>
-                <img src="images/hero-sphere.png" alt="" class="works-deco-img">
-            </div>
+            <span class="section-label" data-i18n="works.label">Portfolio</span>
+            <h2 class="section-title" data-i18n="works.title">Our latest projects</h2>
             <div class="works-grid">
                 <div class="work-card">
                     <div class="work-img placeholder-img"></div>
                     <div class="work-info">
                         <span class="work-tag" data-i18n="works.tag1">UI/UX Design</span>
-                        <h3 data-i18n="works.projectTitle">Project Title Here</h3>
-                        <p data-i18n="works.projectDesc">Short description of the project and the design challenge solved.</p>
+                        <h3 data-i18n="works.project1Title">Brand Identity System</h3>
+                        <p data-i18n="works.project1Desc">Strategic redesign for a fintech startup entering the Japanese market.</p>
                     </div>
                 </div>
-                <div class="work-card">
-                    <div class="work-img placeholder-img"></div>
+                <div class="work-card work-card-featured">
+                    <div class="work-img">
+                        <img src="images/work-featured.png" alt="Tire Rex Company Website" class="work-photo">
+                    </div>
                     <div class="work-info">
-                        <span class="work-tag" data-i18n="works.tag2">Prototyping</span>
-                        <h3 data-i18n="works.projectTitle">Project Title Here</h3>
-                        <p data-i18n="works.projectDesc">Short description of the project and the design challenge solved.</p>
+                        <span class="work-tag" data-i18n="works.tag2">Product Design</span>
+                        <h3 data-i18n="works.project2Title">Tire Rex Company Website</h3>
+                        <a href="#contact" class="work-case-btn" data-i18n="works.viewCase">View Case Study ↗</a>
                     </div>
                 </div>
                 <div class="work-card">
                     <div class="work-img placeholder-img"></div>
                     <div class="work-info">
                         <span class="work-tag" data-i18n="works.tag3">Design Systems</span>
-                        <h3 data-i18n="works.projectTitle">Project Title Here</h3>
-                        <p data-i18n="works.projectDesc">Short description of the project and the design challenge solved.</p>
+                        <h3 data-i18n="works.project3Title">Corporate Design System</h3>
+                        <p data-i18n="works.project3Desc">End-to-end design system for a Tokyo-based enterprise software company.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Impact -->
-    <section class="section-impact" id="impact">
+    <!-- ── IMPACT ── -->
+    <section class="section-impact">
         <div class="container">
             <h2 class="impact-title" data-i18n="impact.title">Our Impact<br>In Numbers</h2>
             <div class="impact-grid">
@@ -231,42 +195,36 @@
         </div>
     </section>
 
-    <!-- Contact -->
+    <!-- ── CONTACT ── -->
     <section class="section-contact" id="contact">
         <div class="container">
-            <h2 class="contact-big-title" data-i18n="contact.title">Let's Build Something<br>Great Together.</h2>
-            <div class="contact-layout">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <span class="contact-label" data-i18n="contact.emailLabel">Email</span>
-                        <a href="mailto:hello@zenith-designjp.com" data-i18n="contact.emailValue">hello@zenith-designjp.com</a>
+            <div class="contact-inner">
+                <img src="images/contact-deco.png" alt="" class="contact-deco-img">
+                <div class="contact-bottom">
+                    <h2 class="contact-big-title" data-i18n="contact.title">Let's Build Something<br>Great Together.</h2>
+                    <div class="contact-actions">
+                        <a href="mailto:hello@zenith-designjp.com" class="contact-email-pill">
+                            <span data-i18n="contact.emailValue">hello@zenith-designjp.com</span>
+                            <span>↗</span>
+                        </a>
+                        <a href="mailto:hello@zenith-designjp.com" class="contact-arrow-btn">↗</a>
                     </div>
-                    <div class="contact-item">
-                        <span class="contact-label" data-i18n="contact.websiteLabel">Website</span>
-                        <a href="https://zenith-designjp.com" target="_blank" data-i18n="contact.websiteValue">zenith-designjp.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-label" data-i18n="contact.locationLabel">Location</span>
-                        <span data-i18n="contact.locationValue">Tokyo, Japan</span>
+                    <div class="contact-footer-bar">
+                        <span class="contact-address" data-i18n="contact.locationValue">Tokyo, Japan</span>
+                        <nav class="contact-footer-nav">
+                            <a href="#approach" data-i18n="nav.approach">Approach</a>
+                            <a href="#works" data-i18n="nav.works">Works</a>
+                            <a href="#services" data-i18n="nav.services">Services</a>
+                        </nav>
                     </div>
                 </div>
-                <form class="contact-form" id="contact-form">
-                    <input type="text" name="name" data-i18n="contact.namePlaceholder" placeholder="Your Name" required>
-                    <input type="email" name="email" data-i18n="contact.emailPlaceholder" placeholder="Your Email" required>
-                    <input type="text" name="subject" data-i18n="contact.subjectPlaceholder" placeholder="Subject">
-                    <textarea name="message" data-i18n="contact.messagePlaceholder" placeholder="Tell us about your project..." rows="5" required></textarea>
-                    <button type="submit" class="btn-send" data-i18n="contact.btnSend">Send Message ↗</button>
-                </form>
             </div>
         </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container footer-inner">
-            <img src="images/Zenith Design Logo Mark.png" alt="Zenith Design Logo" class="footer-logo-img">
+        <div class="footer-copy-bar container">
+            <img src="images/Zenith Design Logo Mark.png" alt="Zenith Design" class="footer-logo-img">
             <span class="footer-copy" data-i18n="footer.copyright">&copy; 2025 Zenith Design. All rights reserved.</span>
         </div>
-    </footer>
+    </section>
 
     <script src="https://cdn.jsdelivr.net/npm/i18next@23.7.6/dist/umd/i18next.min.js"></script>
     <script src="js/i18n-init.js"></script>

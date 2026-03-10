@@ -1,30 +1,13 @@
 {
   "nav": {
-    "about": "About",
-    "services": "Services",
+    "approach": "Approach",
     "works": "Works",
-    "contact": "Contact",
+    "services": "Services",
     "contactBtn": "Contact Us ↗"
   },
   "hero": {
-    "region": "Big in Japan",
-    "company": "Pinghung Wu",
     "title": "Crafting Digital Experiences<br>that Drive Growth.",
-    "desc": "We are a boutique UI/UX design agency dedicated to building intuitive, beautiful, and user-centric products.",
-    "btnWork": "View Our Work",
-    "btnTouch": "Get in Touch"
-  },
-  "about": {
-    "label": "Who We Are",
-    "title": "Clarity through design.",
-    "text1": "Zenith Design is a Tokyo-based creative studio specializing in UI/UX, graphic, and product design. We partner with brands and startups to create purposeful, beautiful, and functional design solutions.",
-    "text2": "Our multidisciplinary team blends strategic thinking with visual craftsmanship — delivering work that resonates with users and stands apart in the market.",
-    "stat1": "5+",
-    "label1": "Years of Experience",
-    "stat2": "80+",
-    "label2": "Projects Delivered",
-    "stat3": "30+",
-    "label3": "Happy Clients"
+    "desc": "We are a boutique UI/UX design agency dedicated to building intuitive, beautiful, and user-centric products."
   },
   "approach": {
     "title": "Our approach<br>to perfect result",
@@ -58,10 +41,14 @@
     "label": "Portfolio",
     "title": "Our latest projects",
     "tag1": "UI/UX Design",
-    "tag2": "Prototyping",
+    "project1Title": "Brand Identity System",
+    "project1Desc": "Strategic redesign for a fintech startup entering the Japanese market.",
+    "tag2": "Product Design",
+    "project2Title": "Tire Rex Company Website",
     "tag3": "Design Systems",
-    "projectTitle": "Project Title Here",
-    "projectDesc": "Short description of the project and the design challenge solved."
+    "project3Title": "Corporate Design System",
+    "project3Desc": "End-to-end design system for a Tokyo-based enterprise software company.",
+    "viewCase": "View Case Study ↗"
   },
   "impact": {
     "title": "Our Impact<br>In Numbers",
@@ -76,26 +63,11 @@
     "desc3": "Building bigger for over a decade, partnering with brands to meet their goals."
   },
   "contact": {
-    "label": "Get In Touch",
     "title": "Let's Build Something<br>Great Together.",
-    "emailLabel": "Email",
     "emailValue": "hello@zenith-designjp.com",
-    "websiteLabel": "Website",
-    "websiteValue": "zenith-designjp.com",
-    "locationLabel": "Location",
-    "locationValue": "Tokyo, Japan",
-    "namePlaceholder": "Your Name",
-    "emailPlaceholder": "Your Email",
-    "subjectPlaceholder": "Subject",
-    "messagePlaceholder": "Tell us about your project...",
-    "btnSend": "Send Message ↗"
+    "locationValue": "Tokyo, Japan"
   },
   "footer": {
     "copyright": "© 2025 Zenith Design. All rights reserved."
-  },
-  "languages": {
-    "en": "English",
-    "zh": "简体中文",
-    "ja": "日本語"
   }
 }

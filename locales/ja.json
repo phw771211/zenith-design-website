@@ -1,30 +1,13 @@
 {
   "nav": {
-    "about": "について",
-    "services": "サービス",
+    "approach": "アプローチ",
     "works": "ポートフォリオ",
-    "contact": "お問い合わせ",
+    "services": "サービス",
     "contactBtn": "お問い合わせ ↗"
   },
   "hero": {
-    "region": "日本で大人気",
-    "company": "Pinghung Wu",
     "title": "デジタル体験を<br>創造し成長を促進。",
-    "desc": "私たちは、直感的で美しく、ユーザー中心のプロダクトを構築することに特化したブティックUI/UXデザインエージェンシーです。",
-    "btnWork": "ポートフォリオを見る",
-    "btnTouch": "お問い合わせ"
-  },
-  "about": {
-    "label": "私たちについて",
-    "title": "デザインの明確性。",
-    "text1": "Zenith Design は、UI/UX、グラフィック、プロダクトデザインを専門とする東京ベースの制作スタジオです。ブランドやスタートアップと協力して、目的を持ち、美しく、機能的なデザインソリューションを作成します。",
-    "text2": "当社の学際的なチームは戦略的思考とビジュアルクラフトマンシップを組み合わせており、ユーザーに共鳴し、市場で際立つ作品を提供します。",
-    "stat1": "5+",
-    "label1": "年の経験",
-    "stat2": "80+",
-    "label2": "納品済みプロジェクト",
-    "stat3": "30+",
-    "label3": "満足したクライアント"
+    "desc": "私たちは、直感的で美しく、ユーザー中心のプロダクトを構築することに特化したブティックUI/UXデザインエージェンシーです。"
   },
   "approach": {
     "title": "完璧な結果への<br>私たちのアプローチ",
@@ -58,10 +41,14 @@
     "label": "ポートフォリオ",
     "title": "最新プロジェクト",
     "tag1": "UI/UX デザイン",
-    "tag2": "プロトタイピング",
+    "project1Title": "ブランドアイデンティティシステム",
+    "project1Desc": "日本市場に参入するフィンテックスタートアップの戦略的リデザイン。",
+    "tag2": "プロダクトデザイン",
+    "project2Title": "Tire Rex カンパニーウェブサイト",
     "tag3": "デザインシステム",
-    "projectTitle": "プロジェクトタイトル",
-    "projectDesc": "プロジェクトと解決されたデザイン課題の簡潔な説明。"
+    "project3Title": "コーポレートデザインシステム",
+    "project3Desc": "東京の企業向けソフトウェア会社のためのエンドツーエンドデザインシステム。",
+    "viewCase": "ケーススタディを見る ↗"
   },
   "impact": {
     "title": "数字で見る<br>私たちの実績",
@@ -76,26 +63,11 @@
     "desc3": "10年以上にわたり、ブランドと協力して目標を達成してきました。"
   },
   "contact": {
-    "label": "お問い合わせ",
     "title": "素晴らしいものを<br>一緒に作りましょう。",
-    "emailLabel": "メール",
     "emailValue": "hello@zenith-designjp.com",
-    "websiteLabel": "ウェブサイト",
-    "websiteValue": "zenith-designjp.com",
-    "locationLabel": "場所",
-    "locationValue": "東京、日本",
-    "namePlaceholder": "お名前",
-    "emailPlaceholder": "メールアドレス",
-    "subjectPlaceholder": "件名",
-    "messagePlaceholder": "プロジェクトについて教えてください...",
-    "btnSend": "送信する ↗"
+    "locationValue": "東京、日本"
   },
   "footer": {
     "copyright": "© 2025 Zenith Design。著作権所有。"
-  },
-  "languages": {
-    "en": "English",
-    "zh": "简体中文",
-    "ja": "日本語"
   }
 }
