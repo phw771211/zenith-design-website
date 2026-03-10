@@ -61,7 +61,7 @@ function get(url, token) {
 
 async function fetchImageUrls(nodeIds) {
   const ids = nodeIds.map(id => id.replace(':', '%3A')).join(',');
-  const url = `https://api.figma.com/v1/images/${FILE_KEY}?ids=${ids}&format=png&scale=1`;
+  const url = `https://api.figma.com/v1/images/${FILE_KEY}?ids=${ids}&format=png&scale=2`;
   const { status, body } = await get(url, TOKEN);
   if (status !== 200) throw new Error(`Figma API error ${status}: ${body.toString()}`);
   return JSON.parse(body.toString()).images; // { "nodeId": "https://..." }
