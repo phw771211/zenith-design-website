@@ -26,6 +26,7 @@
   "devDependencies": {
     "backstopjs": "^6.3.25",
     "http-server": "^14.1.1",
+    "pngjs": "^7.0.0",
     "start-server-and-test": "^2.1.5"
   }
 }
