@@ -93,8 +93,9 @@ img { display: block; max-width: 100%; }
 .hero-3d-img { width: 100%; height: auto; display: block; }
 .hero-text {
     position: relative; z-index: 2;
-    /* pull text UP ~229px at 1440px to overlap the bottom of the hero image */
-    margin-top: clamp(-80px, -16vw, -230px);
+    /* clamp(MIN, PREFERRED, MAX) — for negative margins MIN must be most-negative
+       At 1440px: -16vw = -230px overlap. MIN=-230px, MAX=-80px (smallest overlap) */
+    margin-top: clamp(-230px, -16vw, -80px);
     width: 100%;
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
@@ -103,7 +104,7 @@ img { display: block; max-width: 100%; }
 }
 .hero-text-inner {
     max-width: 860px; margin: 0 auto;
-    padding: 48px 40px 80px;
+    padding: 48px 40px 60px;
 }
 .hero-title {
     font-size: clamp(32px, 3.8vw, 48px); font-weight: 700;
@@ -163,20 +164,23 @@ img { display: block; max-width: 100%; }
     position: absolute; left: -60px; top: 50%;
     transform: translateY(-50%);
     width: 130%; max-width: 520px;
-    opacity: 0.55; pointer-events: none; z-index: 0;
+    /* Keep very subtle — Figma blurs it behind a glass panel */
+    opacity: 0.25; pointer-events: none; z-index: 0;
 }
 /* Glass blur panel over the geo image, matching Figma's Frame 25 (backdrop-blur) */
 .services-intro::before {
     content: ''; position: absolute; inset: 0;
-    backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);
-    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    background: rgba(255,255,255,0.5);
     z-index: 0; pointer-events: none;
 }
 .services-intro h2,
 .services-intro p { position: relative; z-index: 1; }
 .services-big-title {
-    font-size: clamp(40px, 5.5vw, 74px); font-weight: 700; color: var(--black);
-    line-height: 1.0; letter-spacing: -2.5px; margin-bottom: 20px;
+    /* Space Grotesk is ~10% wider than Figma's PolySans Trial, so reduce max from 74px→62px
+       to keep "Our Services" on one line in the 37%-wide column */
+    font-size: clamp(36px, 4.5vw, 62px); font-weight: 700; color: var(--black);
+    line-height: 1.05; letter-spacing: -2px; margin-bottom: 20px;
 }
 .services-desc {
     font-family: var(--font-body); font-size: 16px; color: rgba(0,0,0,0.45);
@@ -195,7 +199,7 @@ img { display: block; max-width: 100%; }
 /* Figma: desc 18px, color rgba(0,0,0,0.75) */
 .service-content p { font-family: var(--font-body); font-size: 18px; color: rgba(0,0,0,0.75); line-height: 1.4; }
 .service-arrow {
-    width: 48px; height: 48px; border-radius: 50%; border: 0.5px solid rgba(0,0,0,0.1);
+    width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.18);
     background: var(--white); display: flex; align-items: center; justify-content: center;
     flex-shrink: 0; font-size: 16px; color: var(--black); transition: all var(--t);
 }
