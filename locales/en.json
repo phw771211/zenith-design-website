@@ -6,9 +6,10 @@
     "contact": "Contact"
   },
   "hero": {
-    "sub": "Tokyo-based Creative Studio",
-    "title": "Design that<br>moves the world.",
-    "desc": "We craft meaningful digital and visual experiences through UI/UX, Graphic, and Product Design.",
+    "region": "Big in Japan",
+    "company": "Pinghung Wu",
+    "title": "Crafting Digital Experiences<br>that Drive Growth.",
+    "desc": "We design meaningful digital experiences through strategic UI/UX, compelling visual identities, and innovative product solutions.",
     "btnWork": "View Our Work",
     "btnTouch": "Get in Touch"
   },
@@ -23,6 +24,21 @@
     "label2": "Projects Delivered",
     "stat3": "30+",
     "label3": "Happy Clients"
+  },
+  "approach": {
+    "title": "Our approach<br>to perfect result",
+    "step1": "Understanding",
+    "desc1": "Deep research and stakeholder interviews to define the problem.",
+    "step2": "Strategy",
+    "desc2": "Developing strategic direction and design principles.",
+    "step3": "Design Value Creation",
+    "desc3": "Creating value through thoughtful, user-centered design.",
+    "step4": "Prototyping",
+    "desc4": "Building interactive prototypes to validate concepts.",
+    "step5": "Refinement",
+    "desc5": "Iterative refinement based on user feedback.",
+    "step6": "Full execution",
+    "desc6": "Complete handoff and implementation support."
   },
   "services": {
     "label": "What We Do",
@@ -43,9 +59,18 @@
     "tag2": "Graphic Design",
     "tag3": "Product Design"
   },
+  "impact": {
+    "title": "Our impact<br>in numbers",
+    "num1": "1,500+",
+    "label1": "Projects Completed",
+    "num2": "50+",
+    "label2": "Global Clients",
+    "num3": "2012",
+    "label3": "Founded"
+  },
   "contact": {
     "label": "Get In Touch",
-    "title": "Let's work together.",
+    "title": "Let's Build Something<br>Great Together.",
     "emailLabel": "Email",
     "emailValue": "hello@zenith-designjp.com",
     "websiteLabel": "Website",

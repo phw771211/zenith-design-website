@@ -9,6 +9,8 @@
     --gray-400:#9a9a9a;
     --gray-600:#555555;
     --accent:  #c8a96e;
+    --mint:    #8FDBDC;
+    --red:     #FF6B6B;
     --font:    "Helvetica Neue", Arial, "Hiragino Sans", "Yu Gothic", sans-serif;
     --max-w:   1100px;
     --transition: 0.3s ease;
@@ -96,7 +98,8 @@ img { display: block; max-width: 100%; }
 /* Hero */
 .hero { min-height: 100vh; background: var(--black); display: flex; align-items: center; padding-top: 64px; }
 .hero-content { max-width: 680px; }
-.hero-sub { font-size: 12px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; }
+.hero-region { font-size: 14px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+.hero-company { font-size: 18px; font-weight: 700; color: var(--red); letter-spacing: 1px; margin-bottom: 24px; }
 .hero-title { font-size: clamp(42px, 7vw, 88px); font-weight: 800; color: var(--white); line-height: 1.05; letter-spacing: -2px; margin-bottom: 24px; }
 .hero-desc { font-size: 18px; color: rgba(255,255,255,0.6); max-width: 480px; margin-bottom: 40px; }
 
@@ -106,6 +109,29 @@ img { display: block; max-width: 100%; }
 .about-stats { display: flex; flex-direction: column; gap: 32px; }
 .stat-number { display: block; font-size: 52px; font-weight: 800; color: var(--accent); line-height: 1; }
 .stat-label { font-size: 13px; color: var(--gray-400); letter-spacing: 1px; text-transform: uppercase; }
+
+/* Approach Section */
+.section-approach { padding: 80px 0; }
+.approach-title { font-size: clamp(28px, 4vw, 52px); font-weight: 800; letter-spacing: -0.5px; line-height: 1.15; margin-bottom: 60px; color: var(--white); }
+.approach-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.approach-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); padding: 32px 24px; border-radius: 4px; transition: all var(--transition); }
+.approach-card:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.12); }
+.approach-card h3 { font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 12px; }
+.approach-card p { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.6; }
+.approach-card-highlight { background: var(--mint); color: var(--black); border-color: var(--mint); }
+.approach-card-highlight h3 { color: var(--black); }
+.approach-card-highlight p { color: rgba(0,0,0,0.75); }
+.approach-card-highlight:hover { background: #7BC8CC; border-color: #7BC8CC; }
+
+/* Impact Section */
+.impact-title { font-size: clamp(28px, 4vw, 48px); font-weight: 700; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 48px; }
+.impact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.impact-card { background: var(--white); border: 1px solid var(--gray-100); padding: 48px 32px; text-align: center; border-radius: 4px; }
+.impact-card-dark { background: var(--black); color: var(--white); border-color: rgba(255,255,255,0.1); }
+.impact-number { display: block; font-size: 52px; font-weight: 800; color: var(--mint); margin-bottom: 12px; line-height: 1; }
+.impact-card-dark .impact-number { color: var(--mint); }
+.impact-card p { font-size: 14px; font-weight: 600; color: var(--gray-600); letter-spacing: 1px; text-transform: uppercase; }
+.impact-card-dark p { color: rgba(255,255,255,0.6); }
 
 /* Services */
 .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
@@ -152,6 +178,8 @@ img { display: block; max-width: 100%; }
     .works-grid { grid-template-columns: repeat(2, 1fr); }
     .about-grid { grid-template-columns: 1fr; gap: 48px; }
     .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+    .approach-grid { grid-template-columns: repeat(2, 1fr); }
+    .impact-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 600px) {
     .nav-right { flex-direction: column; gap: 12px; }
@@ -160,6 +188,8 @@ img { display: block; max-width: 100%; }
     .language-selector { margin-left: auto; margin-right: 12px; }
     .lang-dropdown { right: auto; left: -60px; }
     .works-grid { grid-template-columns: 1fr; }
+    .approach-grid { grid-template-columns: 1fr; }
+    .impact-grid { grid-template-columns: 1fr; }
     .section { padding: 72px 0; }
     .btn { padding: 12px 24px; font-size: 13px; }
     .footer-inner { flex-direction: column; gap: 12px; text-align: center; }
