@@ -161,10 +161,11 @@ img { display: block; max-width: 100%; }
     position: relative; overflow: hidden;
     padding: 60px 0; background: var(--white);
 }
-/* Geo image at section level — Figma: parent frame, lower-left, x=-80 y=177
-   Image is 743×418px in a 1440×595 section. Sits in the bottom-left. */
+/* Geo image at section level — Figma: x=-80 y=177 in 1440×595 section
+   y=177/595 ≈ 30% from top → image overlaps description text and extends down.
+   Use top:30% so it sits behind the text, not separated below it. */
 .services-geo-bg {
-    position: absolute; left: -40px; bottom: -20px;
+    position: absolute; left: -40px; top: 30%;
     width: 50%; max-width: 720px;
     opacity: 0.6; pointer-events: none; z-index: 0;
 }
