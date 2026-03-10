@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Zenith Design - UI/UX, Graphic and Product Design Studio in Tokyo">
     <title>Zenith Design | Creative Design Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -20,65 +23,82 @@
                     <li><a href="#about" data-i18n="nav.about">About</a></li>
                     <li><a href="#services" data-i18n="nav.services">Services</a></li>
                     <li><a href="#works" data-i18n="nav.works">Works</a></li>
-                    <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
                 </ul>
                 <div class="language-selector">
                     <button class="lang-toggle" id="lang-toggle" aria-label="language" title="Select Language">🌐</button>
-                <div class="lang-dropdown" id="lang-dropdown">
-                    <button class="lang-option" data-lang="en">🇬🇧 English</button>
-                    <button class="lang-option" data-lang="zh">🇨🇳 简体中文</button>
-                    <button class="lang-option" data-lang="ja">🇯🇵 日本語</button>
+                    <div class="lang-dropdown" id="lang-dropdown">
+                        <button class="lang-option" data-lang="en">🇬🇧 English</button>
+                        <button class="lang-option" data-lang="zh">🇨🇳 简体中文</button>
+                        <button class="lang-option" data-lang="ja">🇯🇵 日本語</button>
+                    </div>
                 </div>
-                </div>
+                <a href="#contact" class="nav-contact" data-i18n="nav.contactBtn">Contact Us ↗</a>
             </div>
             <button class="nav-toggle" id="nav-toggle" aria-label="menu">&#9776;</button>
         </nav>
     </header>
 
+    <!-- Hero -->
     <section class="hero">
         <div class="hero-content container">
             <p class="hero-region" data-i18n="hero.region">Big in Japan</p>
             <p class="hero-company" data-i18n="hero.company">Pinghung Wu</p>
             <h1 class="hero-title" data-i18n="hero.title">Crafting Digital Experiences<br>that Drive Growth.</h1>
-            <p class="hero-desc" data-i18n="hero.desc">We design meaningful digital experiences through strategic UI/UX, compelling visual identities, and innovative product solutions.</p>
-            <a href="#works" class="btn btn-primary" data-i18n="hero.btnWork">View Our Work</a>
-            <a href="#contact" class="btn btn-outline" data-i18n="hero.btnTouch">Get in Touch</a>
+            <p class="hero-desc" data-i18n="hero.desc">We are a boutique UI/UX design agency dedicated to building intuitive, beautiful, and user-centric products.</p>
+            <div class="hero-btns">
+                <a href="#works" class="btn btn-primary" data-i18n="hero.btnWork">View Our Work</a>
+                <a href="#contact" class="btn btn-dark" data-i18n="hero.btnTouch">Get in Touch</a>
+            </div>
         </div>
     </section>
 
-    <section class="section section-approach section-dark">
+    <!-- Approach -->
+    <section class="section-approach">
         <div class="container">
-            <h2 class="approach-title" data-i18n="approach.title">Our approach<br>to perfect result</h2>
+            <div class="approach-header">
+                <h2 class="approach-title" data-i18n="approach.title">Our approach<br>to perfect result</h2>
+                <div class="approach-actions">
+                    <a href="#contact" class="btn btn-primary" data-i18n="approach.btnStart">Start a project</a>
+                    <a href="#works" class="btn btn-dark" data-i18n="approach.btnWork">See our work</a>
+                </div>
+            </div>
             <div class="approach-grid">
                 <div class="approach-card">
+                    <span class="approach-stage">Stage 01.</span>
                     <h3 data-i18n="approach.step1">Understanding</h3>
                     <p data-i18n="approach.desc1">Deep research and stakeholder interviews to define the problem.</p>
                 </div>
                 <div class="approach-card">
+                    <span class="approach-stage">Stage 02.</span>
                     <h3 data-i18n="approach.step2">Strategy</h3>
                     <p data-i18n="approach.desc2">Developing strategic direction and design principles.</p>
                 </div>
                 <div class="approach-card">
+                    <span class="approach-stage">Stage 03.</span>
                     <h3 data-i18n="approach.step3">Design Value Creation</h3>
                     <p data-i18n="approach.desc3">Creating value through thoughtful, user-centered design.</p>
                 </div>
                 <div class="approach-card">
+                    <span class="approach-stage">Stage 04.</span>
                     <h3 data-i18n="approach.step4">Prototyping</h3>
                     <p data-i18n="approach.desc4">Building interactive prototypes to validate concepts.</p>
                 </div>
                 <div class="approach-card">
+                    <span class="approach-stage">Stage 05.</span>
                     <h3 data-i18n="approach.step5">Refinement</h3>
                     <p data-i18n="approach.desc5">Iterative refinement based on user feedback.</p>
                 </div>
                 <div class="approach-card approach-card-highlight">
-                    <h3 data-i18n="approach.step6">Full execution</h3>
+                    <span class="approach-stage">Stage 06.</span>
+                    <h3 data-i18n="approach.step6">Full Execution</h3>
                     <p data-i18n="approach.desc6">Complete handoff and implementation support.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section" id="about">
+    <!-- About -->
+    <section class="section-about" id="about">
         <div class="container">
             <span class="section-label" data-i18n="about.label">Who We Are</span>
             <h2 class="section-title" data-i18n="about.title">Clarity through design.</h2>
@@ -88,42 +108,67 @@
                     <p data-i18n="about.text2">Our multidisciplinary team blends strategic thinking with visual craftsmanship — delivering work that resonates with users and stands apart in the market.</p>
                 </div>
                 <div class="about-stats">
-                    <div class="stat"><span class="stat-number" data-i18n="about.stat1">5+</span><span class="stat-label" data-i18n="about.label1">Years of Experience</span></div>
-                    <div class="stat"><span class="stat-number" data-i18n="about.stat2">80+</span><span class="stat-label" data-i18n="about.label2">Projects Delivered</span></div>
-                    <div class="stat"><span class="stat-number" data-i18n="about.stat3">30+</span><span class="stat-label" data-i18n="about.label3">Happy Clients</span></div>
+                    <div class="stat">
+                        <span class="stat-number" data-i18n="about.stat1">5+</span>
+                        <span class="stat-label" data-i18n="about.label1">Years of Experience</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-i18n="about.stat2">80+</span>
+                        <span class="stat-label" data-i18n="about.label2">Projects Delivered</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-i18n="about.stat3">30+</span>
+                        <span class="stat-label" data-i18n="about.label3">Happy Clients</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section section-dark" id="services">
+    <!-- Services -->
+    <section class="section-services" id="services">
         <div class="container">
-            <span class="section-label" data-i18n="services.label">What We Do</span>
-            <h2 class="section-title" data-i18n="services.title">Our Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">&#9633;</div>
-                    <h3 data-i18n="services.service1">UI / UX Design</h3>
-                    <p data-i18n="services.desc1">User research, wireframing, prototyping, and interface design that places people at the center.</p>
+            <div class="services-layout">
+                <div class="services-intro">
+                    <span class="section-label" data-i18n="services.label">What We Do</span>
+                    <h2 class="services-big-title" data-i18n="services.title">Our<br>Services</h2>
+                    <p class="services-desc" data-i18n="services.desc">We are a boutique UI/UX design agency dedicated to building intuitive, beautiful, and user-centric products.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">&#9651;</div>
-                    <h3 data-i18n="services.service2">Graphic Design</h3>
-                    <p data-i18n="services.desc2">Brand identity, visual systems, print, and digital communication that leaves a lasting impression.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">&#9711;</div>
-                    <h3 data-i18n="services.service3">Product Design</h3>
-                    <p data-i18n="services.desc3">End-to-end product thinking — from concept and usability testing to launch-ready design.</p>
+                <div class="services-list">
+                    <div class="service-item">
+                        <span class="service-num">01</span>
+                        <div class="service-content">
+                            <h3 data-i18n="services.service1">UI / UX Design</h3>
+                            <p data-i18n="services.desc1">Creating seamless interfaces that delight users.</p>
+                        </div>
+                        <div class="service-arrow">↗</div>
+                    </div>
+                    <div class="service-item">
+                        <span class="service-num">02</span>
+                        <div class="service-content">
+                            <h3 data-i18n="services.service2">Prototyping</h3>
+                            <p data-i18n="services.desc2">Bringing ideas to life with interactive high-fidelity wireframes.</p>
+                        </div>
+                        <div class="service-arrow">↗</div>
+                    </div>
+                    <div class="service-item">
+                        <span class="service-num">03</span>
+                        <div class="service-content">
+                            <h3 data-i18n="services.service3">Design Systems</h3>
+                            <p data-i18n="services.desc3">Building scalable visual languages for your brand.</p>
+                        </div>
+                        <div class="service-arrow">↗</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section" id="works">
+    <!-- Works -->
+    <section class="section-works" id="works">
         <div class="container">
             <span class="section-label" data-i18n="works.label">Portfolio</span>
-            <h2 class="section-title" data-i18n="works.title">Selected Works</h2>
+            <h2 class="section-title" data-i18n="works.title">Our latest projects</h2>
             <div class="works-grid">
                 <div class="work-card">
                     <div class="work-img placeholder-img"></div>
@@ -136,7 +181,7 @@
                 <div class="work-card">
                     <div class="work-img placeholder-img"></div>
                     <div class="work-info">
-                        <span class="work-tag" data-i18n="works.tag2">Graphic Design</span>
+                        <span class="work-tag" data-i18n="works.tag2">Prototyping</span>
                         <h3 data-i18n="works.projectTitle">Project Title Here</h3>
                         <p data-i18n="works.projectDesc">Short description of the project and the design challenge solved.</p>
                     </div>
@@ -144,7 +189,7 @@
                 <div class="work-card">
                     <div class="work-img placeholder-img"></div>
                     <div class="work-info">
-                        <span class="work-tag" data-i18n="works.tag3">Product Design</span>
+                        <span class="work-tag" data-i18n="works.tag3">Design Systems</span>
                         <h3 data-i18n="works.projectTitle">Project Title Here</h3>
                         <p data-i18n="works.projectDesc">Short description of the project and the design challenge solved.</p>
                     </div>
@@ -153,31 +198,35 @@
         </div>
     </section>
 
-    <section class="section" id="impact">
+    <!-- Impact -->
+    <section class="section-impact" id="impact">
         <div class="container">
-            <h2 class="impact-title" data-i18n="impact.title">Our impact<br>in numbers</h2>
+            <h2 class="impact-title" data-i18n="impact.title">Our Impact<br>In Numbers</h2>
             <div class="impact-grid">
                 <div class="impact-card">
                     <span class="impact-number" data-i18n="impact.num1">1,500+</span>
-                    <p data-i18n="impact.label1">Projects Completed</p>
+                    <p class="impact-card-title" data-i18n="impact.label1">Projects Complete</p>
+                    <p data-i18n="impact.desc1">Since 2012, we've been crafting design solutions that create real-world impact on business.</p>
                 </div>
                 <div class="impact-card impact-card-dark">
                     <span class="impact-number" data-i18n="impact.num2">50+</span>
-                    <p data-i18n="impact.label2">Global Clients</p>
+                    <p class="impact-card-title" data-i18n="impact.label2">Global Awards</p>
+                    <p data-i18n="impact.desc2">We are committed to delivering excellence and never settle for mediocrity.</p>
                 </div>
                 <div class="impact-card">
                     <span class="impact-number" data-i18n="impact.num3">2012</span>
-                    <p data-i18n="impact.label3">Founded</p>
+                    <p class="impact-card-title" data-i18n="impact.label3">Founded</p>
+                    <p data-i18n="impact.desc3">Building bigger for over a decade, partnering with brands to meet their goals.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section section-dark" id="contact">
+    <!-- Contact -->
+    <section class="section-contact" id="contact">
         <div class="container">
-            <span class="section-label" data-i18n="contact.label">Get In Touch</span>
-            <h2 class="section-title" data-i18n="contact.title">Let's Build Something<br>Great Together.</h2>
-            <div class="contact-grid">
+            <h2 class="contact-big-title" data-i18n="contact.title">Let's Build Something<br>Great Together.</h2>
+            <div class="contact-layout">
                 <div class="contact-info">
                     <div class="contact-item">
                         <span class="contact-label" data-i18n="contact.emailLabel">Email</span>
@@ -197,7 +246,7 @@
                     <input type="email" name="email" data-i18n="contact.emailPlaceholder" placeholder="Your Email" required>
                     <input type="text" name="subject" data-i18n="contact.subjectPlaceholder" placeholder="Subject">
                     <textarea name="message" data-i18n="contact.messagePlaceholder" placeholder="Tell us about your project..." rows="5" required></textarea>
-                    <button type="submit" class="btn btn-primary" data-i18n="contact.btnSend">Send Message</button>
+                    <button type="submit" class="btn-send" data-i18n="contact.btnSend">Send Message ↗</button>
                 </form>
             </div>
         </div>

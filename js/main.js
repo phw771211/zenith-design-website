@@ -38,12 +38,12 @@ if (langToggle && langDropdown) {
     });
 }
 
-// Shrink header on scroll
+// Darken header border on scroll
 const header = document.querySelector(".header");
 window.addEventListener("scroll", () => {
     header.style.borderBottomColor = window.scrollY > 40
-        ? "rgba(255,255,255,0.10)"
-        : "rgba(255,255,255,0.06)";
+        ? "rgba(0,0,0,0.12)"
+        : "rgba(0,0,0,0.06)";
 });
 
 // Contact form (placeholder — wire up to your backend or Formspree)
