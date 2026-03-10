@@ -23,7 +23,7 @@
   "services": {
     "title": "Our<br>Services",
     "desc": "We are a boutique UI/UX design agency dedicated to building intuitive, beautiful, and user-centric products.",
-    "service1": "UI / UX Design",
+    "service1": "UI/UX Design",
     "desc1": "Creating seamless interfaces that delight users.",
     "service2": "Prototyping",
     "desc2": "Bringing ideas to life with interactive high-fidelity wireframes.",
@@ -60,6 +60,6 @@
     "locationValue": "Tokyo, Japan"
   },
   "footer": {
-    "copyright": "© 2025 Zenith Design. All rights reserved."
+    "copyright": "&copy; 2025 Zenith Design. All rights reserved."
   }
 }
