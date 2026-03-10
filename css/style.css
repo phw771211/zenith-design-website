@@ -161,12 +161,12 @@ img { display: block; max-width: 100%; }
     position: relative; overflow: hidden;
     padding: 60px 0; background: var(--white);
 }
-/* Geo image at section level — Figma places it in the parent frame lower-left,
-   not inside the left column. Positioned absolute so it bleeds naturally. */
+/* Geo image at section level — Figma: parent frame, lower-left, x=-80 y=177
+   Image is 743×418px in a 1440×595 section. Sits in the bottom-left. */
 .services-geo-bg {
-    position: absolute; left: -40px; bottom: -40px;
-    width: 52%; max-width: 760px;
-    opacity: 0.35; pointer-events: none; z-index: 0;
+    position: absolute; left: -40px; bottom: -20px;
+    width: 50%; max-width: 720px;
+    opacity: 0.6; pointer-events: none; z-index: 0;
 }
 .services-layout { position: relative; z-index: 1; display: grid; grid-template-columns: 37% 53%; gap: 10%; align-items: start; }
 .services-intro { position: relative; }
@@ -193,7 +193,7 @@ img { display: block; max-width: 100%; }
 /* Figma: desc 18px, color rgba(0,0,0,0.75) */
 .service-content p { font-family: var(--font-body); font-size: 18px; color: rgba(0,0,0,0.75); line-height: 1.4; }
 .service-arrow {
-    width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.18);
+    width: 48px; height: 48px; border-radius: 50%; border: 1.5px solid rgba(0,0,0,0.3);
     background: var(--white); display: flex; align-items: center; justify-content: center;
     flex-shrink: 0; font-size: 16px; color: var(--black); transition: all var(--t);
 }
