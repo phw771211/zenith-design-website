@@ -21,9 +21,10 @@
             </a>
             <div class="nav-right">
                 <ul class="nav-links">
-                    <li><a href="#approach" data-i18n="nav.approach">Approach</a></li>
+                    <li><a href="#">Home</a></li>
                     <li><a href="#works" data-i18n="nav.works">Works</a></li>
                     <li><a href="#services" data-i18n="nav.services">Services</a></li>
+                    <li><a href="#approach" data-i18n="nav.approach">Approach</a></li>
                 </ul>
                 <div class="language-selector">
                     <button class="lang-toggle" id="lang-toggle" aria-label="language">🌐</button>
@@ -44,9 +45,11 @@
         <div class="hero-visual">
             <img src="images/hero-3d-model.png" alt="" class="hero-3d-img">
         </div>
-        <div class="hero-text container">
-            <h1 class="hero-title" data-i18n="hero.title">Crafting Digital Experiences<br>that Drive Growth.</h1>
-            <p class="hero-desc" data-i18n="hero.desc">We are a boutique UI/UX design agency dedicated to building intuitive, beautiful, and user-centric products.</p>
+        <div class="hero-text">
+            <div class="hero-text-inner">
+                <h1 class="hero-title" data-i18n="hero.title">Crafting Digital Experiences<br>that Drive Growth.</h1>
+                <p class="hero-desc" data-i18n="hero.desc">We are a boutique UI/UX design agency dedicated to building intuitive, beautiful, and user-centric products.</p>
+            </div>
         </div>
     </section>
 
@@ -63,33 +66,27 @@
             <div class="approach-grid">
                 <div class="approach-card">
                     <span class="approach-stage">Stage 01.</span>
-                    <h3 data-i18n="approach.step1">Understanding</h3>
-                    <p data-i18n="approach.desc1">Deep research and stakeholder interviews to define the problem.</p>
+                    <h3 data-i18n="approach.step1">Comparison matrix</h3>
                 </div>
                 <div class="approach-card">
                     <span class="approach-stage">Stage 02.</span>
-                    <h3 data-i18n="approach.step2">Strategy</h3>
-                    <p data-i18n="approach.desc2">Developing strategic direction and design principles.</p>
+                    <h3 data-i18n="approach.step2">Unique value proposition</h3>
                 </div>
                 <div class="approach-card">
                     <span class="approach-stage">Stage 03.</span>
-                    <h3 data-i18n="approach.step3">Design Value Creation</h3>
-                    <p data-i18n="approach.desc3">Creating value through thoughtful, user-centered design.</p>
+                    <h3 data-i18n="approach.step3">Tone of voice: Key Principles</h3>
                 </div>
                 <div class="approach-card">
                     <span class="approach-stage">Stage 04.</span>
-                    <h3 data-i18n="approach.step4">Prototyping</h3>
-                    <p data-i18n="approach.desc4">Building interactive prototypes to validate concepts.</p>
+                    <h3 data-i18n="approach.step4">Positioning analysis</h3>
                 </div>
                 <div class="approach-card">
                     <span class="approach-stage">Stage 05.</span>
-                    <h3 data-i18n="approach.step5">Refinement</h3>
-                    <p data-i18n="approach.desc5">Iterative refinement based on user feedback.</p>
+                    <h3 data-i18n="approach.step5">Semantic analysis</h3>
                 </div>
                 <div class="approach-card approach-card-teal">
                     <span class="approach-stage">Stage 06.</span>
-                    <h3 data-i18n="approach.step6">Full Execution</h3>
-                    <p data-i18n="approach.desc6">Complete handoff and implementation support.</p>
+                    <h3 data-i18n="approach.step6">Final direction definition</h3>
                 </div>
             </div>
         </div>
@@ -100,10 +97,8 @@
         <div class="container">
             <div class="services-layout">
                 <div class="services-intro">
-                    <span class="section-label" data-i18n="services.label">What We Do</span>
                     <h2 class="services-big-title" data-i18n="services.title">Our<br>Services</h2>
                     <p class="services-desc" data-i18n="services.desc">We are a boutique UI/UX design agency dedicated to building intuitive, beautiful, and user-centric products.</p>
-                    <img src="images/hero-geometric.png" alt="" class="services-deco-img">
                 </div>
                 <div class="services-list">
                     <div class="service-item">
@@ -138,31 +133,31 @@
     <!-- ── WORKS ── -->
     <section class="section-works" id="works">
         <div class="container">
-            <span class="section-label" data-i18n="works.label">Portfolio</span>
-            <h2 class="section-title" data-i18n="works.title">Our latest projects</h2>
+            <div class="works-header">
+                <h2 class="section-title works-title" data-i18n="works.title">Our latest projects</h2>
+                <div class="works-nav-arrows">
+                    <button class="works-arrow works-arrow-prev" aria-label="Previous">&#8592;</button>
+                    <button class="works-arrow works-arrow-next" aria-label="Next">&#8594;</button>
+                </div>
+            </div>
             <div class="works-grid">
                 <div class="work-card">
-                    <div class="work-img placeholder-img"></div>
+                    <span class="work-tag" data-i18n="works.tag1">UI/UX Design</span>
                     <div class="work-info">
-                        <span class="work-tag" data-i18n="works.tag1">UI/UX Design</span>
                         <h3 data-i18n="works.project1Title">Brand Identity System</h3>
                         <p data-i18n="works.project1Desc">Strategic redesign for a fintech startup entering the Japanese market.</p>
                     </div>
                 </div>
                 <div class="work-card work-card-featured">
-                    <div class="work-img">
-                        <img src="images/work-featured.png" alt="Tire Rex Company Website" class="work-photo">
-                    </div>
-                    <div class="work-info">
-                        <span class="work-tag" data-i18n="works.tag2">Product Design</span>
+                    <img src="images/work-featured.png" alt="Tire Rex Company Website" class="work-photo">
+                    <div class="work-overlay-top">
                         <h3 data-i18n="works.project2Title">Tire Rex Company Website</h3>
                         <a href="#contact" class="work-case-btn" data-i18n="works.viewCase">View Case Study ↗</a>
                     </div>
                 </div>
                 <div class="work-card">
-                    <div class="work-img placeholder-img"></div>
+                    <span class="work-tag" data-i18n="works.tag3">Design Systems</span>
                     <div class="work-info">
-                        <span class="work-tag" data-i18n="works.tag3">Design Systems</span>
                         <h3 data-i18n="works.project3Title">Corporate Design System</h3>
                         <p data-i18n="works.project3Desc">End-to-end design system for a Tokyo-based enterprise software company.</p>
                     </div>
@@ -179,17 +174,17 @@
                 <div class="impact-card">
                     <span class="impact-number" data-i18n="impact.num1">1,500+</span>
                     <p class="impact-card-title" data-i18n="impact.label1">Projects Complete</p>
-                    <p data-i18n="impact.desc1">Since 2012, we've been crafting design solutions that create real-world impact on business.</p>
+                    <p data-i18n="impact.desc1">Since 2012, we've been crafting Design, Marketing and Technical solutions that have a real-world impact on business.</p>
                 </div>
                 <div class="impact-card impact-card-dark">
                     <span class="impact-number" data-i18n="impact.num2">50+</span>
                     <p class="impact-card-title" data-i18n="impact.label2">Global Awards</p>
-                    <p data-i18n="impact.desc2">We are committed to delivering excellence and never settle for mediocrity.</p>
+                    <p data-i18n="impact.desc2">We are committed to delivering excellence for our clients, and we never settle for mediocrity.</p>
                 </div>
                 <div class="impact-card">
                     <span class="impact-number" data-i18n="impact.num3">2012</span>
-                    <p class="impact-card-title" data-i18n="impact.label3">Founded</p>
-                    <p data-i18n="impact.desc3">Building bigger for over a decade, partnering with brands to meet their goals.</p>
+                    <p class="impact-card-title" data-i18n="impact.label3">Building Bigger for over a decade</p>
+                    <p data-i18n="impact.desc3">Since 2012 we've partnered with brands to meet their goals. We continue to provide the best services.</p>
                 </div>
             </div>
         </div>

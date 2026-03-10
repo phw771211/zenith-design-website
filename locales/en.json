@@ -13,22 +13,15 @@
     "title": "Our approach<br>to perfect result",
     "btnStart": "Start a project",
     "btnWork": "See our work",
-    "step1": "Understanding",
-    "desc1": "Deep research and stakeholder interviews to define the problem.",
-    "step2": "Strategy",
-    "desc2": "Developing strategic direction and design principles.",
-    "step3": "Design Value Creation",
-    "desc3": "Creating value through thoughtful, user-centered design.",
-    "step4": "Prototyping",
-    "desc4": "Building interactive prototypes to validate concepts.",
-    "step5": "Refinement",
-    "desc5": "Iterative refinement based on user feedback.",
-    "step6": "Full Execution",
-    "desc6": "Complete handoff and implementation support."
+    "step1": "Comparison matrix",
+    "step2": "Unique value proposition",
+    "step3": "Tone of voice: Key Principles",
+    "step4": "Positioning analysis",
+    "step5": "Semantic analysis",
+    "step6": "Final direction definition"
   },
   "services": {
-    "label": "What We Do",
-    "title": "Our Services",
+    "title": "Our<br>Services",
     "desc": "We are a boutique UI/UX design agency dedicated to building intuitive, beautiful, and user-centric products.",
     "service1": "UI / UX Design",
     "desc1": "Creating seamless interfaces that delight users.",
@@ -38,7 +31,6 @@
     "desc3": "Building scalable visual languages for your brand."
   },
   "works": {
-    "label": "Portfolio",
     "title": "Our latest projects",
     "tag1": "UI/UX Design",
     "project1Title": "Brand Identity System",
@@ -54,13 +46,13 @@
     "title": "Our Impact<br>In Numbers",
     "num1": "1,500+",
     "label1": "Projects Complete",
-    "desc1": "Since 2012, we've been crafting design solutions that create real-world impact on business.",
+    "desc1": "Since 2012, we've been crafting Design, Marketing and Technical solutions that have a real-world impact on business.",
     "num2": "50+",
     "label2": "Global Awards",
-    "desc2": "We are committed to delivering excellence and never settle for mediocrity.",
+    "desc2": "We are committed to delivering excellence for our clients, and we never settle for mediocrity.",
     "num3": "2012",
-    "label3": "Founded",
-    "desc3": "Building bigger for over a decade, partnering with brands to meet their goals."
+    "label3": "Building Bigger for over a decade",
+    "desc3": "Since 2012 we've partnered with brands to meet their goals. We continue to provide the best services."
   },
   "contact": {
     "title": "Let's Build Something<br>Great Together.",
