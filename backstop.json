@@ -1,0 +1,72 @@
+{
+  "id": "zenith-design",
+  "viewports": [
+    { "label": "desktop", "width": 1440, "height": 900 }
+  ],
+  "scenarios": [
+    {
+      "label": "01_hero",
+      "url": "http://localhost:3000",
+      "selectors": [".hero"],
+      "delay": 2000,
+      "misMatchThreshold": 5,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "02_approach",
+      "url": "http://localhost:3000",
+      "selectors": [".section-approach"],
+      "delay": 2000,
+      "misMatchThreshold": 5,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "03_services",
+      "url": "http://localhost:3000",
+      "selectors": [".section-services"],
+      "delay": 2000,
+      "misMatchThreshold": 5,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "04_works",
+      "url": "http://localhost:3000",
+      "selectors": [".section-works"],
+      "delay": 2000,
+      "misMatchThreshold": 5,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "05_impact",
+      "url": "http://localhost:3000",
+      "selectors": [".section-impact"],
+      "delay": 2000,
+      "misMatchThreshold": 5,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "06_contact",
+      "url": "http://localhost:3000",
+      "selectors": [".section-contact"],
+      "delay": 2000,
+      "misMatchThreshold": 5,
+      "requireSameDimensions": false
+    }
+  ],
+  "paths": {
+    "bitmaps_reference": "backstop_data/bitmaps_reference",
+    "bitmaps_test": "backstop_data/bitmaps_test",
+    "engine_scripts": "backstop_data/engine_scripts",
+    "html_report": "backstop_data/html_report",
+    "ci_report": "backstop_data/ci_report"
+  },
+  "report": ["browser"],
+  "engine": "puppeteer",
+  "engineOptions": {
+    "args": ["--no-sandbox", "--disable-setuid-sandbox"]
+  },
+  "asyncCaptureLimit": 2,
+  "asyncCompareLimit": 50,
+  "debug": false,
+  "debugWindow": false
+}
