@@ -74,8 +74,9 @@ img { display: block; max-width: 100%; }
     border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-.nav-logo { display: flex; align-items: center; height: 100%; }
-.nav-logo .logo-img { height: 40px; width: auto; object-fit: contain; }
+.nav-logo { display: flex; align-items: center; gap: 10px; height: 100%; text-decoration: none; }
+.nav-logo .logo-img { height: 36px; width: auto; object-fit: contain; }
+.logo-text { font-size: 14px; font-weight: 700; color: var(--white); letter-spacing: 1.5px; text-transform: uppercase; white-space: nowrap; }
 .nav-links { display: flex; list-style: none; gap: 36px; }
 .nav-links a { font-size: 13px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.75); transition: color var(--transition); }
 .nav-links a:hover { color: var(--accent); }
