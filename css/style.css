@@ -157,25 +157,19 @@ img { display: block; max-width: 100%; }
    Left col (x=100, w=457): title + desc
    Right col (x=676, w=664): numbered service list
 ───────────────────────────────────────── */
-.section-services { padding: 60px 0; background: var(--white); }
-.services-layout { display: grid; grid-template-columns: 37% 53%; gap: 10%; align-items: start; }
-.services-intro { position: relative; overflow: hidden; }
+.section-services {
+    position: relative; overflow: hidden;
+    padding: 60px 0; background: var(--white);
+}
+/* Geo image at section level — Figma places it in the parent frame lower-left,
+   not inside the left column. Positioned absolute so it bleeds naturally. */
 .services-geo-bg {
-    position: absolute; left: -60px; top: 50%;
-    transform: translateY(-50%);
-    width: 130%; max-width: 520px;
-    /* Keep very subtle — Figma blurs it behind a glass panel */
-    opacity: 0.25; pointer-events: none; z-index: 0;
+    position: absolute; left: -40px; bottom: -40px;
+    width: 52%; max-width: 760px;
+    opacity: 0.35; pointer-events: none; z-index: 0;
 }
-/* Glass blur panel over the geo image, matching Figma's Frame 25 (backdrop-blur) */
-.services-intro::before {
-    content: ''; position: absolute; inset: 0;
-    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
-    background: rgba(255,255,255,0.5);
-    z-index: 0; pointer-events: none;
-}
-.services-intro h2,
-.services-intro p { position: relative; z-index: 1; }
+.services-layout { position: relative; z-index: 1; display: grid; grid-template-columns: 37% 53%; gap: 10%; align-items: start; }
+.services-intro { position: relative; }
 .services-big-title {
     /* Space Grotesk is ~10% wider than Figma's PolySans Trial, so reduce max from 74px→62px
        to keep "Our Services" on one line in the 37%-wide column */
