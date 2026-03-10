@@ -8,15 +8,17 @@
       "label": "01_hero",
       "url": "http://localhost:3000",
       "selectors": [".hero"],
-      "delay": 2000,
-      "misMatchThreshold": 5,
+      "onReadyScript": "puppet/setLanguage.js",
+      "delay": 500,
+      "misMatchThreshold": 10,
       "requireSameDimensions": false
     },
     {
       "label": "02_approach",
       "url": "http://localhost:3000",
       "selectors": [".section-approach"],
-      "delay": 2000,
+      "onReadyScript": "puppet/setLanguage.js",
+      "delay": 500,
       "misMatchThreshold": 5,
       "requireSameDimensions": false
     },
@@ -24,7 +26,8 @@
       "label": "03_services",
       "url": "http://localhost:3000",
       "selectors": [".section-services"],
-      "delay": 2000,
+      "onReadyScript": "puppet/setLanguage.js",
+      "delay": 500,
       "misMatchThreshold": 5,
       "requireSameDimensions": false
     },
@@ -32,7 +35,8 @@
       "label": "04_works",
       "url": "http://localhost:3000",
       "selectors": [".section-works"],
-      "delay": 2000,
+      "onReadyScript": "puppet/setLanguage.js",
+      "delay": 500,
       "misMatchThreshold": 5,
       "requireSameDimensions": false
     },
@@ -40,7 +44,8 @@
       "label": "05_impact",
       "url": "http://localhost:3000",
       "selectors": [".section-impact"],
-      "delay": 2000,
+      "onReadyScript": "puppet/setLanguage.js",
+      "delay": 500,
       "misMatchThreshold": 5,
       "requireSameDimensions": false
     },
@@ -48,7 +53,8 @@
       "label": "06_contact",
       "url": "http://localhost:3000",
       "selectors": [".section-contact"],
-      "delay": 2000,
+      "onReadyScript": "puppet/setLanguage.js",
+      "delay": 500,
       "misMatchThreshold": 5,
       "requireSameDimensions": false
     }
