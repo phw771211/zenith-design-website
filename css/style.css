@@ -93,25 +93,25 @@ img { display: block; max-width: 100%; }
 .hero-3d-img { width: 100%; height: auto; display: block; }
 .hero-text {
     position: relative; z-index: 2;
-    /* pull text UP to overlap the bottom of the hero image */
-    margin-top: clamp(-70px, -12vw, -180px);
+    /* pull text UP ~229px at 1440px to overlap the bottom of the hero image */
+    margin-top: clamp(-80px, -16vw, -230px);
     width: 100%;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    background: rgba(255,255,255,0.12);
     text-align: center;
 }
 .hero-text-inner {
-    max-width: 900px; margin: 0 auto;
-    padding: 40px 40px 100px;
+    max-width: 860px; margin: 0 auto;
+    padding: 48px 40px 80px;
 }
 .hero-title {
-    font-size: clamp(38px, 5.5vw, 54px); font-weight: 700;
-    color: var(--black); line-height: 1.2; letter-spacing: -1.5px; margin-bottom: 24px;
+    font-size: clamp(32px, 3.8vw, 48px); font-weight: 700;
+    color: var(--black); line-height: 1.15; letter-spacing: -1.5px; margin-bottom: 20px;
 }
 .hero-desc {
-    font-family: var(--font-body); font-size: 18px; color: rgba(0,0,0,0.75);
-    max-width: 680px; margin: 0 auto; line-height: 1.7; font-weight: 400;
+    font-family: var(--font-body); font-size: 17px; color: rgba(0,0,0,0.7);
+    max-width: 580px; margin: 0 auto; line-height: 1.65; font-weight: 400;
 }
 
 /* ─────────────────────────────────────────
@@ -156,11 +156,7 @@ img { display: block; max-width: 100%; }
    Left col (x=100, w=457): title + desc
    Right col (x=676, w=664): numbered service list
 ───────────────────────────────────────── */
-.section-services { padding: 100px 0; background: var(--white); }
-.section-label {
-    display: block; font-size: 12px; font-weight: 600;
-    letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 16px;
-}
+.section-services { padding: 60px 0; background: var(--white); }
 .services-layout { display: grid; grid-template-columns: 37% 53%; gap: 10%; align-items: start; }
 .services-intro { position: relative; overflow: hidden; }
 .services-geo-bg {
@@ -168,6 +164,13 @@ img { display: block; max-width: 100%; }
     transform: translateY(-50%);
     width: 130%; max-width: 520px;
     opacity: 0.55; pointer-events: none; z-index: 0;
+}
+/* Glass blur panel over the geo image, matching Figma's Frame 25 (backdrop-blur) */
+.services-intro::before {
+    content: ''; position: absolute; inset: 0;
+    backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);
+    background: rgba(255,255,255,0.15);
+    z-index: 0; pointer-events: none;
 }
 .services-intro h2,
 .services-intro p { position: relative; z-index: 1; }
@@ -177,22 +180,22 @@ img { display: block; max-width: 100%; }
 }
 .services-desc {
     font-family: var(--font-body); font-size: 16px; color: rgba(0,0,0,0.45);
-    line-height: 1.7; margin-bottom: 32px;
+    line-height: 1.8; margin-bottom: 0;
 }
-.services-deco-img { width: 100%; max-width: 360px; opacity: 0.65; pointer-events: none; }
 .services-list { display: flex; flex-direction: column; }
 .service-item {
     display: grid; grid-template-columns: 32px 1fr auto;
     gap: 20px; align-items: center;
-    padding: 28px 0; border-top: 1px solid rgba(0,0,0,0.08);
+    /* Figma: divider (Vector 531) at bottom of each item — use border-bottom */
+    padding: 24px 0; border-bottom: 1px solid rgba(0,0,0,0.1);
     transition: opacity var(--t);
 }
-.service-item:last-child { border-bottom: 1px solid rgba(0,0,0,0.08); }
-.service-num { font-family: var(--font-body); font-size: 13px; color: rgba(0,0,0,0.2); padding-top: 3px; }
+.service-num { font-family: var(--font-body); font-size: 13px; color: rgba(0,0,0,0.25); align-self: flex-start; padding-top: 6px; }
 .service-content h3 { font-size: clamp(22px, 2.5vw, 32px); font-weight: 700; color: var(--black); margin-bottom: 6px; }
-.service-content p { font-family: var(--font-body); font-size: 15px; color: rgba(0,0,0,0.5); line-height: 1.6; }
+/* Figma: desc 18px, color rgba(0,0,0,0.75) */
+.service-content p { font-family: var(--font-body); font-size: 18px; color: rgba(0,0,0,0.75); line-height: 1.4; }
 .service-arrow {
-    width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.15);
+    width: 48px; height: 48px; border-radius: 50%; border: 0.5px solid rgba(0,0,0,0.1);
     background: var(--white); display: flex; align-items: center; justify-content: center;
     flex-shrink: 0; font-size: 16px; color: var(--black); transition: all var(--t);
 }

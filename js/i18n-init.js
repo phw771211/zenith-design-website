@@ -68,10 +68,8 @@ function translatePage() {
         if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
             element.placeholder = translation;
         } else {
-            // For elements with HTML (like hero title with <br>)
-            if (key === 'hero.title') {
-                element.innerHTML = translation;
-            } else if (key === 'footer.copyright') {
+            // Use innerHTML for any translation containing HTML tags (e.g. <br>)
+            if (/<[^>]+>/.test(translation)) {
                 element.innerHTML = translation;
             } else {
                 element.textContent = translation;
