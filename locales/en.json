@@ -22,7 +22,7 @@
   },
   "services": {
     "title": "Our Services",
-    "desc": "We are a boutique UI/UX design agency dedicated to building intuitive, beautiful, and user-centric products.",
+    "desc": "We are a boutique UI/UX design agency dedicated to building intuitive, beautiful, and user-centric products. We are a boutique UI/UX design agency dedicated to building intuitive, beautiful, and user-centric products.",
     "service1": "UI/UX Design",
     "desc1": "Creating seamless interfaces that delight users.",
     "service2": "Prototyping",
@@ -33,31 +33,31 @@
   "works": {
     "title": "Our latest projects",
     "tag1": "UI/UX Design",
-    "project1Title": "Brand Identity System",
-    "project1Desc": "Strategic redesign for a fintech startup entering the Japanese market.",
+    "project1Title": "Comparison matrix",
+    "project1Desc": "We are a boutique UI/UX design agency dedicated to building intuitive, beautiful, and user-centric products.",
     "tag2": "Product Design",
     "project2Title": "Tire Rex Company Website",
-    "tag3": "Design Systems",
-    "project3Title": "Corporate Design System",
-    "project3Desc": "End-to-end design system for a Tokyo-based enterprise software company.",
+    "tag3": "UI/UX Design",
+    "project3Title": "Comparison matrix",
+    "project3Desc": "We are a boutique UI/UX design agency dedicated to building intuitive, beautiful, and user-centric products.",
     "viewCase": "View Case Study ↗"
   },
   "impact": {
-    "title": "Our Impact<br>In Numbers",
+    "title": "Our Impact In Numbers",
     "num1": "1,500+",
     "label1": "Projects Complete",
-    "desc1": "Since 2012, we've been crafting Design, Marketing and Technical solutions that have a real-world impact on business.",
+    "desc1": "Since 2012, Never Settle has been crafting Design, Marketing and Technical solutions that have a real-world impact on business.",
     "num2": "50+",
     "label2": "Global Awards",
     "desc2": "We are committed to delivering excellence for our clients, and we never settle for mediocrity.",
     "num3": "2012",
     "label3": "Building Bigger for over a decade",
-    "desc3": "Since 2012 we've partnered with brands to meet their goals. We continue to provide the best services."
+    "desc3": "Since 2012 Never Settle has partnered with brands to meet their goals. We continue to provide the best services."
   },
   "contact": {
     "title": "Let's Build Something<br>Great Together",
-    "emailValue": "hello@zenith-designjp.com",
-    "locationValue": "Tokyo, Japan"
+    "emailValue": "contact@biginjapan.jp",
+    "locationValue": "Osaka, Japan, Lingworth Avenue 45"
   },
   "footer": {
     "copyright": "&copy; 2025 Zenith Design. All rights reserved."

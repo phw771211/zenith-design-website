@@ -8,9 +8,9 @@
     --muted:   #494d50;
     --accent:  #66d4b4;
     --border:  #d4d4d4;
-    --font:    'Space Grotesk', sans-serif;
+    --font:    'Plus Jakarta Sans', sans-serif;
     --font-body: 'Inter', sans-serif;
-    --max-w:   1240px;
+    --max-w:   1440px;
     --t:       0.25s ease;
 }
 
@@ -107,7 +107,7 @@ img { display: block; max-width: 100%; }
     padding: 48px 40px 60px;
 }
 .hero-title {
-    font-size: clamp(32px, 3.8vw, 48px); font-weight: 700;
+    font-size: clamp(32px, 3.8vw, 48px); font-weight: 800;
     color: var(--black); line-height: 1.15; letter-spacing: -1.5px; margin-bottom: 20px;
 }
 .hero-desc {
@@ -124,15 +124,15 @@ img { display: block; max-width: 100%; }
     padding: 100px 0;
 }
 .approach-header {
-    display: flex; justify-content: space-between; align-items: flex-start;
-    margin-bottom: 56px; gap: 32px;
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 80px; gap: 32px;
 }
 .approach-title {
-    font-size: clamp(32px, 4vw, 54px); font-weight: 700;
+    font-size: clamp(32px, 4vw, 54px); font-weight: 800;
     color: var(--white); line-height: 1.12; letter-spacing: -1.5px; max-width: 460px;
 }
-.approach-actions { display: flex; gap: 12px; align-items: center; flex-shrink: 0; padding-top: 6px; }
-.approach-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.approach-actions { display: flex; gap: 12px; align-items: center; flex-shrink: 0; padding-top: 0; }
+.approach-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
 .approach-card {
     background: var(--dark); border-radius: 15px; padding: 40px;
     display: flex; flex-direction: column;
@@ -142,7 +142,7 @@ img { display: block; max-width: 100%; }
 .approach-card:hover { background: #1c1c1c; }
 .approach-stage { display: block; font-size: 14px; font-weight: 400; color: var(--muted); flex-shrink: 0; }
 .approach-card h3 {
-    font-size: clamp(20px, 2vw, 32px); font-weight: 600; color: var(--white);
+    font-size: clamp(20px, 2vw, 32px); font-weight: 700; color: var(--white);
     line-height: 1.2; margin-top: auto; padding-top: 16px;
 }
 .approach-card-teal { background: var(--accent); }
@@ -159,38 +159,37 @@ img { display: block; max-width: 100%; }
 ───────────────────────────────────────── */
 .section-services {
     position: relative; overflow: hidden;
-    padding: 60px 0; background: var(--white);
+    padding: 40px 0; background: var(--white);
 }
 /* Geo image at section level — Figma: x=-80 y=177 in 1440×595 section
    y=177/595 ≈ 30% from top → image overlaps description text and extends down.
    Use top:30% so it sits behind the text, not separated below it. */
 .services-geo-bg {
-    position: absolute; left: -40px; top: 30%;
+    position: absolute; left: -80px; top: 30%;
     width: 50%; max-width: 720px;
     opacity: 0.6; pointer-events: none; z-index: 0;
 }
 .services-layout { position: relative; z-index: 1; display: grid; grid-template-columns: 37% 53%; gap: 10%; align-items: start; }
 .services-intro { position: relative; }
 .services-big-title {
-    /* Space Grotesk is ~10% wider than Figma's PolySans Trial, so reduce max from 74px→62px
-       to keep "Our Services" on one line in the 37%-wide column */
-    font-size: clamp(36px, 4.5vw, 62px); font-weight: 700; color: var(--black);
-    line-height: 1.05; letter-spacing: -2px; margin-bottom: 20px;
+    /* Plus Jakarta Sans matches Figma's PolySans Trial width closely, use 74px max */
+    font-size: clamp(36px, 4.5vw, 74px); font-weight: 800; color: var(--black);
+    line-height: 1.1; letter-spacing: -2px; margin-bottom: 20px;
 }
 .services-desc {
     font-family: var(--font-body); font-size: 16px; color: rgba(0,0,0,0.45);
     line-height: 1.8; margin-bottom: 0;
 }
-.services-list { display: flex; flex-direction: column; }
+.services-list { display: flex; flex-direction: column; border-top: 1px solid rgba(0,0,0,0.1); }
 .service-item {
     display: grid; grid-template-columns: 32px 1fr auto;
     gap: 20px; align-items: center;
-    /* Figma: divider (Vector 531) at bottom of each item — use border-bottom */
-    padding: 24px 0; border-bottom: 1px solid rgba(0,0,0,0.1);
+    /* Figma: divider at bottom of each item */
+    padding: 40px 0; border-bottom: 1px solid rgba(0,0,0,0.1);
     transition: opacity var(--t);
 }
 .service-num { font-family: var(--font-body); font-size: 13px; color: rgba(0,0,0,0.25); align-self: flex-start; padding-top: 6px; }
-.service-content h3 { font-size: clamp(22px, 2.5vw, 32px); font-weight: 700; color: var(--black); margin-bottom: 6px; }
+.service-content h3 { font-size: clamp(22px, 2.5vw, 32px); font-weight: 800; color: var(--black); margin-bottom: 6px; }
 /* Figma: desc 18px, color rgba(0,0,0,0.75) */
 .service-content p { font-family: var(--font-body); font-size: 18px; color: rgba(0,0,0,0.75); line-height: 1.4; }
 .service-arrow {
@@ -207,13 +206,13 @@ img { display: block; max-width: 100%; }
 ───────────────────────────────────────── */
 .section-works { background: var(--black); padding: 100px 0; }
 .section-title { font-size: clamp(28px, 3.5vw, 46px); font-weight: 700; letter-spacing: -0.5px; line-height: 1.15; margin-bottom: 52px; }
-.works-title { font-size: clamp(36px, 4.5vw, 54px); letter-spacing: -1.5px; line-height: 1.2; margin-bottom: 0; }
+.works-title { font-size: clamp(36px, 3.75vw, 54px); font-weight: 800; letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 0; max-width: 360px; }
 .section-works .section-title { color: var(--white); }
 
 /* Works header with title + nav arrows */
 .works-header {
     display: flex; justify-content: space-between; align-items: center;
-    margin-bottom: 52px;
+    margin-bottom: 80px;
 }
 .works-nav-arrows { display: flex; gap: 8px; flex-shrink: 0; }
 .works-arrow {
@@ -231,8 +230,8 @@ img { display: block; max-width: 100%; }
 /* Works grid — 2 cards visible, 3rd partially peeks, horizontal scroll */
 .works-grid {
     display: grid;
-    grid-template-columns: repeat(3, calc(50% - 8px));
-    gap: 16px;
+    grid-template-columns: repeat(3, 597px);
+    gap: 12px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
@@ -242,7 +241,7 @@ img { display: block; max-width: 100%; }
 .works-grid::-webkit-scrollbar { display: none; }
 .work-card {
     position: relative; background: var(--dark); border-radius: 15px;
-    overflow: hidden; aspect-ratio: 597 / 627;
+    overflow: hidden; aspect-ratio: 597 / 600;
     scroll-snap-align: start;
     transition: transform var(--t);
 }
@@ -258,7 +257,7 @@ img { display: block; max-width: 100%; }
     position: absolute; bottom: 0; left: 0; right: 0; padding: 0 40px 40px;
 }
 .work-info h3 {
-    font-size: clamp(20px, 2vw, 32px); font-weight: 600; color: var(--white);
+    font-size: clamp(20px, 2vw, 32px); font-weight: 700; color: var(--white);
     line-height: 1.2; margin-bottom: 12px;
 }
 .work-info p { font-family: var(--font-body); font-size: 14px; color: var(--muted); line-height: 1.6; }
@@ -271,13 +270,13 @@ img { display: block; max-width: 100%; }
 .work-overlay-top {
     position: absolute; top: 0; left: 0; right: 0; z-index: 2;
     padding: 32px 40px 32px;
-    background: rgba(57, 57, 57, 0.75);
-    backdrop-filter: blur(50px);
-    -webkit-backdrop-filter: blur(50px);
+    background: rgb(57, 57, 57);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
 }
 .work-overlay-top h3 {
-    font-size: clamp(20px, 2vw, 32px); font-weight: 600; color: var(--white);
-    line-height: 1.2; margin-bottom: 16px;
+    font-size: clamp(20px, 2vw, 32px); font-weight: 700; color: var(--white);
+    line-height: 1.2; margin-bottom: 16px; max-width: 280px;
 }
 .work-case-btn {
     display: inline-flex; align-items: center; gap: 6px;
@@ -294,15 +293,26 @@ img { display: block; max-width: 100%; }
    Card order: light(1500+) | dark(50+) | light(2012)
    Card size: ~407×600, r:24 (light) / r:15 (dark)
 ───────────────────────────────────────── */
-.section-impact { padding: 100px 0; background: var(--white); }
-.impact-title {
-    font-size: clamp(32px, 4vw, 54px); font-weight: 700;
-    letter-spacing: -1.5px; line-height: 1.12; margin-bottom: 60px; color: var(--black);
+.section-impact { padding: 72px 0 100px; background: var(--white); position: relative; overflow: hidden; }
+/* Sphere decorative image — Figma: x=-244, y=3728 (page), impact section starts y=4013 → offset=-285px */
+.section-impact::before {
+    content: '';
+    position: absolute;
+    top: -285px; left: -244px;
+    width: 2334px; height: 1313px;
+    background: url('../images/impact-sphere.png') no-repeat left top / contain;
+    pointer-events: none; z-index: 0;
 }
-.impact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: stretch; }
+.section-impact .container { position: relative; z-index: 1; }
+.impact-title {
+    font-size: clamp(32px, 4vw, 54px); font-weight: 800;
+    letter-spacing: -1.5px; line-height: 1.05; margin-bottom: 60px; color: var(--black);
+    max-width: 420px;
+}
+.impact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; align-items: stretch; }
 .impact-card {
     border: 0.5px solid var(--border); border-radius: 24px; padding: 40px;
-    display: flex; flex-direction: column; min-height: 520px;
+    display: flex; flex-direction: column; min-height: 600px;
     backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);
     background: rgba(255,255,255,0.2);
 }
@@ -311,7 +321,7 @@ img { display: block; max-width: 100%; }
     backdrop-filter: none; -webkit-backdrop-filter: none;
 }
 .impact-number {
-    display: block; font-size: clamp(48px, 4.5vw, 64px); font-weight: 700;
+    display: block; font-size: clamp(48px, 4.5vw, 64px); font-weight: 800;
     color: var(--black); line-height: 1; flex-shrink: 0;
 }
 .impact-card-dark .impact-number { color: var(--white); }
@@ -337,13 +347,13 @@ img { display: block; max-width: 100%; }
     padding: 60px 0;
 }
 .contact-deco-img {
-    position: absolute; right: -40px; top: 40px;
-    width: 48%; max-width: 580px;
+    position: absolute; right: 10px; top: 48px;
+    width: 673px;
     pointer-events: none; z-index: 0;
 }
 .contact-bottom { position: relative; z-index: 2; }
 .contact-big-title {
-    font-size: clamp(36px, 5vw, 64px); font-weight: 700;
+    font-size: clamp(36px, 5vw, 54px); font-weight: 800;
     color: var(--white); line-height: 1.08; letter-spacing: -2px; margin-bottom: 56px;
     max-width: 640px;
 }

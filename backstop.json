@@ -10,7 +10,7 @@
       "selectors": [".hero"],
       "onReadyScript": "puppet/setLanguage.js",
       "delay": 500,
-      "misMatchThreshold": 20,
+      "misMatchThreshold": 10,
       "requireSameDimensions": false
     },
     {
@@ -19,7 +19,7 @@
       "selectors": [".section-approach"],
       "onReadyScript": "puppet/setLanguage.js",
       "delay": 500,
-      "misMatchThreshold": 35,
+      "misMatchThreshold": 10,
       "requireSameDimensions": false
     },
     {
@@ -28,7 +28,7 @@
       "selectors": [".section-services"],
       "onReadyScript": "puppet/setLanguage.js",
       "delay": 500,
-      "misMatchThreshold": 20,
+      "misMatchThreshold": 10,
       "requireSameDimensions": false
     },
     {
@@ -37,7 +37,7 @@
       "selectors": [".section-works"],
       "onReadyScript": "puppet/setLanguage.js",
       "delay": 500,
-      "misMatchThreshold": 55,
+      "misMatchThreshold": 10,
       "requireSameDimensions": false
     },
     {
@@ -46,7 +46,7 @@
       "selectors": [".section-impact"],
       "onReadyScript": "puppet/setLanguage.js",
       "delay": 500,
-      "misMatchThreshold": 30,
+      "misMatchThreshold": 10,
       "requireSameDimensions": false
     },
     {
@@ -55,7 +55,7 @@
       "selectors": [".section-contact"],
       "onReadyScript": "puppet/setLanguage.js",
       "delay": 500,
-      "misMatchThreshold": 25,
+      "misMatchThreshold": 10,
       "requireSameDimensions": false
     }
   ],
