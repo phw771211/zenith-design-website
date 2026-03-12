@@ -14,6 +14,11 @@
     src: url('../polysans-font-family/polysanstrial-neutral.otf') format('opentype');
     font-weight: normal; font-style: normal; font-display: block;
 }
+@font-face {
+    font-family: 'PolySans Neutral Mono';
+    src: url('../polysans-font-family/polysanstrial-neutralmono.otf') format('opentype');
+    font-weight: normal; font-style: normal; font-display: block;
+}
 
 /* Reset & Base */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -224,50 +229,121 @@ img { display: block; max-width: 100%; }
 .approach-card-teal h3 { color: var(--white); }
 
 /* ─────────────────────────────────────────
-   SERVICES  — white, 2-column layout
-   Figma: x=0 y=2081 1440×595
-   Left col (x=100, w=457): title + desc
-   Right col (x=676, w=664): numbered service list
+   SERVICES  — pixel-perfect from Figma node 30:81 (1440×595px)
+   Geo img:    section left=-80 top=177 w=743
+   Left col:   section left=100 top=46 w=457 h=213
+     Title:    PolySans Bulky 74px, abs left=0 top=0
+     Desc:     DM Sans 16px lh=1.8, abs left=3 top=97 w=454
+   List:       section left=676 top=64 w=664 border-top
+     Items at top=0/170/340, h=102, number left=0 top=3
+     Content frame left=39 w=625 h=102
+       h3: PolySans Median 32px, left=0 top=0 w=289
+       p:  DM Sans 18px, left=0 top=42 nowrap
+       divider ::after bottom=0 left=5 w=620 h=0.5px
+       arrow: right=0 top=17 48×48px
 ───────────────────────────────────────── */
 .section-services {
-    position: relative; overflow: hidden;
-    padding: 60px 0; background: var(--white);
+    position: relative;
+    height: 595px; overflow: hidden;
+    background: var(--white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
-/* Geo image at section level — Figma: x=-80 y=177 in 1440×595 section
-   y=177/595 ≈ 30% from top → image overlaps description text and extends down.
-   Use top:30% so it sits behind the text, not separated below it. */
 .services-geo-bg {
-    position: absolute; left: -80px; top: 30%;
-    width: 50%; max-width: 720px;
-    opacity: 0.6; pointer-events: none; z-index: 0;
+    position: absolute; left: -80px; top: 177px;
+    width: 743px;
+    pointer-events: none; z-index: 0;
 }
-.services-layout { position: relative; z-index: 1; display: grid; grid-template-columns: 37% 53%; gap: 10%; align-items: start; }
-.services-intro { position: relative; }
+/* Full-width absolute layout matching Figma 1440px section */
+.services-layout {
+    position: absolute; left: 0; top: 0;
+    width: 1440px; height: 595px;
+    z-index: 1;
+}
+/* Left col: Figma x=100 y=46 w=457 h=213 */
+.services-intro {
+    position: absolute; left: 100px; top: 46px;
+    width: 457px; height: 213px;
+}
+/* Backdrop blur behind title/desc: Figma left=-128 top=-46 w=649 h=306 */
+.services-intro::before {
+    content: '';
+    position: absolute; left: -128px; top: -46px;
+    width: 649px; height: 306px;
+    backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);
+    background: rgba(255,255,255,0.2);
+    z-index: -1; pointer-events: none;
+}
+/* Title: PolySans Bulky 74px, abs left=0 top=0 */
 .services-big-title {
-    /* Outfit matches Figma's PolySans Trial width closely, use 74px max */
-    font-size: clamp(36px, 5.14vw, 74px); font-weight: 800; color: var(--black);
-    line-height: 1.1; letter-spacing: -2px; margin-bottom: 20px;
+    position: absolute; left: 0; top: 0;
+    font-family: 'PolySans Bulky', sans-serif;
+    font-size: 74px; font-weight: normal;
+    color: var(--black); line-height: 1.2; letter-spacing: 0;
+    white-space: nowrap; margin: 0;
 }
+/* Desc: DM Sans 16px lh=1.8, abs left=3 top=97 w=454 */
 .services-desc {
-    font-family: var(--font-body); font-size: 16px; color: rgba(0,0,0,0.45);
-    line-height: 1.8; margin-bottom: 0;
+    position: absolute; left: 3px; top: 97px;
+    width: 454px;
+    font-family: var(--font-body); font-size: 16px; font-weight: normal;
+    color: rgba(0,0,0,0.45); line-height: 1.8;
 }
-.services-list { display: flex; flex-direction: column; border-top: 1px solid rgba(0,0,0,0.1); }
+/* Services list: Figma x=676 y=64 w=664 */
+.services-list {
+    position: absolute; left: 676px; top: 64px;
+    width: 664px; height: 442px;
+    border-top: 0.5px solid rgba(0,0,0,0.1);
+}
+/* Each service item: absolute within list */
 .service-item {
-    display: grid; grid-template-columns: 32px 1fr auto;
-    gap: 20px; align-items: center;
-    /* Figma: divider at bottom of each item */
-    padding: 40px 0; border-bottom: 1px solid rgba(0,0,0,0.1);
-    transition: opacity var(--t);
+    position: absolute; left: 0;
+    width: 664px; height: 102px;
 }
-.service-num { font-family: var(--font-body); font-size: 13px; color: rgba(0,0,0,0.25); align-self: flex-start; padding-top: 6px; }
-.service-content h3 { font-size: clamp(22px, 2.5vw, 32px); font-weight: 800; color: var(--black); margin-bottom: 6px; }
-/* Figma: desc 18px, color rgba(0,0,0,0.75) */
-.service-content p { font-family: var(--font-body); font-size: 18px; color: rgba(0,0,0,0.75); line-height: 1.28; }
+.service-item:nth-child(1) { top: 0; }
+.service-item:nth-child(2) { top: 170px; }
+.service-item:nth-child(3) { top: 340px; }
+/* Number: PolySans Neutral Mono 14px, abs left=0 top=3 */
+.service-num {
+    position: absolute; left: 0; top: 3px;
+    font-family: 'PolySans Neutral Mono', sans-serif;
+    font-size: 14px; font-weight: normal;
+    color: rgba(0,0,0,0.25);
+}
+/* Content frame: abs left=39 top=0 w=625 h=102 */
+.service-content {
+    position: absolute; left: 39px; top: 0;
+    width: 625px; height: 102px;
+}
+/* h3: PolySans Median 32px, abs left=0 top=0 w=289 */
+.service-content h3 {
+    position: absolute; left: 0; top: 0; width: 289px;
+    font-family: 'PolySans Median', sans-serif;
+    font-size: 32px; font-weight: normal;
+    color: var(--black); line-height: 1.2; margin: 0;
+}
+/* desc: DM Sans 18px, abs left=0 top=42 */
+.service-content p {
+    position: absolute; left: 0; top: 42px;
+    font-family: var(--font-body); font-size: 18px; font-weight: normal;
+    color: rgba(0,0,0,0.75); line-height: normal; white-space: nowrap;
+}
+/* Divider: abs bottom=0 left=5 w=620 h=0.5px */
+.service-content::after {
+    content: '';
+    position: absolute; bottom: 0; left: 5px;
+    width: 620px; height: 0.5px;
+    background: rgba(0,0,0,0.1);
+}
+/* Arrow btn: abs right=0 top=17 48×48 */
 .service-arrow {
-    width: 48px; height: 48px; border-radius: 50%; border: 1.5px solid rgba(0,0,0,0.3);
-    background: var(--white); display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0; font-size: 16px; color: var(--black); transition: all var(--t);
+    position: absolute; right: 0; top: 17px;
+    width: 48px; height: 48px; border-radius: 300px;
+    border: 0.5px solid rgba(0,0,0,0.1);
+    background: var(--white);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; color: var(--black);
+    cursor: pointer; transition: all var(--t);
 }
 .service-item:hover .service-arrow { background: var(--black); color: var(--white); border-color: var(--black); }
 
@@ -476,7 +552,6 @@ img { display: block; max-width: 100%; }
 @media (max-width: 1100px) {
     .container { padding: 0 40px; }
     .footer-copy-bar { padding: 20px 40px; }
-    .services-layout { grid-template-columns: 1fr 1.4fr; gap: 60px; }
     .approach-grid { grid-template-columns: repeat(3, 1fr); }
     .approach-title { width: auto; font-size: clamp(32px, 4vw, 54px); }
 }
@@ -491,7 +566,22 @@ img { display: block; max-width: 100%; }
     .works-grid { grid-template-columns: repeat(2, 1fr); }
     .works-title { font-size: clamp(32px, 4vw, 46px); }
     .impact-grid { grid-template-columns: repeat(2, 1fr); }
-    .services-layout { grid-template-columns: 1fr; gap: 48px; }
+    /* Services: reflow to stacked layout at tablet */
+    .section-services { height: auto; padding: 60px 0; overflow: visible; }
+    .services-layout { position: relative; left: auto; top: auto; width: 100%; height: auto; }
+    .services-geo-bg { position: absolute; left: -40px; top: 50%; width: 60%; max-width: 480px; }
+    .services-intro { position: relative; left: auto; top: auto; width: auto; height: auto; padding: 0 40px; margin-bottom: 40px; }
+    .services-intro::before { display: none; }
+    .services-big-title { position: static; font-size: clamp(36px, 5vw, 60px); white-space: normal; margin-bottom: 16px; }
+    .services-desc { position: static; width: auto; }
+    .services-list { position: relative; left: auto; top: auto; width: auto; height: auto; border-top: 0.5px solid rgba(0,0,0,0.1); padding: 0 40px; }
+    .service-item { position: relative; top: auto; left: auto; width: auto; height: auto; display: grid; grid-template-columns: 32px 1fr auto; gap: 20px; align-items: center; padding: 32px 0; border-bottom: 0.5px solid rgba(0,0,0,0.1); }
+    .service-content { position: relative; left: auto; top: auto; width: auto; height: auto; }
+    .service-num { position: relative; left: auto; top: auto; padding-top: 6px; align-self: flex-start; }
+    .service-content h3 { position: static; width: auto; margin-bottom: 8px; }
+    .service-content p { position: static; white-space: normal; }
+    .service-content::after { display: none; }
+    .service-arrow { position: relative; right: auto; top: auto; flex-shrink: 0; }
     .contact-deco-img { width: 55%; right: -20px; top: 20px; }
 }
 @media (max-width: 640px) {
@@ -505,7 +595,10 @@ img { display: block; max-width: 100%; }
     .approach-grid { grid-template-columns: 1fr; }
     .impact-grid { grid-template-columns: 1fr; }
     .section-approach, .section-works, .section-contact { padding-top: 72px; padding-bottom: 72px; }
-    .section-services, .section-impact { padding: 72px 0; }
+    .section-impact { padding: 72px 0; }
+    .services-intro { padding: 0 20px; }
+    .services-list { padding: 0 20px; }
+    .services-big-title { font-size: clamp(32px, 8vw, 48px); }
     .hero-text { height: auto; padding: 40px 20px 60px; margin-top: -120px; }
     .hero-text-inner { position: static; }
     .hero-title { position: static; width: auto; font-size: clamp(28px, 6vw, 44px); margin-bottom: 16px; text-align: center; }
