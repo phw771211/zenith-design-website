@@ -1,3 +1,20 @@
+/* ── PolySans Trial Fonts ── */
+@font-face {
+    font-family: 'PolySans Bulky';
+    src: url('../polysans-font-family/polysanstrial-bulky.otf') format('opentype');
+    font-weight: normal; font-style: normal; font-display: block;
+}
+@font-face {
+    font-family: 'PolySans Median';
+    src: url('../polysans-font-family/polysanstrial-median.otf') format('opentype');
+    font-weight: normal; font-style: normal; font-display: block;
+}
+@font-face {
+    font-family: 'PolySans Neutral';
+    src: url('../polysans-font-family/polysanstrial-neutral.otf') format('opentype');
+    font-weight: normal; font-style: normal; font-display: block;
+}
+
 /* Reset & Base */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -8,8 +25,8 @@
     --muted:   #494d50;
     --accent:  #66d4b4;
     --border:  #d4d4d4;
-    --font:    'Plus Jakarta Sans', sans-serif;
-    --font-body: 'Inter', sans-serif;
+    --font:    'Outfit', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
     --max-w:   1440px;
     --t:       0.25s ease;
 }
@@ -78,78 +95,133 @@ img { display: block; max-width: 100%; }
 
 /* ─────────────────────────────────────────
    HERO  — full-width 3D image, text overlaps bottom
-   Figma: image x=0 y=81 1440×810, text y=662 (71.7% down image)
-   Overlap = 229px at 1440px → -16vw scales proportionally
+   Figma: 3D image y=81 1440×810 (rendered at 64px offset + 810px = bottom at 874px)
+   Text frame 30:14: y=589 w=1440 h=341, blur(5px), rgba(255,255,255,0.1)
+   margin-top = -(874-589) = -285px to place frame at y=589
+   Title 30:15: left=321 top=73 w=743 – PolySans Bulky 54px lh=1.2 centered
+   Desc  30:16: left=279 top=224 w=871 – DM Sans 18px lh=normal rgba(0,0,0,0.75)
 ───────────────────────────────────────── */
 .hero {
     background: var(--white);
-    padding-top: 64px; /* nav height */
-    text-align: center;
+    padding-top: 64px;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 .hero-visual {
     width: 100%;
     position: relative; z-index: 0;
+    padding-top: 17px; /* Figma: image at y=81 = nav(64px) + gap(17px) */
 }
 .hero-3d-img { width: 100%; height: auto; display: block; }
 .hero-text {
     position: relative; z-index: 2;
-    /* clamp(MIN, PREFERRED, MAX) — for negative margins MIN must be most-negative
-       At 1440px: -16vw = -230px overlap. MIN=-230px, MAX=-80px (smallest overlap) */
-    margin-top: clamp(-230px, -16vw, -80px);
+    /* Image bottom = 64+17+810=891. Text at y=589: margin = -(891-589) = -302 */
+    margin-top: -302px;
     width: 100%;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    background: rgba(255,255,255,0.12);
-    text-align: center;
+    height: 341px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    background: rgba(255,255,255,0.1);
 }
 .hero-text-inner {
-    max-width: 860px; margin: 0 auto;
-    padding: 48px 40px 60px;
+    position: absolute;
+    inset: 0;
 }
 .hero-title {
-    font-size: clamp(32px, 3.8vw, 48px); font-weight: 800;
-    color: var(--black); line-height: 1.15; letter-spacing: -1.5px; margin-bottom: 20px;
+    position: absolute;
+    left: 321px; top: 73px;
+    width: 743px;
+    font-family: 'PolySans Bulky', sans-serif;
+    font-size: 54px; font-weight: normal;
+    color: var(--black); line-height: 1.2; letter-spacing: 0;
+    text-align: center;
 }
 .hero-desc {
-    font-family: var(--font-body); font-size: 17px; color: rgba(0,0,0,0.7);
-    max-width: 580px; margin: 0 auto; line-height: 1.65; font-weight: 400;
+    position: absolute;
+    left: 279px; top: 224px;
+    width: 871px;
+    font-family: var(--font-body);
+    font-size: 18px; font-weight: normal;
+    color: rgba(0,0,0,0.75);
+    line-height: normal;
+    white-space: nowrap;
 }
 
 /* ─────────────────────────────────────────
    APPROACH  — black section, 6 cards
-   Figma: x=0 y=980 1440×967, inner content at x=100
+   Figma: 30:17 — x=0 y=980 1440×967
+   Inner frame 30:18: left=100 top=100 w=1240 h=767
+   Title 30:19: left=0 top=0 w=424 h=130, PolySans Bulky 54px lh=1.2
+   Buttons 30:20/22: top=70, PolySans Median 15px px=24 py=16 r=300px
+   Cards 30:24–30:39: h=274px, stage left=40 top=40, h3 left=40 top=158
 ───────────────────────────────────────── */
 .section-approach {
     background: var(--black);
     padding: 100px 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 .approach-header {
-    display: flex; justify-content: space-between; align-items: flex-end;
-    margin-bottom: 80px; gap: 32px;
+    position: relative;
+    height: 130px;      /* Figma title height: 2 × 54px × 1.2 = 129.6px */
+    margin-bottom: 80px; /* gap to cards: 210 - 130 = 80px */
 }
 .approach-title {
-    font-size: clamp(32px, 4vw, 54px); font-weight: 800;
-    color: var(--white); line-height: 1.12; letter-spacing: -1.5px; max-width: 460px;
+    position: absolute;
+    left: 0; top: 0;
+    width: 424px;
+    font-family: 'PolySans Bulky', sans-serif;
+    font-size: 54px; font-weight: normal;
+    color: var(--white); line-height: 1.2; letter-spacing: 0;
 }
-.approach-actions { display: flex; gap: 12px; align-items: center; flex-shrink: 0; padding-top: 0; }
-.approach-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.approach-actions {
+    position: absolute;
+    right: 0; top: 70px;  /* Figma: buttons at y=70 within inner frame */
+    display: flex; gap: 12px; align-items: center;
+}
+.section-approach .btn {
+    font-family: 'PolySans Median', sans-serif;
+    font-size: 15px; font-weight: normal; line-height: 1.2;
+    padding: 16px 24px; border-radius: 300px;
+}
+/* Figma 30:24–30:39: col widths 407/406/407, col-gap=10, row-gap=9 */
+.approach-grid {
+    display: grid;
+    grid-template-columns: 407px 406px 407px;
+    column-gap: 10px; row-gap: 9px;
+}
 .approach-card {
-    background: var(--dark); border-radius: 15px; padding: 40px;
-    display: flex; flex-direction: column;
-    min-height: 274px;
+    position: relative;
+    background: var(--dark); border-radius: 15px;
+    height: 274px; overflow: hidden;
     transition: background var(--t);
 }
 .approach-card:hover { background: #1c1c1c; }
-.approach-stage { display: block; font-size: 14px; font-weight: 400; color: var(--muted); flex-shrink: 0; }
-.approach-card h3 {
-    font-size: clamp(20px, 2vw, 32px); font-weight: 700; color: var(--white);
-    line-height: 1.2; margin-top: auto; padding-top: 16px;
+/* Stage: absolute left=40 top=40, PolySans Neutral 14px */
+.approach-stage {
+    position: absolute; left: 40px; top: 40px;
+    font-family: 'PolySans Neutral', sans-serif;
+    font-size: 14px; font-weight: normal;
+    color: var(--muted); line-height: 1.2;
 }
+/* Card h3: absolute left=40 top=158, PolySans Median 32px */
+.approach-card h3 {
+    position: absolute; left: 40px; top: 158px;
+    font-family: 'PolySans Median', sans-serif;
+    font-size: 32px; font-weight: normal;
+    color: var(--white); line-height: 1.2;
+    width: 211px;  /* default (cards 2,4,5) */
+    margin: 0; padding: 0;
+}
+/* Per-card h3 widths from Figma text-box measurements */
+.approach-grid .approach-card:nth-child(1) h3 { width: 194px; }
+.approach-grid .approach-card:nth-child(3) h3 { width: 219px; }
+.approach-grid .approach-card:nth-child(6) h3 { width: 219px; }
 .approach-card-teal { background: var(--accent); }
 .approach-card-teal:hover { background: #59ccaa; }
 .approach-card-teal .approach-stage { color: rgba(255,255,255,0.65); }
-.approach-card-teal h3, .approach-card-teal p { color: var(--white); }
-.approach-card-teal p { color: rgba(255,255,255,0.8); }
+.approach-card-teal h3 { color: var(--white); }
 
 /* ─────────────────────────────────────────
    SERVICES  — white, 2-column layout
@@ -159,7 +231,7 @@ img { display: block; max-width: 100%; }
 ───────────────────────────────────────── */
 .section-services {
     position: relative; overflow: hidden;
-    padding: 40px 0; background: var(--white);
+    padding: 60px 0; background: var(--white);
 }
 /* Geo image at section level — Figma: x=-80 y=177 in 1440×595 section
    y=177/595 ≈ 30% from top → image overlaps description text and extends down.
@@ -172,8 +244,8 @@ img { display: block; max-width: 100%; }
 .services-layout { position: relative; z-index: 1; display: grid; grid-template-columns: 37% 53%; gap: 10%; align-items: start; }
 .services-intro { position: relative; }
 .services-big-title {
-    /* Plus Jakarta Sans matches Figma's PolySans Trial width closely, use 74px max */
-    font-size: clamp(36px, 4.5vw, 74px); font-weight: 800; color: var(--black);
+    /* Outfit matches Figma's PolySans Trial width closely, use 74px max */
+    font-size: clamp(36px, 5.14vw, 74px); font-weight: 800; color: var(--black);
     line-height: 1.1; letter-spacing: -2px; margin-bottom: 20px;
 }
 .services-desc {
@@ -191,7 +263,7 @@ img { display: block; max-width: 100%; }
 .service-num { font-family: var(--font-body); font-size: 13px; color: rgba(0,0,0,0.25); align-self: flex-start; padding-top: 6px; }
 .service-content h3 { font-size: clamp(22px, 2.5vw, 32px); font-weight: 800; color: var(--black); margin-bottom: 6px; }
 /* Figma: desc 18px, color rgba(0,0,0,0.75) */
-.service-content p { font-family: var(--font-body); font-size: 18px; color: rgba(0,0,0,0.75); line-height: 1.4; }
+.service-content p { font-family: var(--font-body); font-size: 18px; color: rgba(0,0,0,0.75); line-height: 1.28; }
 .service-arrow {
     width: 48px; height: 48px; border-radius: 50%; border: 1.5px solid rgba(0,0,0,0.3);
     background: var(--white); display: flex; align-items: center; justify-content: center;
@@ -241,7 +313,7 @@ img { display: block; max-width: 100%; }
 .works-grid::-webkit-scrollbar { display: none; }
 .work-card {
     position: relative; background: var(--dark); border-radius: 15px;
-    overflow: hidden; aspect-ratio: 597 / 600;
+    overflow: hidden; aspect-ratio: 597 / 627;
     scroll-snap-align: start;
     transition: transform var(--t);
 }
@@ -269,10 +341,8 @@ img { display: block; max-width: 100%; }
 }
 .work-overlay-top {
     position: absolute; top: 0; left: 0; right: 0; z-index: 2;
-    padding: 32px 40px 32px;
-    background: rgb(57, 57, 57);
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
+    padding: 32px 40px 48px;
+    background: linear-gradient(to bottom, rgba(30,30,30,0.92) 0%, rgba(30,30,30,0.75) 60%, transparent 100%);
 }
 .work-overlay-top h3 {
     font-size: clamp(20px, 2vw, 32px); font-weight: 700; color: var(--white);
@@ -293,7 +363,7 @@ img { display: block; max-width: 100%; }
    Card order: light(1500+) | dark(50+) | light(2012)
    Card size: ~407×600, r:24 (light) / r:15 (dark)
 ───────────────────────────────────────── */
-.section-impact { padding: 72px 0 100px; background: var(--white); position: relative; overflow: hidden; }
+.section-impact { padding: 40px 0 360px; background: var(--white); position: relative; overflow: hidden; }
 /* Sphere decorative image — Figma: x=-244, y=3728 (page), impact section starts y=4013 → offset=-285px */
 .section-impact::before {
     content: '';
@@ -342,7 +412,7 @@ img { display: block; max-width: 100%; }
 ───────────────────────────────────────── */
 .section-contact { background: var(--black); padding-top: 0; }
 .contact-inner {
-    position: relative; min-height: 740px;
+    position: relative; min-height: 940px;
     display: flex; flex-direction: column; justify-content: flex-end;
     padding: 60px 0;
 }
@@ -407,11 +477,17 @@ img { display: block; max-width: 100%; }
     .container { padding: 0 40px; }
     .footer-copy-bar { padding: 20px 40px; }
     .services-layout { grid-template-columns: 1fr 1.4fr; gap: 60px; }
+    .approach-grid { grid-template-columns: repeat(3, 1fr); }
+    .approach-title { width: auto; font-size: clamp(32px, 4vw, 54px); }
 }
 @media (max-width: 900px) {
     .approach-grid { grid-template-columns: repeat(2, 1fr); }
-    .approach-header { flex-direction: column; gap: 24px; }
-    .approach-actions { padding-top: 0; }
+    .approach-header { height: auto; display: flex; flex-direction: column; gap: 24px; }
+    .approach-title { position: static; width: auto; font-size: clamp(32px, 4vw, 48px); }
+    .approach-actions { position: static; }
+    .approach-card { height: auto; min-height: 274px; display: flex; flex-direction: column; padding: 40px; }
+    .approach-card h3 { position: static; width: auto; margin-top: auto; padding-top: 16px; }
+    .approach-stage { position: static; display: block; }
     .works-grid { grid-template-columns: repeat(2, 1fr); }
     .works-title { font-size: clamp(32px, 4vw, 46px); }
     .impact-grid { grid-template-columns: repeat(2, 1fr); }
@@ -430,7 +506,10 @@ img { display: block; max-width: 100%; }
     .impact-grid { grid-template-columns: 1fr; }
     .section-approach, .section-works, .section-contact { padding-top: 72px; padding-bottom: 72px; }
     .section-services, .section-impact { padding: 72px 0; }
-    .hero-text { padding-bottom: 60px; }
+    .hero-text { height: auto; padding: 40px 20px 60px; margin-top: -120px; }
+    .hero-text-inner { position: static; }
+    .hero-title { position: static; width: auto; font-size: clamp(28px, 6vw, 44px); margin-bottom: 16px; text-align: center; }
+    .hero-desc { position: static; width: auto; white-space: normal; font-size: 16px; text-align: center; }
     .contact-deco-img { display: none; }
     .contact-actions { flex-direction: column; gap: 16px; align-items: flex-start; }
     .contact-footer-bar { flex-direction: column; gap: 16px; align-items: flex-start; }
