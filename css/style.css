@@ -63,16 +63,16 @@ img { display: block; max-width: 100%; }
 }
 .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
 .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-.nav-logo .logo-img { height: 32px; width: auto; object-fit: contain; filter: brightness(0); }
-.logo-text { font-size: 15px; font-weight: 700; color: var(--black); }
+.nav-logo .logo-img { height: 42px; width: auto; object-fit: contain; filter: brightness(0); }
+.logo-text { font-size: 20px; font-weight: 700; color: var(--black); }
 .nav-right { display: flex; align-items: center; gap: 32px; }
 .nav-links { display: flex; list-style: none; gap: 32px; }
-.nav-links a { font-size: 14px; font-weight: 600; color: var(--black); transition: opacity var(--t); }
+.nav-links a { font-size: 18px; font-weight: 600; color: var(--black); transition: opacity var(--t); }
 .nav-links a:hover { opacity: 0.4; }
 .nav-contact {
     display: inline-flex; align-items: center; gap: 6px;
     padding: 14px 20px 14px 24px; border-radius: 999px; font-family: var(--font);
-    font-size: 15px; font-weight: 500; color: var(--black);
+    font-size: 20px; font-weight: 500; color: var(--black);
     border: 0.5px solid rgba(0,0,0,0.1); background: var(--white);
     cursor: pointer; transition: all var(--t); white-space: nowrap;
 }
@@ -443,7 +443,7 @@ img { display: block; max-width: 100%; }
    Card order: light(1500+) | dark(50+) | light(2012)
    Card size: ~407×600, r:24 (light) / r:15 (dark)
 ───────────────────────────────────────── */
-.section-impact { padding: 40px 0 360px; background: var(--white); position: relative; overflow: hidden; }
+.section-impact { padding: 60px 0; background: var(--white); position: relative; overflow: hidden; }
 /* Sphere decorative image — Figma: x=-244, y=3728 (page), impact section starts y=4013 → offset=-285px */
 .section-impact::before {
     content: '';
