@@ -135,7 +135,8 @@ img { display: block; max-width: 100%; }
 }
 .hero-title {
     position: absolute;
-    left: 321px; top: 73px;
+    left: 50%; top: 73px;
+    transform: translateX(-50%);
     width: 743px;
     font-family: 'PolySans Bulky', sans-serif;
     font-size: 54px; font-weight: normal;
@@ -144,13 +145,15 @@ img { display: block; max-width: 100%; }
 }
 .hero-desc {
     position: absolute;
-    left: 279px; top: 224px;
+    left: 50%; top: 224px;
+    transform: translateX(-50%);
     width: 871px;
     font-family: var(--font-body);
     font-size: 18px; font-weight: normal;
     color: rgba(0,0,0,0.75);
     line-height: normal;
     white-space: nowrap;
+    text-align: center;
 }
 
 /* ─────────────────────────────────────────
@@ -256,7 +259,8 @@ img { display: block; max-width: 100%; }
 }
 /* Full-width absolute layout matching Figma 1440px section */
 .services-layout {
-    position: absolute; left: 0; top: 0;
+    position: absolute; left: 50%; top: 0;
+    transform: translateX(-50%);
     width: 1440px; height: 595px;
     z-index: 1;
 }
