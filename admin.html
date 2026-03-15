@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zenith Admin — Project Editor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&display=swap" rel="stylesheet">
+<style>
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'DM Sans', sans-serif; background: #f2f2f2; color: #111; font-size: 14px; height: 100vh; overflow: hidden; display: flex; flex-direction: column; }
+
+/* ── Toolbar ── */
+.toolbar {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 20px; background: #111; color: #fff;
+    flex-shrink: 0;
+}
+.toolbar-title { font-weight: 600; font-size: 15px; margin-right: auto; }
+.toolbar select {
+    padding: 7px 12px; border-radius: 6px; border: none;
+    background: #2a2a2a; color: #fff; font-size: 13px;
+    font-family: inherit; cursor: pointer; min-width: 200px;
+}
+.btn-toolbar {
+    padding: 8px 16px; border-radius: 6px; border: none;
+    font-family: inherit; font-size: 13px; font-weight: 600;
+    cursor: pointer; transition: opacity 0.15s;
+}
+.btn-toolbar:hover { opacity: 0.8; }
+.btn-new  { background: #2a2a2a; color: #fff; }
+.btn-del  { background: #5a1a1a; color: #fff; }
+.btn-save { background: #66d4b4; color: #111; }
+
+/* ── Main layout ── */
+.editor-layout {
+    display: grid; grid-template-columns: 420px 1fr;
+    flex: 1; overflow: hidden;
+}
+
+/* ── Form panel ── */
+.form-panel {
+    background: #fff; border-right: 1px solid #e0e0e0;
+    overflow-y: auto; padding: 24px;
+}
+.form-section { margin-bottom: 28px; }
+.form-section-title {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: #888; margin-bottom: 12px;
+    padding-bottom: 8px; border-bottom: 1px solid #f0f0f0;
+}
+.field { margin-bottom: 14px; }
+.field label { display: block; font-size: 12px; font-weight: 600; color: #555; margin-bottom: 5px; }
+.field input, .field textarea, .field select {
+    width: 100%; padding: 8px 10px; border: 1px solid #e0e0e0;
+    border-radius: 6px; font-family: inherit; font-size: 13px;
+    color: #111; background: #fafafa; transition: border-color 0.15s;
+}
+.field input:focus, .field textarea:focus { outline: none; border-color: #66d4b4; background: #fff; }
+.field textarea { resize: vertical; min-height: 72px; }
+.screenshot-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px; }
+.screenshot-row .field { margin-bottom: 0; }
+.field small { display: block; margin-top: 4px; font-size: 11px; color: #aaa; }
+.status-bar {
+    margin-top: 16px; padding: 10px 12px; border-radius: 6px;
+    font-size: 13px; display: none;
+}
+.status-bar.success { background: #e8faf5; color: #0a7a5a; display: block; }
+.status-bar.error   { background: #fde8e8; color: #a00; display: block; }
+
+/* ── Preview panel ── */
+.preview-panel {
+    overflow-y: auto; background: #fff;
+    padding: 0;
+}
+.preview-label {
+    position: sticky; top: 0; z-index: 10;
+    background: #f9f9f9; border-bottom: 1px solid #e8e8e8;
+    padding: 8px 20px; font-size: 11px; font-weight: 600;
+    letter-spacing: 0.06em; text-transform: uppercase; color: #999;
+}
+
+/* ── Preview styles (mirrors case-study.css) ── */
+@font-face { font-family: 'PolySans Bulky'; src: url('polysans-font-family/polysanstrial-bulky.otf') format('opentype'); font-display: block; }
+@font-face { font-family: 'PolySans Median'; src: url('polysans-font-family/polysanstrial-median.otf') format('opentype'); font-display: block; }
+@font-face { font-family: 'PolySans Neutral Mono'; src: url('polysans-font-family/polysanstrial-neutralmono.otf') format('opentype'); font-display: block; }
+
+.pv-hero { width: 100%; aspect-ratio: 16/7; overflow: hidden; background: #141414; }
+.pv-hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.pv-body { max-width: 860px; margin: 0 auto; padding: 48px 32px 80px; }
+.pv-tag { font-family: 'PolySans Neutral Mono', monospace; font-size: 12px; color: rgba(0,0,0,0.4); letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 12px; }
+.pv-title { font-family: 'PolySans Bulky', sans-serif; font-size: 36px; font-weight: normal; line-height: 1.15; color: #000; margin-bottom: 24px; }
+.pv-overview { font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.8; color: rgba(0,0,0,0.7); max-width: 640px; }
+.pv-divider { border: none; border-top: 0.5px solid #d4d4d4; margin: 48px 0; }
+.pv-screenshots { display: flex; flex-direction: column; gap: 28px; }
+.pv-screenshot-item img { width: 100%; border-radius: 10px; border: 1px solid rgba(0,0,0,0.06); display: block; }
+.pv-caption { font-family: 'DM Sans', sans-serif; font-size: 13px; color: rgba(0,0,0,0.45); margin-top: 8px; }
+.pv-outcome-label { font-family: 'PolySans Median', sans-serif; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: #000; display: block; margin-bottom: 12px; }
+.pv-outcome-text { font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.8; color: rgba(0,0,0,0.7); }
+.pv-empty { color: #ccc; font-style: italic; font-size: 13px; }
+</style>
+</head>
+<body>
+
+<!-- ── Toolbar ── -->
+<div class="toolbar">
+    <span class="toolbar-title">Zenith Admin — Project Editor</span>
+    <select id="projectSelect" onchange="loadProject(this.value)"></select>
+    <button class="btn-toolbar btn-new" onclick="newProject()">+ New Project</button>
+    <button class="btn-toolbar btn-del" onclick="deleteProject()">Delete</button>
+    <button class="btn-toolbar btn-save" onclick="saveAll()">Save ✓</button>
+</div>
+
+<!-- ── Editor layout ── -->
+<div class="editor-layout">
+
+    <!-- Form panel -->
+    <div class="form-panel">
+        <div class="form-section">
+            <div class="form-section-title">Project Info</div>
+            <div class="field">
+                <label>ID (used in URL — no spaces, lowercase)</label>
+                <input type="text" id="f-id" placeholder="e.g. tire-rex" oninput="syncPreview()">
+            </div>
+            <div class="field">
+                <label>Tag / Category</label>
+                <input type="text" id="f-tag" placeholder="e.g. UI/UX Design" oninput="syncPreview()">
+            </div>
+            <div class="field">
+                <label>Project Title</label>
+                <input type="text" id="f-title" placeholder="e.g. Tire Rex Company Website" oninput="syncPreview()">
+            </div>
+            <div class="field">
+                <label>Overview (2–3 sentences)</label>
+                <textarea id="f-overview" rows="4" placeholder="Describe the project and its goal..." oninput="syncPreview()"></textarea>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <div class="form-section-title">Cover Image</div>
+            <div class="field">
+                <label>Cover image path</label>
+                <input type="text" id="f-cover" placeholder="images/projects/my-cover.png" oninput="syncPreview()">
+                <small>Place the image in the images/projects/ folder, then type the path here.</small>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <div class="form-section-title">Screenshots (up to 5)</div>
+            <div id="screenshots-list"></div>
+            <button onclick="addScreenshot()" style="margin-top:8px;padding:7px 14px;border:1px dashed #ccc;background:none;border-radius:6px;cursor:pointer;font-size:12px;color:#888;">+ Add Screenshot</button>
+        </div>
+
+        <div class="form-section">
+            <div class="form-section-title">Outcome</div>
+            <div class="field">
+                <label>Outcome / Result (1–2 sentences)</label>
+                <textarea id="f-outcome" rows="3" placeholder="What changed after this project?" oninput="syncPreview()"></textarea>
+            </div>
+        </div>
+
+        <div id="status-bar" class="status-bar"></div>
+    </div>
+
+    <!-- Preview panel -->
+    <div class="preview-panel">
+        <div class="preview-label">Live Preview</div>
+        <div id="preview-content"></div>
+    </div>
+
+</div>
+
+<script src="projects.js"></script>
+<script>
+let projects = JSON.parse(JSON.stringify(window.PROJECTS || []));
+let currentId = projects.length ? projects[0].id : null;
+
+// ── Initialise ──────────────────────────────────────────────────────────────
+
+function init() {
+    rebuildSelect();
+    if (currentId) loadProject(currentId);
+    else syncPreview();
+}
+
+function rebuildSelect() {
+    const sel = document.getElementById('projectSelect');
+    sel.innerHTML = projects.map(p =>
+        `<option value="${p.id}" ${p.id === currentId ? 'selected' : ''}>${p.title || p.id}</option>`
+    ).join('');
+}
+
+// ── Load / New / Delete ─────────────────────────────────────────────────────
+
+function loadProject(id) {
+    currentId = id;
+    const p = projects.find(p => p.id === id);
+    if (!p) return;
+    document.getElementById('f-id').value       = p.id       || '';
+    document.getElementById('f-tag').value      = p.tag      || '';
+    document.getElementById('f-title').value    = p.title    || '';
+    document.getElementById('f-overview').value = p.overview || '';
+    document.getElementById('f-cover').value    = p.coverImage || '';
+    document.getElementById('f-outcome').value  = p.outcome  || '';
+    rebuildScreenshotFields(p.screenshots || [], p.captions || []);
+    syncPreview();
+}
+
+function newProject() {
+    const id = 'new-project-' + Date.now();
+    projects.push({ id, tag: '', title: 'New Project', overview: '', coverImage: '', screenshots: [], captions: [], outcome: '' });
+    currentId = id;
+    rebuildSelect();
+    loadProject(id);
+}
+
+function deleteProject() {
+    if (projects.length <= 1) { showStatus('Cannot delete the last project.', 'error'); return; }
+    if (!confirm('Delete this project?')) return;
+    projects = projects.filter(p => p.id !== currentId);
+    currentId = projects[0].id;
+    rebuildSelect();
+    loadProject(currentId);
+}
+
+// ── Screenshots ─────────────────────────────────────────────────────────────
+
+function rebuildScreenshotFields(screenshots, captions) {
+    const list = document.getElementById('screenshots-list');
+    list.innerHTML = '';
+    screenshots.forEach((src, i) => addScreenshotRow(src, captions[i] || ''));
+}
+
+function addScreenshot() {
+    if (document.querySelectorAll('.ss-row').length >= 5) {
+        showStatus('Maximum 5 screenshots per project.', 'error'); return;
+    }
+    addScreenshotRow('', '');
+    syncPreview();
+}
+
+function addScreenshotRow(src, caption) {
+    const i = document.querySelectorAll('.ss-row').length;
+    const row = document.createElement('div');
+    row.className = 'screenshot-row ss-row';
+    row.innerHTML = `
+        <div class="field">
+            <label>Image ${i + 1} path</label>
+            <input type="text" class="ss-src" value="${src}" placeholder="images/projects/screen-${i+1}.png" oninput="syncPreview()">
+        </div>
+        <div class="field">
+            <label>Caption</label>
+            <input type="text" class="ss-cap" value="${caption}" placeholder="Short description" oninput="syncPreview()">
+        </div>`;
+    document.getElementById('screenshots-list').appendChild(row);
+}
+
+// ── Sync current form → projects array ──────────────────────────────────────
+
+function readForm() {
+    const ssRows = document.querySelectorAll('.ss-row');
+    const screenshots = [], captions = [];
+    ssRows.forEach(row => {
+        const src = row.querySelector('.ss-src').value.trim();
+        const cap = row.querySelector('.ss-cap').value.trim();
+        if (src) { screenshots.push(src); captions.push(cap); }
+    });
+    return {
+        id:         document.getElementById('f-id').value.trim().replace(/\s+/g, '-').toLowerCase(),
+        tag:        document.getElementById('f-tag').value.trim(),
+        title:      document.getElementById('f-title').value.trim(),
+        overview:   document.getElementById('f-overview').value.trim(),
+        coverImage: document.getElementById('f-cover').value.trim(),
+        outcome:    document.getElementById('f-outcome').value.trim(),
+        screenshots, captions
+    };
+}
+
+function syncPreview() {
+    const p = readForm();
+    const previewDiv = document.getElementById('preview-content');
+    const screenshotsHtml = p.screenshots.map((src, i) => `
+        <div class="pv-screenshot-item">
+            <img src="${src}" alt="" onerror="this.style.display='none'">
+            ${p.captions[i] ? `<p class="pv-caption">${p.captions[i]}</p>` : ''}
+        </div>`).join('');
+
+    previewDiv.innerHTML = `
+        <div class="pv-hero">
+            <img src="${p.coverImage}" alt="" onerror="this.style.background='#2a2a2a';this.style.display='none'">
+        </div>
+        <div class="pv-body">
+            <span class="pv-tag">${p.tag || '<span class="pv-empty">tag</span>'}</span>
+            <h1 class="pv-title">${p.title || '<span class="pv-empty">Project Title</span>'}</h1>
+            <p class="pv-overview">${p.overview || '<span class="pv-empty">Overview text will appear here...</span>'}</p>
+            <hr class="pv-divider">
+            <div class="pv-screenshots">
+                ${screenshotsHtml || '<p class="pv-empty">Screenshots will appear here once you add image paths.</p>'}
+            </div>
+            ${p.outcome ? `<hr class="pv-divider"><span class="pv-outcome-label">Outcome</span><p class="pv-outcome-text">${p.outcome}</p>` : ''}
+        </div>`;
+}
+
+// ── Save ─────────────────────────────────────────────────────────────────────
+
+function saveAll() {
+    const updated = readForm();
+    const idx = projects.findIndex(p => p.id === currentId);
+    if (idx === -1) { showStatus('Project not found.', 'error'); return; }
+
+    // If ID changed, update currentId too
+    if (updated.id !== currentId) {
+        const dup = projects.find((p, i) => p.id === updated.id && i !== idx);
+        if (dup) { showStatus('Another project already uses this ID.', 'error'); return; }
+        currentId = updated.id;
+    }
+
+    projects[idx] = updated;
+    rebuildSelect();
+
+    fetch('http://localhost:3001/save-projects', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ projects })
+    })
+    .then(r => r.json())
+    .then(data => {
+        if (data.ok) showStatus('Saved! Refresh your site to see changes.', 'success');
+        else         showStatus('Save failed: ' + data.error, 'error');
+    })
+    .catch(() => showStatus('Could not reach admin server. Is npm run admin running?', 'error'));
+}
+
+function showStatus(msg, type) {
+    const bar = document.getElementById('status-bar');
+    bar.textContent = msg;
+    bar.className = 'status-bar ' + type;
+    setTimeout(() => bar.className = 'status-bar', 4000);
+}
+
+// ── Boot ─────────────────────────────────────────────────────────────────────
+init();
+</script>
+</body>
+</html>
