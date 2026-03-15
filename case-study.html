@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study | Zenith Design</title>
+    <link rel="icon" type="image/png" href="images/Zenith Design Logo Mark.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/case-study.css">
+</head>
+<body>
+
+    <!-- ── NAV (identical to index.html) ── -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/Zenith Design Logo Mark.png" alt="Zenith Design Logo" class="logo-img">
+                <span class="logo-text">Zenith Design</span>
+            </a>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#works">Works</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#approach">Approach</a></li>
+                </ul>
+                <a href="index.html#contact" class="nav-contact">Contact Us ↗</a>
+            </div>
+            <button class="nav-toggle" id="nav-toggle" aria-label="menu">&#9776;</button>
+        </nav>
+    </header>
+
+    <!-- ── CASE STUDY CONTENT (rendered by JS) ── -->
+    <main id="cs-main" style="padding-top: 64px;"></main>
+
+    <script src="projects.js"></script>
+    <script>
+        // Read ?id= from URL
+        const params = new URLSearchParams(window.location.search);
+        const projectId = params.get('id');
+        const project = (window.PROJECTS || []).find(p => p.id === projectId);
+        const main = document.getElementById('cs-main');
+
+        if (!project) {
+            main.innerHTML = `
+                <div class="cs-not-found">
+                    <p>Project not found. <a href="index.html">← Back to home</a></p>
+                </div>`;
+        } else {
+            // Update page title
+            document.title = project.title + ' | Zenith Design';
+
+            // Build screenshots HTML
+            const screenshotsHtml = project.screenshots.map((src, i) => `
+                <div class="cs-screenshot-item">
+                    <img src="${src}" alt="${project.captions[i] || ''}">
+                    ${project.captions[i] ? `<p class="cs-caption">${project.captions[i]}</p>` : ''}
+                </div>
+            `).join('');
+
+            main.innerHTML = `
+                <div class="cs-hero">
+                    <img src="${project.coverImage}" alt="${project.title}">
+                </div>
+                <div class="cs-body">
+                    <span class="cs-tag">${project.tag}</span>
+                    <h1 class="cs-title">${project.title}</h1>
+                    <p class="cs-overview">${project.overview}</p>
+
+                    <hr class="cs-divider">
+
+                    <div class="cs-screenshots">
+                        ${screenshotsHtml}
+                    </div>
+
+                    <hr class="cs-divider">
+
+                    <span class="cs-outcome-label">Outcome</span>
+                    <p class="cs-outcome-text">${project.outcome}</p>
+
+                    <a href="index.html#works" class="cs-back">← Back to all projects</a>
+                </div>`;
+        }
+
+        // Mobile nav toggle (same as main site)
+        const navToggle = document.getElementById('nav-toggle');
+        const navLinks  = document.querySelector('.nav-links');
+        navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    </script>
+</body>
+</html>
