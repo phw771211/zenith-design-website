@@ -397,6 +397,7 @@ img { display: block; max-width: 100%; }
     overflow: hidden; aspect-ratio: 597 / 627;
     scroll-snap-align: start;
     transition: transform var(--t);
+    cursor: pointer;
 }
 .work-card:hover { transform: translateY(-4px); }
 
