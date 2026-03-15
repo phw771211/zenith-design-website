@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npx http-server . -p 3000 -c-1",
+    "admin": "node server/admin-server.js",
     "qa": "npx backstop test",
     "qa:reference": "npx backstop reference",
     "qa:update-refs": "node scripts/fetch-figma-references.js",
