@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Zenith Design - UI/UX, Graphic and Product Design Studio in Tokyo">
     <title>Zenith Design | Creative Design Studio</title>
-    <link rel="icon" type="image/png" href="images/Zenith Design Logo Mark.png">
-    <link rel="apple-touch-icon" href="images/Zenith Design Logo Mark.png">
+    <link rel="icon" type="image/png" href="images/zenith-logo-mark.png">
+    <link rel="apple-touch-icon" href="images/zenith-logo-mark.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
       "@type": "Organization",
       "name": "Zenith Design",
       "url": "https://zenith-designjp.com",
-      "logo": "https://zenith-designjp.com/images/Zenith Design Logo Mark.png",
+      "logo": "https://zenith-designjp.com/images/zenith-logo-mark.png",
       "description": "UI/UX, Graphic and Product Design Studio in Tokyo",
       "address": {
         "@type": "PostalAddress",
@@ -34,7 +34,7 @@
     <header class="header">
         <nav class="nav container">
             <a href="#" class="nav-logo">
-                <img src="images/Zenith Design Logo Mark.png" alt="Zenith Design Logo" class="logo-img">
+                <img src="images/zenith-logo-mark.png" alt="Zenith Design Logo" class="logo-img">
                 <span class="logo-text">Zenith Design</span>
             </a>
             <div class="nav-right">
@@ -160,29 +160,7 @@
                     <button class="works-arrow works-arrow-next" aria-label="Next">&#8594;</button>
                 </div>
             </div>
-            <div class="works-grid">
-                <a href="case-study.html?id=brand-identity" class="work-card" style="text-decoration:none;">
-                    <span class="work-tag">UI/UX Design</span>
-                    <div class="work-info">
-                        <h3>Brand Identity System</h3>
-                        <p>Strategic redesign for a fintech startup entering the Japanese market.</p>
-                    </div>
-                </a>
-                <a href="case-study.html?id=tire-rex" class="work-card work-card-featured" style="text-decoration:none;">
-                    <img src="images/work-featured.png" alt="Tire Rex Company Website" class="work-photo">
-                    <div class="work-overlay-top">
-                        <h3>Tire Rex Company Website</h3>
-                        <a href="case-study.html?id=tire-rex" class="work-case-btn">View Case Study ↗</a>
-                    </div>
-                </a>
-                <a href="case-study.html?id=corporate-design-system" class="work-card" style="text-decoration:none;">
-                    <span class="work-tag">Design Systems</span>
-                    <div class="work-info">
-                        <h3>Corporate Design System</h3>
-                        <p>End-to-end design system for a Tokyo-based enterprise software company.</p>
-                    </div>
-                </a>
-            </div>
+            <div class="works-grid" id="works-grid"></div>
         </div>
     </section>
 
@@ -235,6 +213,33 @@
         </div>
     </section>
 
+    <script src="projects.js"></script>
+    <script>
+        // Populate Works grid dynamically from projects.js
+        (function() {
+            const grid = document.getElementById('works-grid');
+            if (!grid || !window.PROJECTS || !window.PROJECTS.length) return;
+            const projects = window.PROJECTS.slice(0, 3);
+            grid.innerHTML = projects.map(function(p, i) {
+                const featured = i === 1;
+                if (featured) {
+                    return '<a href="case-study.html?id=' + p.id + '" class="work-card work-card-featured" style="text-decoration:none;">'
+                        + '<img src="' + p.coverImage + '" alt="' + p.title + '" class="work-photo">'
+                        + '<div class="work-overlay-top">'
+                        + '<h3>' + p.title + '</h3>'
+                        + '<span class="work-case-btn">View Case Study ↗</span>'
+                        + '</div></a>';
+                }
+                return '<a href="case-study.html?id=' + p.id + '" class="work-card" style="text-decoration:none;">'
+                    + '<img src="' + p.coverImage + '" alt="' + p.title + '" class="work-photo">'
+                    + '<span class="work-tag">' + p.tag + '</span>'
+                    + '<div class="work-info">'
+                    + '<h3>' + p.title + '</h3>'
+                    + '<p>' + (p.cardDesc || p.overview) + '</p>'
+                    + '</div></a>';
+            }).join('');
+        })();
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/i18next@23.7.6/dist/umd/i18next.min.js"></script>
     <script src="js/i18n-init.js"></script>
     <script src="js/main.js"></script>

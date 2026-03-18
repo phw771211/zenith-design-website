@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Case Study | Zenith Design</title>
-    <link rel="icon" type="image/png" href="images/Zenith Design Logo Mark.png">
+    <link rel="icon" type="image/png" href="images/zenith-logo-mark.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
     <header class="header">
         <nav class="nav container">
             <a href="index.html" class="nav-logo">
-                <img src="images/Zenith Design Logo Mark.png" alt="Zenith Design Logo" class="logo-img">
+                <img src="images/zenith-logo-mark.png" alt="Zenith Design Logo" class="logo-img">
                 <span class="logo-text">Zenith Design</span>
             </a>
             <div class="nav-right">
@@ -63,7 +63,7 @@
 
             main.innerHTML = `
                 <div class="cs-hero">
-                    <img src="${project.coverImage}" alt="${project.title}">
+                    <img src="${project.heroImage || project.coverImage}" alt="${project.title}">
                 </div>
                 <div class="cs-body">
                     <span class="cs-tag">${project.tag}</span>

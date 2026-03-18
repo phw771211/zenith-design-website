@@ -552,6 +552,12 @@ img { display: block; max-width: 100%; }
 .footer-logo-img { height: 24px; width: auto; object-fit: contain; filter: brightness(0) invert(1); }
 .footer-copy { font-family: var(--font-body); font-size: 13px; color: var(--muted); }
 
+/* ── Japanese language overrides ── */
+/* Services: title wraps to 2 lines in JA (74px × 1.2 × 2 = 178px),
+   so push desc below and expand intro container */
+html[lang="ja"] .services-intro { height: 290px; }
+html[lang="ja"] .services-desc  { top: 190px; }
+
 /* ── Mobile nav open state ── */
 .nav-links.open {
     display: flex; flex-direction: column; position: fixed;

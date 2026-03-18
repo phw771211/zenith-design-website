@@ -21,3 +21,12 @@ backstop_data/ci_report/
 
 # Admin panel superpowers toolkit
 .superpowers/
+
+# Non-web assets (print, source zips, unintegrated images)
+docs/
+namecard_print.pdf
+namecard_side1.png
+JP Case Covers 1x.zip
+JP Case Covers 1x/
+images/zenith desing website logo.png
+images/projects/Parrot Education - Meeting.png

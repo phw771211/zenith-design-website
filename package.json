@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npx http-server . -p 3000 -c-1",
+    "start": "node server/admin-server.js",
     "admin": "node server/admin-server.js",
     "qa": "npx backstop test",
     "qa:reference": "npx backstop reference",
