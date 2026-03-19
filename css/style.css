@@ -254,8 +254,8 @@ img { display: block; max-width: 100%; }
     -moz-osx-font-smoothing: grayscale;
 }
 .services-geo-bg {
-    position: absolute; left: -80px; top: 177px;
-    width: 743px;
+    position: absolute; left: 0; top: 100px;
+    width: 50%; min-width: 600px; max-width: 900px;
     pointer-events: none; z-index: 0;
 }
 /* Full-width absolute layout matching Figma 1440px section */
