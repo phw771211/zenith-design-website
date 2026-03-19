@@ -248,7 +248,7 @@ img { display: block; max-width: 100%; }
 ───────────────────────────────────────── */
 .section-services {
     position: relative;
-    height: auto; min-height: 595px; overflow-x: hidden; overflow-y: visible;
+    min-height: 660px; overflow: hidden;
     background: var(--white);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -263,7 +263,7 @@ img { display: block; max-width: 100%; }
 .services-layout {
     position: absolute; left: 50%; top: 0;
     transform: translateX(-50%);
-    width: 1440px; height: auto; min-height: 595px; padding-bottom: 64px;
+    width: 1440px; min-height: 660px; padding-bottom: 64px;
     z-index: 1;
 }
 /* Left col: Figma x=100 y=46 w=457 h=213 */
