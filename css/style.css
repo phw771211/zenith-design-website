@@ -636,14 +636,14 @@ html[lang="ja"] .services-desc  { top: 190px; }
     .impact-card { min-height: auto; padding: 28px; gap: 0; }
     .impact-card-title { margin-top: 16px; padding-top: 0; }
 
-    /* Fix 3: Services — prevent content overflow */
+    /* Fix 3: Services — fix narrow column and oversized font */
     .services-intro { padding: 0 20px; }
     .services-list { padding: 0 20px; overflow: hidden; }
     .services-big-title { font-size: clamp(32px, 8vw, 48px); }
     .service-item { box-sizing: border-box; width: 100%; overflow: hidden; }
-    .service-content { overflow: hidden; min-width: 0; }
-    .service-content h3 { white-space: normal; word-break: break-word; }
-    .service-content p { word-break: break-word; }
+    .service-content { overflow: hidden; min-width: 0; padding-right: 0; }
+    .service-content h3 { font-size: 20px; word-break: normal; overflow-wrap: normal; }
+    .service-content p { font-size: 14px; }
 
     /* Fix 4: Contact — remove 940px black void, stack content from top */
     .contact-inner { min-height: auto; justify-content: flex-start; padding: 60px 0 40px; }
