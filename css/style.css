@@ -248,22 +248,21 @@ img { display: block; max-width: 100%; }
 ───────────────────────────────────────── */
 .section-services {
     position: relative;
-    min-height: 660px; overflow: hidden;
+    height: 595px; overflow: hidden;
     background: var(--white);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 .services-geo-bg {
-    position: absolute; left: 0; top: 0; bottom: 0;
-    width: 50%;
-    object-fit: cover; object-position: left center;
+    position: absolute; left: 0; top: 80px;
+    width: 50%; max-width: 700px;
     pointer-events: none; z-index: 0;
 }
 /* Full-width absolute layout matching Figma 1440px section */
 .services-layout {
     position: absolute; left: 50%; top: 0;
     transform: translateX(-50%);
-    width: 1440px; min-height: 660px; padding-bottom: 64px;
+    width: 1440px; height: 595px;
     z-index: 1;
 }
 /* Left col: Figma x=100 y=46 w=457 h=213 */
