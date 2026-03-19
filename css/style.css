@@ -626,9 +626,13 @@ html[lang="ja"] .services-desc  { top: 190px; }
     .approach-card { min-height: 160px; padding: 28px; }
     .approach-card h3 { margin-top: 16px; font-size: 24px; }
 
-    /* Works */
-    .works-grid { grid-template-columns: 1fr; }
-    .works-header { flex-direction: column; align-items: flex-start; gap: 24px; }
+    /* Works — horizontal swipe carousel, cards at 85vw with peek */
+    .works-header { flex-direction: column; align-items: flex-start; gap: 16px; margin-bottom: 32px; }
+    .works-nav-arrows { display: none; }
+    .works-grid { grid-template-columns: repeat(3, 85vw); padding-bottom: 0; }
+    .work-info { padding: 0 24px 24px; }
+    .work-tag { top: 20px; left: 24px; }
+    .work-overlay-top { padding: 24px 24px 40px; }
 
     /* Impact — remove 600px min-height */
     .impact-grid { grid-template-columns: 1fr; }
