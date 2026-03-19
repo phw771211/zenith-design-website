@@ -254,8 +254,11 @@ img { display: block; max-width: 100%; }
     -moz-osx-font-smoothing: grayscale;
 }
 .services-geo-bg {
-    position: absolute; left: 0; top: 100px;
-    width: 50%; min-width: 600px; max-width: 900px;
+    position: absolute; left: 0; top: 80px;
+    /* Always covers from viewport left edge up to the service list start,
+       which sits at (50vw - 44px) within the centered 1440px layout */
+    width: calc(50% - 44px);
+    min-width: 700px;
     pointer-events: none; z-index: 0;
 }
 /* Full-width absolute layout matching Figma 1440px section */
