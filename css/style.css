@@ -115,7 +115,8 @@ img { display: block; max-width: 100%; }
     -moz-osx-font-smoothing: grayscale;
 }
 .hero-visual {
-    width: 100%;
+    width: 100%; max-width: 1440px;
+    margin-left: auto; margin-right: auto;
     position: relative; z-index: 0;
     padding-top: 17px; /* Figma: image at y=81 = nav(64px) + gap(17px) */
 }
