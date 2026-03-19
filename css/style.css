@@ -578,9 +578,9 @@ html[lang="ja"] .services-desc  { top: 190px; }
     .works-title { font-size: clamp(32px, 4vw, 46px); }
     .impact-grid { grid-template-columns: repeat(2, 1fr); }
     /* Services: reflow to stacked layout at tablet */
-    .section-services { height: auto; padding: 60px 0; overflow: visible; }
+    .section-services { height: auto; padding: 60px 0; overflow: hidden; }
     .services-layout { position: relative; left: auto; top: auto; width: 100%; height: auto; }
-    .services-geo-bg { position: absolute; left: -40px; top: 50%; width: 60%; max-width: 480px; }
+    .services-geo-bg { display: none; }
     .services-intro { position: relative; left: auto; top: auto; width: auto; height: auto; padding: 0 40px; margin-bottom: 40px; }
     .services-intro::before { display: none; }
     .services-big-title { position: static; font-size: clamp(36px, 5vw, 60px); white-space: normal; margin-bottom: 16px; }
@@ -596,24 +596,45 @@ html[lang="ja"] .services-desc  { top: 190px; }
     .contact-deco-img { width: 55%; right: -20px; top: 20px; }
 }
 @media (max-width: 640px) {
+    /* Layout */
     .container { padding: 0 20px; }
     .footer-copy-bar { padding: 20px; flex-direction: column; gap: 12px; text-align: center; }
+
+    /* Nav */
     .nav-links { display: none; }
     .nav-contact { display: none; }
     .nav-toggle { display: block; }
-    .works-grid { grid-template-columns: 1fr; }
-    .works-header { flex-direction: column; align-items: flex-start; gap: 24px; }
-    .approach-grid { grid-template-columns: 1fr; }
-    .impact-grid { grid-template-columns: 1fr; }
-    .section-approach, .section-works, .section-contact { padding-top: 72px; padding-bottom: 72px; }
-    .section-impact { padding: 72px 0; }
-    .services-intro { padding: 0 20px; }
-    .services-list { padding: 0 20px; }
-    .services-big-title { font-size: clamp(32px, 8vw, 48px); }
+
+    /* Hero — clip overflow, fix text centering */
+    .hero { overflow: hidden; }
+    .hero-visual { overflow: hidden; }
     .hero-text { height: auto; padding: 40px 20px 60px; margin-top: -120px; }
     .hero-text-inner { position: static; }
     .hero-title { position: static; width: auto; font-size: clamp(28px, 6vw, 44px); margin-bottom: 16px; text-align: center; }
     .hero-desc { position: static; width: auto; white-space: normal; font-size: 16px; text-align: center; }
+
+    /* Approach — compact cards, reduce dead vertical space */
+    .approach-grid { grid-template-columns: 1fr; }
+    .section-approach, .section-works, .section-contact { padding-top: 72px; padding-bottom: 72px; }
+    .approach-card { min-height: 160px; padding: 28px; }
+    .approach-card h3 { margin-top: 16px; font-size: 24px; }
+
+    /* Works */
+    .works-grid { grid-template-columns: 1fr; }
+    .works-header { flex-direction: column; align-items: flex-start; gap: 24px; }
+
+    /* Impact — remove 600px min-height, compact layout */
+    .impact-grid { grid-template-columns: 1fr; }
+    .section-impact { padding: 72px 0; }
+    .impact-card { min-height: auto; padding: 28px; gap: 0; }
+    .impact-card-title { margin-top: 16px; padding-top: 0; }
+
+    /* Services mobile */
+    .services-intro { padding: 0 20px; }
+    .services-list { padding: 0 20px; }
+    .services-big-title { font-size: clamp(32px, 8vw, 48px); }
+
+    /* Contact */
     .contact-deco-img { display: none; }
     .contact-actions { flex-direction: column; gap: 16px; align-items: flex-start; }
     .contact-footer-bar { flex-direction: column; gap: 16px; align-items: flex-start; }
