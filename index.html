@@ -220,22 +220,15 @@
             const grid = document.getElementById('works-grid');
             if (!grid || !window.PROJECTS || !window.PROJECTS.length) return;
             const projects = window.PROJECTS.slice(0, 3);
-            grid.innerHTML = projects.map(function(p, i) {
-                const featured = i === 1;
-                if (featured) {
-                    return '<a href="case-study.html?id=' + p.id + '" class="work-card work-card-featured" style="text-decoration:none;">'
-                        + '<img src="' + p.coverImage + '" alt="' + p.title + '" class="work-photo">'
-                        + '<div class="work-overlay-top">'
-                        + '<h3>' + p.title + '</h3>'
-                        + '<span class="work-case-btn">View Case Study ↗</span>'
-                        + '</div></a>';
-                }
+            grid.innerHTML = projects.map(function(p) {
                 return '<a href="case-study.html?id=' + p.id + '" class="work-card" style="text-decoration:none;">'
+                    + '<div class="work-card-image">'
                     + '<img src="' + p.coverImage + '" alt="' + p.title + '" class="work-photo">'
-                    + '<span class="work-tag">' + p.tag + '</span>'
-                    + '<div class="work-info">'
-                    + '<h3>' + p.title + '</h3>'
-                    + '<p>' + (p.cardDesc || p.overview) + '</p>'
+                    + '</div>'
+                    + '<div class="work-card-text">'
+                    + '<span class="work-card-tag">' + p.tag + '</span>'
+                    + '<h3 class="work-card-title">' + p.title + '</h3>'
+                    + '<p class="work-card-desc">' + (p.cardDesc || p.overview) + '</p>'
                     + '</div></a>';
             }).join('');
         })();
