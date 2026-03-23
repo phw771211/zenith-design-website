@@ -44,7 +44,9 @@ Promise.all([
         } else {
             // Translate page
             translatePage();
-            
+            if (window.renderWorksGrid) window.renderWorksGrid(currentLanguage);
+            if (window.renderCaseStudy) window.renderCaseStudy(currentLanguage);
+
             // Set active language button
             document.querySelectorAll('.lang-option').forEach(btn => {
                 if (btn.dataset.lang === currentLanguage) {
@@ -85,6 +87,8 @@ function changeLanguage(lang) {
     
     i18next.changeLanguage(lang, () => {
         translatePage();
+        if (window.renderWorksGrid) window.renderWorksGrid(lang);
+        if (window.renderCaseStudy) window.renderCaseStudy(lang);
         document.documentElement.lang = lang;
         
         // Update active button

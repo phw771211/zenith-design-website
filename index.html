@@ -214,23 +214,33 @@
 
     <script src="projects.js"></script>
     <script>
-        // Populate Works grid dynamically from projects.js
-        (function() {
-            const grid = document.getElementById('works-grid');
+        var _worksInitLang = localStorage.getItem('language') || 'en';
+        function getLangField(p, field, lang) {
+            if (lang === 'en') return p[field] || '';
+            return p[field + '_' + lang] || p[field] || '';
+        }
+        function renderWorksGrid(lang) {
+            lang = lang || _worksInitLang;
+            var grid = document.getElementById('works-grid');
             if (!grid || !window.PROJECTS || !window.PROJECTS.length) return;
-            const projects = window.PROJECTS.slice(0, 3);
+            var projects = window.PROJECTS.slice(0, 3);
             grid.innerHTML = projects.map(function(p) {
+                var tag   = getLangField(p, 'tag', lang);
+                var title = getLangField(p, 'title', lang);
+                var desc  = getLangField(p, 'cardDesc', lang) || getLangField(p, 'overview', lang);
                 return '<a href="case-study.html?id=' + p.id + '" class="work-card" style="text-decoration:none;">'
                     + '<div class="work-card-image">'
-                    + '<img src="' + p.coverImage + '" alt="' + p.title + '" class="work-photo">'
+                    + '<img src="' + p.coverImage + '" alt="' + title + '" class="work-photo">'
                     + '</div>'
                     + '<div class="work-card-text">'
-                    + '<span class="work-card-tag">' + p.tag + '</span>'
-                    + '<h3 class="work-card-title">' + p.title + '</h3>'
-                    + '<p class="work-card-desc">' + (p.cardDesc || p.overview) + '</p>'
+                    + '<span class="work-card-tag">' + tag + '</span>'
+                    + '<h3 class="work-card-title">' + title + '</h3>'
+                    + '<p class="work-card-desc">' + desc + '</p>'
                     + '</div></a>';
             }).join('');
-        })();
+        }
+        window.renderWorksGrid = renderWorksGrid;
+        renderWorksGrid(_worksInitLang);
     </script>
     <script src="https://cdn.jsdelivr.net/npm/i18next@23.7.6/dist/umd/i18next.min.js"></script>
     <script src="js/i18n-init.js"></script>

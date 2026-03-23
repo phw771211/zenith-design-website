@@ -40,58 +40,61 @@
     <script>
         function renderParagraphs(text, cls) {
             if (!text) return '';
-            return text.split(/\n\n+/).map(p => `<p class="${cls}">` + p.replace(/\n/g, '<br>') + '</p>').join('');
+            return text.split(/\n\n+/).map(function(p) { return '<p class="' + cls + '">' + p.replace(/\n/g, '<br>') + '</p>'; }).join('');
+        }
+        function getLangField(p, field, lang) {
+            if (lang === 'en') return p[field] || '';
+            return p[field + '_' + lang] || p[field] || '';
         }
 
-        // Read ?id= from URL
-        const params = new URLSearchParams(window.location.search);
-        const projectId = params.get('id');
-        const project = (window.PROJECTS || []).find(p => p.id === projectId);
-        const main = document.getElementById('cs-main');
+        var params = new URLSearchParams(window.location.search);
+        var projectId = params.get('id');
+        var project = (window.PROJECTS || []).find(function(p) { return p.id === projectId; });
+        var main = document.getElementById('cs-main');
 
         if (!project) {
-            main.innerHTML = `
-                <div class="cs-not-found">
-                    <p>Project not found. <a href="index.html">← Back to home</a></p>
-                </div>`;
+            main.innerHTML = '<div class="cs-not-found"><p>Project not found. <a href="index.html">← Back to home</a></p></div>';
         } else {
-            // Update page title
-            document.title = project.title + ' | Zenith Design';
+            function renderCaseStudy(lang) {
+                lang = lang || localStorage.getItem('language') || 'en';
+                var tag      = getLangField(project, 'tag', lang);
+                var title    = getLangField(project, 'title', lang);
+                var overview = getLangField(project, 'overview', lang);
+                var outcome  = getLangField(project, 'outcome', lang);
+                var captions = lang !== 'en' ? (project['captions_' + lang] || project.captions || []) : (project.captions || []);
 
-            // Build screenshots HTML
-            const screenshotsHtml = project.screenshots.map((src, i) => `
-                <div class="cs-screenshot-item">
-                    <img src="${src}" alt="${project.captions[i] || ''}">
-                    ${project.captions[i] ? `<p class="cs-caption">${project.captions[i]}</p>` : ''}
-                </div>
-            `).join('');
+                document.title = title + ' | Zenith Design';
 
-            main.innerHTML = `
-                ${project.heroImage ? `<div class="cs-hero"><img src="${project.heroImage}" alt="${project.title}"></div>` : ''}
-                <div class="cs-body">
-                    <span class="cs-tag">${project.tag}</span>
-                    <h1 class="cs-title">${project.title}</h1>
-                    ${renderParagraphs(project.overview, 'cs-overview')}
+                var screenshotsHtml = (project.screenshots || []).map(function(src, i) {
+                    var cap = captions[i] || '';
+                    return '<div class="cs-screenshot-item">'
+                        + '<img src="' + src + '" alt="' + cap + '">'
+                        + (cap ? '<p class="cs-caption">' + cap + '</p>' : '')
+                        + '</div>';
+                }).join('');
 
-                    <hr class="cs-divider">
-
-                    <div class="cs-screenshots">
-                        ${screenshotsHtml}
-                    </div>
-
-                    <hr class="cs-divider">
-
-                    <span class="cs-outcome-label">Outcome</span>
-                    <p class="cs-outcome-text">${project.outcome}</p>
-
-                    <a href="index.html#works" class="cs-back">← Back to all projects</a>
-                </div>`;
+                main.innerHTML =
+                    (project.heroImage ? '<div class="cs-hero"><img src="' + project.heroImage + '" alt="' + title + '"></div>' : '')
+                    + '<div class="cs-body">'
+                    + '<span class="cs-tag">' + tag + '</span>'
+                    + '<h1 class="cs-title">' + title + '</h1>'
+                    + renderParagraphs(overview, 'cs-overview')
+                    + '<hr class="cs-divider">'
+                    + '<div class="cs-screenshots">' + screenshotsHtml + '</div>'
+                    + '<hr class="cs-divider">'
+                    + '<span class="cs-outcome-label">Outcome</span>'
+                    + '<p class="cs-outcome-text">' + outcome + '</p>'
+                    + '<a href="index.html#works" class="cs-back">← Back to all projects</a>'
+                    + '</div>';
+            }
+            window.renderCaseStudy = renderCaseStudy;
+            renderCaseStudy();
         }
 
-        // Mobile nav toggle (same as main site)
-        const navToggle = document.getElementById('nav-toggle');
-        const navLinks  = document.querySelector('.nav-links');
-        navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+        // Mobile nav toggle
+        var navToggle = document.getElementById('nav-toggle');
+        var navLinks  = document.querySelector('.nav-links');
+        navToggle.addEventListener('click', function() { navLinks.classList.toggle('open'); });
     </script>
 </body>
 </html>

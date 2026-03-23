@@ -82,6 +82,11 @@ body { font-family: 'DM Sans', sans-serif; background: #f2f2f2; color: #111; fon
 .status-bar.error   { background: #fde8e8; color: #a00; display: block; border: 1px solid #f5b8b8; }
 .upload-preview { width: 48px; height: 48px; object-fit: cover; border-radius: 4px; border: 1px solid #e0e0e0; display: none; flex-shrink: 0; }
 .upload-preview.visible { display: block; }
+.lang-tabs { display: flex; gap: 4px; margin-bottom: 16px; }
+.lang-tab { padding: 5px 14px; border-radius: 4px; border: 1px solid #e0e0e0; background: #fafafa; font-family: inherit; font-size: 12px; font-weight: 600; cursor: pointer; color: #888; transition: all 0.15s; }
+.lang-tab.active { background: #111; color: #fff; border-color: #111; }
+.lang-fields { display: none; }
+.lang-fields.active { display: block; }
 
 /* ── Preview panel ── */
 .preview-panel {
@@ -137,21 +142,38 @@ body { font-family: 'DM Sans', sans-serif; background: #f2f2f2; color: #111; fon
                 <label>ID (used in URL — no spaces, lowercase)</label>
                 <input type="text" id="f-id" placeholder="e.g. tire-rex" oninput="syncPreview()">
             </div>
-            <div class="field">
-                <label>Tag / Category</label>
-                <input type="text" id="f-tag" placeholder="e.g. UI/UX Design" oninput="syncPreview()">
+        </div>
+
+        <div class="form-section">
+            <div class="form-section-title">Content</div>
+            <div class="lang-tabs">
+                <button class="lang-tab active" data-lang="en" onclick="switchAdminLang('en')">EN</button>
+                <button class="lang-tab" data-lang="zh" onclick="switchAdminLang('zh')">ZH</button>
+                <button class="lang-tab" data-lang="ja" onclick="switchAdminLang('ja')">JA</button>
             </div>
-            <div class="field">
-                <label>Project Title</label>
-                <input type="text" id="f-title" placeholder="e.g. Tire Rex Company Website" oninput="syncPreview()">
+            <!-- EN fields -->
+            <div class="lang-fields active" data-lang="en">
+                <div class="field"><label>Tag / Category</label><input type="text" id="f-tag" placeholder="e.g. UI/UX Design" oninput="syncPreview()"></div>
+                <div class="field"><label>Project Title</label><input type="text" id="f-title" placeholder="e.g. Tire Rex Company Website" oninput="syncPreview()"></div>
+                <div class="field"><label>Card Description <span style="font-weight:400;color:#aaa">(homepage card — 1 sentence)</span></label><input type="text" id="f-card-desc" placeholder="e.g. App design for live poker event management." oninput="syncPreview()"></div>
+                <div class="field"><label>Overview <span style="font-weight:400;color:#aaa">(case study page — double Enter for new paragraph)</span></label><textarea id="f-overview" rows="10" placeholder="Describe the project and its goal..." oninput="syncPreview()"></textarea></div>
+                <div class="field"><label>Outcome</label><textarea id="f-outcome" rows="3" placeholder="What changed after this project?" oninput="syncPreview()"></textarea></div>
             </div>
-            <div class="field">
-                <label>Card Description <span style="font-weight:400;color:#aaa">(short text shown on homepage card — 1 sentence)</span></label>
-                <input type="text" id="f-card-desc" placeholder="e.g. App design for live poker event management." oninput="syncPreview()">
+            <!-- ZH fields -->
+            <div class="lang-fields" data-lang="zh">
+                <div class="field"><label>Tag / Category (中文)</label><input type="text" id="f-tag-zh" placeholder="如：UI/UX 设计" oninput="syncPreview()"></div>
+                <div class="field"><label>Project Title (中文)</label><input type="text" id="f-title-zh" placeholder="项目标题" oninput="syncPreview()"></div>
+                <div class="field"><label>Card Description (中文)</label><input type="text" id="f-card-desc-zh" placeholder="首页卡片上的简短描述" oninput="syncPreview()"></div>
+                <div class="field"><label>Overview (中文)</label><textarea id="f-overview-zh" rows="10" placeholder="用中文描述项目目标..." oninput="syncPreview()"></textarea></div>
+                <div class="field"><label>Outcome (中文)</label><textarea id="f-outcome-zh" rows="3" placeholder="项目成果" oninput="syncPreview()"></textarea></div>
             </div>
-            <div class="field">
-                <label>Overview <span style="font-weight:400;color:#aaa">(shown on case study page — press Enter twice to start a new paragraph)</span></label>
-                <textarea id="f-overview" rows="10" placeholder="Describe the project and its goal...&#10;&#10;Press Enter twice to add a new paragraph." oninput="syncPreview()"></textarea>
+            <!-- JA fields -->
+            <div class="lang-fields" data-lang="ja">
+                <div class="field"><label>Tag / Category (日本語)</label><input type="text" id="f-tag-ja" placeholder="例：UI/UX デザイン" oninput="syncPreview()"></div>
+                <div class="field"><label>Project Title (日本語)</label><input type="text" id="f-title-ja" placeholder="プロジェクトタイトル" oninput="syncPreview()"></div>
+                <div class="field"><label>Card Description (日本語)</label><input type="text" id="f-card-desc-ja" placeholder="ホームページのカードに表示される説明" oninput="syncPreview()"></div>
+                <div class="field"><label>Overview (日本語)</label><textarea id="f-overview-ja" rows="10" placeholder="プロジェクトについて日本語で説明..." oninput="syncPreview()"></textarea></div>
+                <div class="field"><label>Outcome (日本語)</label><textarea id="f-outcome-ja" rows="3" placeholder="プロジェクトの成果" oninput="syncPreview()"></textarea></div>
             </div>
         </div>
 
@@ -184,14 +206,6 @@ body { font-family: 'DM Sans', sans-serif; background: #f2f2f2; color: #111; fon
             <button onclick="addScreenshot()" style="margin-top:8px;padding:7px 14px;border:1px dashed #ccc;background:none;border-radius:6px;cursor:pointer;font-size:12px;color:#888;">+ Add Screenshot</button>
         </div>
 
-        <div class="form-section">
-            <div class="form-section-title">Outcome</div>
-            <div class="field">
-                <label>Outcome / Result (1–2 sentences)</label>
-                <textarea id="f-outcome" rows="3" placeholder="What changed after this project?" oninput="syncPreview()"></textarea>
-            </div>
-        </div>
-
         <div id="status-bar" class="status-bar"></div>
     </div>
 
@@ -207,6 +221,11 @@ body { font-family: 'DM Sans', sans-serif; background: #f2f2f2; color: #111; fon
 <script>
 let projects = JSON.parse(JSON.stringify(window.PROJECTS || []));
 let currentId = projects.length ? projects[0].id : null;
+
+function switchAdminLang(lang) {
+    document.querySelectorAll('.lang-tab').forEach(t => t.classList.toggle('active', t.dataset.lang === lang));
+    document.querySelectorAll('.lang-fields').forEach(f => f.classList.toggle('active', f.dataset.lang === lang));
+}
 
 // ── Initialise ──────────────────────────────────────────────────────────────
 
@@ -229,6 +248,7 @@ function loadProject(id) {
     currentId = id;
     const p = projects.find(p => p.id === id);
     if (!p) return;
+    switchAdminLang('en');
     document.getElementById('f-id').value        = p.id        || '';
     document.getElementById('f-tag').value       = p.tag       || '';
     document.getElementById('f-title').value     = p.title     || '';
@@ -240,14 +260,24 @@ function loadProject(id) {
     if (coverPrev) { coverPrev.src = p.coverImage || ''; coverPrev.classList.toggle('visible', !!p.coverImage); }
     const heroPrev = document.getElementById('f-hero-preview');
     if (heroPrev) { heroPrev.src = p.heroImage || ''; heroPrev.classList.toggle('visible', !!p.heroImage); }
-    document.getElementById('f-outcome').value   = p.outcome   || '';
-    rebuildScreenshotFields(p.screenshots || [], p.captions || []);
+    document.getElementById('f-outcome').value       = p.outcome      || '';
+    document.getElementById('f-tag-zh').value        = p.tag_zh        || '';
+    document.getElementById('f-title-zh').value      = p.title_zh      || '';
+    document.getElementById('f-card-desc-zh').value  = p.cardDesc_zh   || '';
+    document.getElementById('f-overview-zh').value   = p.overview_zh   || '';
+    document.getElementById('f-outcome-zh').value    = p.outcome_zh    || '';
+    document.getElementById('f-tag-ja').value        = p.tag_ja        || '';
+    document.getElementById('f-title-ja').value      = p.title_ja      || '';
+    document.getElementById('f-card-desc-ja').value  = p.cardDesc_ja   || '';
+    document.getElementById('f-overview-ja').value   = p.overview_ja   || '';
+    document.getElementById('f-outcome-ja').value    = p.outcome_ja    || '';
+    rebuildScreenshotFields(p.screenshots || [], p.captions || [], p.captions_zh || [], p.captions_ja || []);
     syncPreview();
 }
 
 function newProject() {
     const id = 'new-project-' + Date.now();
-    projects.push({ id, tag: '', title: 'New Project', overview: '', coverImage: '', screenshots: [], captions: [], outcome: '' });
+    projects.push({ id, tag: '', title: 'New Project', overview: '', coverImage: '', screenshots: [], captions: [], captions_zh: [], captions_ja: [], outcome: '', tag_zh: '', title_zh: '', cardDesc_zh: '', overview_zh: '', outcome_zh: '', tag_ja: '', title_ja: '', cardDesc_ja: '', overview_ja: '', outcome_ja: '' });
     currentId = id;
     rebuildSelect();
     loadProject(id);
@@ -264,21 +294,21 @@ function deleteProject() {
 
 // ── Screenshots ─────────────────────────────────────────────────────────────
 
-function rebuildScreenshotFields(screenshots, captions) {
+function rebuildScreenshotFields(screenshots, captions, captions_zh, captions_ja) {
     const list = document.getElementById('screenshots-list');
     list.innerHTML = '';
-    screenshots.forEach((src, i) => addScreenshotRow(src, captions[i] || ''));
+    screenshots.forEach((src, i) => addScreenshotRow(src, captions[i] || '', (captions_zh || [])[i] || '', (captions_ja || [])[i] || ''));
 }
 
 function addScreenshot() {
     if (document.querySelectorAll('.ss-row').length >= 5) {
         showStatus('Maximum 5 screenshots per project.', 'error'); return;
     }
-    addScreenshotRow('', '');
+    addScreenshotRow('', '', '', '');
     syncPreview();
 }
 
-function addScreenshotRow(src, caption) {
+function addScreenshotRow(src, caption, caption_zh, caption_ja) {
     const i = document.querySelectorAll('.ss-row').length;
     const srcId = 'ss-src-' + i;
     const prevId = 'ss-prev-' + i;
@@ -293,9 +323,17 @@ function addScreenshotRow(src, caption) {
                 <img id="${prevId}" class="upload-preview${src ? ' visible' : ''}" src="${src}" alt="">
             </div>
         </div>
-        <div class="field">
-            <label>Caption</label>
-            <input type="text" class="ss-cap" value="${caption}" placeholder="Short description" oninput="syncPreview()">
+        <div class="field lang-fields active" data-lang="en">
+            <label>Caption (EN)</label>
+            <input type="text" class="ss-cap ss-cap-en" value="${caption || ''}" placeholder="Short description" oninput="syncPreview()">
+        </div>
+        <div class="field lang-fields" data-lang="zh">
+            <label>Caption (中文)</label>
+            <input type="text" class="ss-cap-zh" value="${caption_zh || ''}" placeholder="简短描述">
+        </div>
+        <div class="field lang-fields" data-lang="ja">
+            <label>Caption (日本語)</label>
+            <input type="text" class="ss-cap-ja" value="${caption_ja || ''}" placeholder="短い説明">
         </div>`;
     document.getElementById('screenshots-list').appendChild(row);
 }
@@ -304,22 +342,36 @@ function addScreenshotRow(src, caption) {
 
 function readForm() {
     const ssRows = document.querySelectorAll('.ss-row');
-    const screenshots = [], captions = [];
+    const screenshots = [], captions = [], captions_zh = [], captions_ja = [];
     ssRows.forEach(row => {
         const src = row.querySelector('.ss-src').value.trim();
-        const cap = row.querySelector('.ss-cap').value.trim();
-        if (src) { screenshots.push(src); captions.push(cap); }
+        if (src) {
+            screenshots.push(src);
+            captions.push(row.querySelector('.ss-cap-en').value.trim());
+            captions_zh.push(row.querySelector('.ss-cap-zh').value.trim());
+            captions_ja.push(row.querySelector('.ss-cap-ja').value.trim());
+        }
     });
     return {
-        id:         document.getElementById('f-id').value.trim().replace(/\s+/g, '-').toLowerCase(),
-        tag:        document.getElementById('f-tag').value.trim(),
-        title:      document.getElementById('f-title').value.trim(),
-        cardDesc:   document.getElementById('f-card-desc').value.trim(),
-        overview:   document.getElementById('f-overview').value.trim(),
-        coverImage: document.getElementById('f-cover').value.trim(),
-        heroImage:  document.getElementById('f-hero').value.trim() || undefined,
-        outcome:    document.getElementById('f-outcome').value.trim(),
-        screenshots, captions
+        id:           document.getElementById('f-id').value.trim().replace(/\s+/g, '-').toLowerCase(),
+        tag:          document.getElementById('f-tag').value.trim(),
+        title:        document.getElementById('f-title').value.trim(),
+        cardDesc:     document.getElementById('f-card-desc').value.trim(),
+        overview:     document.getElementById('f-overview').value.trim(),
+        coverImage:   document.getElementById('f-cover').value.trim(),
+        heroImage:    document.getElementById('f-hero').value.trim() || undefined,
+        outcome:      document.getElementById('f-outcome').value.trim(),
+        tag_zh:       document.getElementById('f-tag-zh').value.trim(),
+        title_zh:     document.getElementById('f-title-zh').value.trim(),
+        cardDesc_zh:  document.getElementById('f-card-desc-zh').value.trim(),
+        overview_zh:  document.getElementById('f-overview-zh').value.trim(),
+        outcome_zh:   document.getElementById('f-outcome-zh').value.trim(),
+        tag_ja:       document.getElementById('f-tag-ja').value.trim(),
+        title_ja:     document.getElementById('f-title-ja').value.trim(),
+        cardDesc_ja:  document.getElementById('f-card-desc-ja').value.trim(),
+        overview_ja:  document.getElementById('f-overview-ja').value.trim(),
+        outcome_ja:   document.getElementById('f-outcome-ja').value.trim(),
+        screenshots, captions, captions_zh, captions_ja
     };
 }
 
