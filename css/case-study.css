@@ -35,7 +35,9 @@
     font-family: var(--font-body);
     font-size: 18px; line-height: 1.8;
     color: rgba(0,0,0,0.7); max-width: 680px;
+    margin-bottom: 1.4em;
 }
+.cs-overview:last-of-type { margin-bottom: 0; }
 
 /* Divider */
 .cs-divider {

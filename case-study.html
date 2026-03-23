@@ -38,6 +38,11 @@
 
     <script src="projects.js"></script>
     <script>
+        function renderParagraphs(text, cls) {
+            if (!text) return '';
+            return text.split(/\n\n+/).map(p => `<p class="${cls}">` + p.replace(/\n/g, '<br>') + '</p>').join('');
+        }
+
         // Read ?id= from URL
         const params = new URLSearchParams(window.location.search);
         const projectId = params.get('id');
@@ -62,13 +67,11 @@
             `).join('');
 
             main.innerHTML = `
-                <div class="cs-hero">
-                    <img src="${project.heroImage || project.coverImage}" alt="${project.title}">
-                </div>
+                ${project.heroImage ? `<div class="cs-hero"><img src="${project.heroImage}" alt="${project.title}"></div>` : ''}
                 <div class="cs-body">
                     <span class="cs-tag">${project.tag}</span>
                     <h1 class="cs-title">${project.title}</h1>
-                    <p class="cs-overview">${project.overview}</p>
+                    ${renderParagraphs(project.overview, 'cs-overview')}
 
                     <hr class="cs-divider">
 

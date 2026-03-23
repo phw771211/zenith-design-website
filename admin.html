@@ -59,8 +59,9 @@ body { font-family: 'DM Sans', sans-serif; background: #f2f2f2; color: #111; fon
 }
 .field input:focus, .field textarea:focus { outline: none; border-color: #66d4b4; background: #fff; }
 .field textarea { resize: vertical; min-height: 72px; }
-.screenshot-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px; }
-.screenshot-row .field { margin-bottom: 0; }
+.screenshot-row { margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #f0f0f0; }
+.screenshot-row .field { margin-bottom: 8px; }
+.screenshot-row .field:last-child { margin-bottom: 0; }
 .field small { display: block; margin-top: 4px; font-size: 11px; color: #aaa; }
 .upload-row { display: flex; gap: 8px; align-items: center; }
 .upload-row input[type=text] { flex: 1; }
@@ -72,11 +73,15 @@ body { font-family: 'DM Sans', sans-serif; background: #f2f2f2; color: #111; fon
 }
 .btn-upload:hover { background: #f0f0f0; }
 .status-bar {
-    margin-top: 16px; padding: 10px 12px; border-radius: 6px;
+    position: sticky; bottom: 0;
+    padding: 10px 12px; border-radius: 6px;
     font-size: 13px; display: none;
+    z-index: 20; margin-top: 16px;
 }
-.status-bar.success { background: #e8faf5; color: #0a7a5a; display: block; }
-.status-bar.error   { background: #fde8e8; color: #a00; display: block; }
+.status-bar.success { background: #e8faf5; color: #0a7a5a; display: block; border: 1px solid #a8e8d4; }
+.status-bar.error   { background: #fde8e8; color: #a00; display: block; border: 1px solid #f5b8b8; }
+.upload-preview { width: 48px; height: 48px; object-fit: cover; border-radius: 4px; border: 1px solid #e0e0e0; display: none; flex-shrink: 0; }
+.upload-preview.visible { display: block; }
 
 /* ── Preview panel ── */
 .preview-panel {
@@ -145,8 +150,8 @@ body { font-family: 'DM Sans', sans-serif; background: #f2f2f2; color: #111; fon
                 <input type="text" id="f-card-desc" placeholder="e.g. App design for live poker event management." oninput="syncPreview()">
             </div>
             <div class="field">
-                <label>Overview (2–3 sentences, shown on case study page)</label>
-                <textarea id="f-overview" rows="4" placeholder="Describe the project and its goal..." oninput="syncPreview()"></textarea>
+                <label>Overview <span style="font-weight:400;color:#aaa">(shown on case study page — press Enter twice to start a new paragraph)</span></label>
+                <textarea id="f-overview" rows="10" placeholder="Describe the project and its goal...&#10;&#10;Press Enter twice to add a new paragraph." oninput="syncPreview()"></textarea>
             </div>
         </div>
 
@@ -157,6 +162,7 @@ body { font-family: 'DM Sans', sans-serif; background: #f2f2f2; color: #111; fon
                 <div class="upload-row">
                     <input type="text" id="f-cover" placeholder="images/projects/my-cover.png" oninput="syncPreview()">
                     <button class="btn-upload" onclick="triggerUpload('f-cover')">Upload</button>
+                    <img id="f-cover-preview" class="upload-preview" alt="">
                 </div>
                 <small>Shown on the homepage Works card.</small>
             </div>
@@ -165,6 +171,7 @@ body { font-family: 'DM Sans', sans-serif; background: #f2f2f2; color: #111; fon
                 <div class="upload-row">
                     <input type="text" id="f-hero" placeholder="images/projects/my-hero.png" oninput="syncPreview()">
                     <button class="btn-upload" onclick="triggerUpload('f-hero')">Upload</button>
+                    <img id="f-hero-preview" class="upload-preview" alt="">
                 </div>
                 <small>Shown at the top of the case study subpage. Leave blank to use the card image.</small>
             </div>
@@ -229,6 +236,10 @@ function loadProject(id) {
     document.getElementById('f-overview').value  = p.overview  || '';
     document.getElementById('f-cover').value     = p.coverImage || '';
     document.getElementById('f-hero').value      = p.heroImage  || '';
+    const coverPrev = document.getElementById('f-cover-preview');
+    if (coverPrev) { coverPrev.src = p.coverImage || ''; coverPrev.classList.toggle('visible', !!p.coverImage); }
+    const heroPrev = document.getElementById('f-hero-preview');
+    if (heroPrev) { heroPrev.src = p.heroImage || ''; heroPrev.classList.toggle('visible', !!p.heroImage); }
     document.getElementById('f-outcome').value   = p.outcome   || '';
     rebuildScreenshotFields(p.screenshots || [], p.captions || []);
     syncPreview();
@@ -269,12 +280,18 @@ function addScreenshot() {
 
 function addScreenshotRow(src, caption) {
     const i = document.querySelectorAll('.ss-row').length;
+    const srcId = 'ss-src-' + i;
+    const prevId = 'ss-prev-' + i;
     const row = document.createElement('div');
     row.className = 'screenshot-row ss-row';
     row.innerHTML = `
         <div class="field">
-            <label>Image ${i + 1} path</label>
-            <input type="text" class="ss-src" value="${src}" placeholder="images/projects/screen-${i+1}.png" oninput="syncPreview()">
+            <label>Screenshot ${i + 1}</label>
+            <div class="upload-row">
+                <input type="text" id="${srcId}" class="ss-src" value="${src}" placeholder="images/projects/screen-${i+1}.png" oninput="syncPreview()">
+                <button class="btn-upload" onclick="triggerUpload('${srcId}')">Upload</button>
+                <img id="${prevId}" class="upload-preview${src ? ' visible' : ''}" src="${src}" alt="">
+            </div>
         </div>
         <div class="field">
             <label>Caption</label>
@@ -306,6 +323,11 @@ function readForm() {
     };
 }
 
+function renderParagraphs(text) {
+    if (!text) return '';
+    return text.split(/\n\n+/).map(p => '<p class="pv-overview">' + p.replace(/\n/g, '<br>') + '</p>').join('');
+}
+
 function syncPreview() {
     const p = readForm();
     const previewDiv = document.getElementById('preview-content');
@@ -316,13 +338,11 @@ function syncPreview() {
         </div>`).join('');
 
     previewDiv.innerHTML = `
-        <div class="pv-hero">
-            <img src="${p.coverImage}" alt="" onerror="this.style.background='#2a2a2a';this.style.display='none'">
-        </div>
+        ${p.heroImage ? `<div class="pv-hero"><img src="${p.heroImage}" alt=""></div>` : ''}
         <div class="pv-body">
             <span class="pv-tag">${p.tag || '<span class="pv-empty">tag</span>'}</span>
             <h1 class="pv-title">${p.title || '<span class="pv-empty">Project Title</span>'}</h1>
-            <p class="pv-overview">${p.overview || '<span class="pv-empty">Overview text will appear here...</span>'}</p>
+            ${renderParagraphs(p.overview) || '<p class="pv-overview pv-empty">Overview text will appear here...</p>'}
             <hr class="pv-divider">
             <div class="pv-screenshots">
                 ${screenshotsHtml || '<p class="pv-empty">Screenshots will appear here once you add image paths.</p>'}
@@ -365,7 +385,7 @@ function showStatus(msg, type) {
     const bar = document.getElementById('status-bar');
     bar.textContent = msg;
     bar.className = 'status-bar ' + type;
-    setTimeout(() => bar.className = 'status-bar', 4000);
+    setTimeout(() => bar.className = 'status-bar', 8000);
 }
 
 // ── Image Upload ─────────────────────────────────────────────────────────────
@@ -388,13 +408,19 @@ function handleUpload(event) {
         .then(data => {
             if (data.ok) {
                 document.getElementById(_uploadTargetField).value = data.path;
+                const previewKey = _uploadTargetField.startsWith('ss-src-') ? _uploadTargetField.replace('ss-src-', 'ss-prev-') : _uploadTargetField + '-preview';
+                const previewEl = document.getElementById(previewKey);
+                if (previewEl) {
+                    previewEl.src = data.path;
+                    previewEl.classList.add('visible');
+                }
                 syncPreview();
-                showStatus('Uploaded: ' + data.path, 'success');
+                showStatus('Image uploaded: ' + data.path, 'success');
             } else {
                 showStatus('Upload failed: ' + data.error, 'error');
             }
         })
-        .catch(() => showStatus('Could not reach admin server. Is npm run admin running?', 'error'));
+        .catch(() => showStatus('Could not reach admin server. Is npm start running?', 'error'));
 }
 
 // ── Boot ─────────────────────────────────────────────────────────────────────
