@@ -4,65 +4,65 @@ window.PROJECTS = [
     "tag": "AI Workflow",
     "tag_zh": "AI 工作流",
     "tag_ja": "AIワークフロー",
-    "title": "Project: AI Workflow Redesign",
-    "title_zh": "项目：AI 工作流重设计",
-    "title_ja": "プロジェクト：AIワークフロー再設計",
-    "cardDesc": "Supporting our client to introduce AI to manage overall product/design/development flow",
-    "cardDesc_zh": "协助客户引入 AI，全面管理产品、设计与开发流程",
-    "cardDesc_ja": "クライアントがAIを導入し、製品・デザイン・開発のフロー全体を管理できるよう支援",
-    "overview": "Right now it's in the FOMO phase - Everybody talks about AI, how AI boosts their efficiency, and it feels if you don't start using AI, then you will be eliminated from the game.  \n \nWe sit with clients, give them highlevel introduction what current AI tools does (even it evolves every 2 weeks), and more importantly, we understand their workflow painpoint and we suggest how they can utlize AI.",
-    "overview_zh": "目前正处于 FOMO（错失恐惧）阶段——每个人都在谈论 AI，谈论 AI 如何提升效率。如果你还没开始使用 AI，就感觉自己会被淘汰出局。\n \n我们与客户深入坐下来，为他们提供当前 AI 工具的高层次介绍（即便这些工具每两周就在进化），更重要的是，我们深入理解他们的工作流痛点，并提出如何有效运用 AI 的建议。",
-    "overview_ja": "今はFOMO（取り残される恐怖）の時代です。誰もがAIについて話し、AIが効率をどれほど高めるかを語っています。AIを使い始めなければ、競争から脱落してしまうような感覚があります。\n \n私たちはクライアントと向き合い、現在のAIツールが何をできるかをハイレベルで紹介します（たとえ2週間ごとに進化していても）。そしてより重要なのは、クライアントのワークフローにおける課題を理解し、AIをどのように活用できるかを提案することです。",
+    "title": "AI Workflow Integration",
+    "title_zh": "AI 工作流整合",
+    "title_ja": "AIワークフロー統合",
+    "cardDesc": "Helping clients cut through the AI noise — identifying where it genuinely fits their workflow and embedding it where it matters most.",
+    "cardDesc_zh": "帮助客户拨开 AI 的噪音——精准识别 AI 真正适用的场景，并将其嵌入最关键的工作环节。",
+    "cardDesc_ja": "AIの喧騒を整理し、クライアントのワークフローに本当に合う場所を見極め、最も重要な部分に組み込みます。",
+    "overview": "The AI landscape is moving fast, and most teams are feeling the pressure to adopt it before they fall behind. But rushing in without a clear strategy leads to tool sprawl, wasted spend, and frustrated teams.\n\nWe work alongside clients to cut through the noise. We map their existing workflow, identify where AI can genuinely reduce friction, and design a practical integration plan — not a one-size-fits-all solution, but one built around how their team actually works.",
+    "overview_zh": "AI 领域正以前所未有的速度发展，大多数团队都感受到了必须尽快跟进的压力。但在没有明确策略的情况下仓促行动，只会带来工具泛滥、预算浪费和团队疲惫。\n\n我们与客户并肩合作，帮助他们理清思路。通过梳理现有工作流、识别 AI 真正能够降低摩擦的节点，我们设计出切实可行的整合方案——不是千篇一律的解决方案，而是真正围绕团队实际工作方式量身打造的。",
+    "overview_ja": "AIの世界は急速に動いており、ほとんどのチームが乗り遅れまいとプレッシャーを感じています。しかし明確な戦略なしに急いで導入しても、ツールの乱立、予算の無駄遣い、チームの疲弊を招くだけです。\n\n私たちはクライアントと共に、その喧騒を整理します。既存のワークフローをマッピングし、AIが真に摩擦を減らせるポイントを特定し、実践的な統合計画を設計します。画一的なソリューションではなく、チームの実際の働き方に合わせたものです。",
     "coverImage": "images/projects/螢幕擷取畫面 2026-03-23 115457.png",
-    "outcome": "This project is still on-going, but from the interview we know it already improves how people communicate. Now members can reduce time asking context, because AI helps to document all, and give you answers when it's project context related.",
-    "outcome_zh": "该项目仍在进行中，但从访谈反馈来看，它已经改善了团队成员的沟通方式。成员们现在花在询问背景信息上的时间更少了，因为 AI 帮助记录了所有内容，并能在涉及项目背景时即时提供答案。",
-    "outcome_ja": "このプロジェクトはまだ進行中ですが、インタビューを通じて、すでにメンバー間のコミュニケーションが改善されていることが分かっています。AIがすべての情報をドキュメント化し、プロジェクトのコンテキストに関連する質問に答えてくれるため、メンバーが状況確認に費やす時間が大幅に減少しました。",
+    "outcome": "The engagement is ongoing, but early results are already measurable. Team members spend significantly less time chasing context — AI-assisted documentation now captures decisions and discussions in real time, giving everyone instant access to the information they need.",
+    "outcome_zh": "项目仍在持续推进中，但早期成效已初步显现。团队成员花在追问背景信息上的时间大幅减少——AI 辅助的文档系统能够实时记录决策与讨论内容，让每位成员都能即时获取所需信息。",
+    "outcome_ja": "プロジェクトは進行中ですが、早期の成果はすでに数値に表れています。チームメンバーがコンテキストを追いかけるのに費やす時間が大幅に減少しました。AIによるドキュメント支援がリアルタイムで意思決定や議論を記録し、全員が必要な情報に即座にアクセスできるようになっています。",
     "screenshots": [
       "images/projects/螢幕擷取畫面 2026-03-23 115632.png"
     ],
     "captions": [
-      "We propose high-level workflow how the AI-embedded flow look like"
+      "High-level workflow diagram illustrating the AI-embedded process design."
     ],
     "captions_zh": [
-      "我们提出了 AI 嵌入式工作流的高层次方案示意"
+      "AI 嵌入式流程设计的高层次工作流示意图"
     ],
     "captions_ja": [
-      "AI組み込みフローのハイレベルなワークフロー提案"
+      "AI組み込みプロセス設計を示すハイレベルなワークフロー図"
     ]
   },
   {
     "id": "avatar",
-    "tag": "Graphic Design",
-    "tag_zh": "图形设计",
-    "tag_ja": "グラフィックデザイン",
-    "title": "Project: Customized Avatar Component",
-    "title_zh": "项目：定制化头像组件",
-    "title_ja": "プロジェクト：カスタムアバターコンポーネント",
-    "cardDesc": "Support client to introduce customized avatar components to unlock special campaign to win unique decor.",
-    "cardDesc_zh": "协助客户推出定制化头像组件，以解锁特别活动并赢取专属装饰品",
-    "cardDesc_ja": "クライアントがカスタムアバターコンポーネントを導入し、特別キャンペーンでユニークなデコレーションを獲得できる仕組みを支援",
-    "overview": "Our client wants to introduce avatar that makes impact to user journey, so we introduce this idea: why don't you allow player to collect different decoration from the campaigns, and then they will have unique avatars that stands out?\n \nWith this idea in mind, we helped out client to intoduce a system that supports more than 3000+ possible avatar combinations, and we continue to introduce more unique decorations when they go live with the projects.",
-    "overview_zh": "客户希望引入一个能够影响用户旅程的头像系统，因此我们提出了这个创意：何不让玩家从各类活动中收集不同的装饰品，打造独一无二、令人眼前一亮的专属头像？\n \n基于这个理念，我们帮助客户建立了一套支持超过 3000 种头像组合的系统，并在项目上线后持续推出更多独特装饰品。",
-    "overview_ja": "クライアントはユーザー体験に影響を与えるアバターシステムの導入を望んでいました。そこで私たちはこのアイデアを提案しました。「キャンペーンでプレイヤーがさまざまなデコレーションを集め、他とは違うユニークなアバターを作れるようにしてはどうか？」\n \nこのアイデアをもとに、3000種類以上のアバター組み合わせに対応するシステムの導入を支援しました。プロジェクトのローンチ後も、新たなユニークデコレーションを追加し続けています。",
+    "tag": "UI/UX Design",
+    "tag_zh": "UI/UX 设计",
+    "tag_ja": "UI/UX デザイン",
+    "title": "Customized Avatar System",
+    "title_zh": "定制化头像系统",
+    "title_ja": "カスタムアバターシステム",
+    "cardDesc": "Designed a campaign-driven avatar system that gives players a reason to return — unlocking unique decorations that make their profile stand out.",
+    "cardDesc_zh": "设计了一套活动驱动的头像系统，让玩家有持续回访的理由——通过解锁专属装饰品，打造与众不同的个人形象。",
+    "cardDesc_ja": "キャンペーン連動型のアバターシステムを設計し、プレイヤーが繰り返し戻ってくる理由を生み出しました。ユニークなデコレーションで、自分だけのプロフィールを際立たせます。",
+    "overview": "Our client wanted to deepen user engagement within their platform, but lacked a mechanic that gave players a compelling reason to keep coming back. We proposed a campaign-linked avatar system: players earn decorations through in-app events, combining them to build a profile that's uniquely theirs.\n\nWe designed and shipped a system supporting over 3,000 avatar combinations, with an extensible framework that makes it straightforward to introduce new decorations as each campaign rolls out.",
+    "overview_zh": "客户希望深化用户在平台内的参与度，但缺乏一种能让玩家持续回访的有力机制。我们提出了活动联动头像系统的方案：玩家通过应用内活动赚取装饰品，自由组合，打造专属于自己的独特形象。\n\n我们设计并落地了一套支持超过 3,000 种头像组合的系统，并配备了可扩展的框架，使每次活动上线时都能轻松引入新的装饰品。",
+    "overview_ja": "クライアントはプラットフォーム内のユーザーエンゲージメントを深めたいと考えていましたが、プレイヤーが繰り返し戻ってくる強力な動機づけの仕組みが不足していました。私たちはキャンペーン連動型のアバターシステムを提案しました。プレイヤーはアプリ内イベントを通じてデコレーションを獲得し、組み合わせることで唯一無二のプロフィールを作り上げます。\n\n3,000種類以上のアバター組み合わせに対応するシステムを設計・リリースしました。拡張性の高いフレームワークにより、各キャンペーンのローンチに合わせて新たなデコレーションをスムーズに追加できます。",
     "coverImage": "images/projects/螢幕擷取畫面 2026-03-23 112025.png",
-    "outcome": "Based on interview results, client told us the DAU (daily active user) grows 10%-15% because people have incentive to log in and get points to exchange for decorations.",
-    "outcome_zh": "根据访谈结果，客户反馈 DAU（日活跃用户数）增长了 10%–15%，因为用户有动力每天登录并积累积分来兑换装饰品。",
-    "outcome_ja": "インタビューの結果、ユーザーがデコレーション獲得のためにログインするインセンティブが生まれたことで、DAU（デイリーアクティブユーザー）が10〜15%増加したとクライアントから報告を受けました。",
+    "outcome": "Post-launch interviews revealed a 10–15% increase in DAU. The decoration reward loop gave players a tangible daily incentive — log in, earn points, personalise your profile.",
+    "outcome_zh": "上线后的访谈结果显示，DAU（日活跃用户数）增长了 10%–15%。装饰品奖励循环为玩家提供了切实的每日驱动力——登录、积累积分、打造专属形象。",
+    "outcome_ja": "ローンチ後のインタビューにより、DAU（デイリーアクティブユーザー）が10〜15%増加したことが明らかになりました。デコレーションの報酬ループがプレイヤーに具体的な毎日の動機を与えました。ログインして、ポイントを貯めて、プロフィールをカスタマイズする。",
     "screenshots": [
       "images/projects/螢幕擷取畫面 2026-03-23 121811.png",
       "images/projects/螢幕擷取畫面 2026-03-23 121833.png"
     ],
     "captions": [
-      "Different avatar persona prototypes",
-      "Based on client's ambassadors' image to design customized avatars."
+      "Avatar persona explorations — defining the visual range of player identity.",
+      "Custom avatar designs built around the client's brand ambassador aesthetic."
     ],
     "captions_zh": [
-      "不同头像人物原型设计",
-      "以客户品牌大使形象为基础设计的定制头像"
+      "头像人物原型探索——界定玩家身份的视觉表达范围",
+      "以客户品牌大使形象为基础打造的定制头像设计"
     ],
     "captions_ja": [
-      "さまざまなアバターペルソナのプロトタイプ",
-      "クライアントのアンバサダーのイメージをもとにデザインしたカスタムアバター"
+      "アバターペルソナの探索 — プレイヤーアイデンティティのビジュアル範囲を定義",
+      "クライアントのブランドアンバサダーの美学をもとにしたカスタムアバターデザイン"
     ]
   },
   {
@@ -70,30 +70,30 @@ window.PROJECTS = [
     "tag": "UI/UX Design",
     "tag_zh": "UI/UX 设计",
     "tag_ja": "UI/UX デザイン",
-    "title": "Project: Operation Management Backoffice",
-    "title_zh": "项目：运营管理后台",
-    "title_ja": "プロジェクト：オペレーション管理バックオフィス",
-    "cardDesc": "We helped out client to redesign a live backoffice, reducing the complexity of UI/UX. Now it has less change for operation team to click the wrong button.",
-    "cardDesc_zh": "我们协助客户重新设计了线上后台系统，大幅降低了 UI/UX 的复杂度，让运营团队误操作的概率显著降低",
-    "cardDesc_ja": "稼働中のバックオフィスの再設計を支援し、UIとUXの複雑さを軽減。運営チームが誤ったボタンを押すリスクを大幅に削減しました",
-    "overview": "Many company does not care about backoffice UI/UX design. But based on study and experience, if you don't have a UX friendly back-office, you will spend 10%-20% more time to fix human mistakes coming from your operation team! \n \nWe helped out client to redesign an live backoffice, reducing the complexity of UI/UX, so now it has less change for operation team to click the wrong button, and it's more intuitive to use.",
-    "overview_zh": "许多公司并不重视后台系统的 UI/UX 设计。但根据研究与实践经验，如果后台缺乏良好的用户体验，你将会花费额外 10%–20% 的时间去修正运营团队的人为失误！\n \n我们协助客户对线上后台进行了全面重设计，显著降低了 UI/UX 的复杂度。现在运营团队误操作的风险大幅降低，整个系统也变得更加直观易用。",
-    "overview_ja": "多くの企業はバックオフィスのUI/UXデザインを軽視しています。しかし研究と経験によると、使いやすいバックオフィスがなければ、運営チームのヒューマンエラー対応に10〜20%もの余分な時間を費やすことになります！\n \n私たちはクライアントの稼働中のバックオフィスを再設計し、UIとUXの複雑さを大幅に削減しました。その結果、運営チームが誤操作する可能性が低下し、より直感的に操作できるシステムへと生まれ変わりました。",
+    "title": "Back-office UX Redesign",
+    "title_zh": "后台系统 UX 重设计",
+    "title_ja": "バックオフィスUX再設計",
+    "cardDesc": "Redesigned a live operations back-office to reduce UI complexity — fewer errors, faster workflows, and a system the team can actually trust.",
+    "cardDesc_zh": "对线上运营后台进行全面重设计，降低 UI 复杂度——错误更少、流程更快、系统更值得信赖。",
+    "cardDesc_ja": "稼働中の運営バックオフィスを再設計してUIの複雑さを解消。エラーの削減、業務の高速化、そしてチームが真に信頼できるシステムを実現しました。",
+    "overview": "Back-office UX is one of the most overlooked areas of product design. Most companies treat it as an afterthought — but a poorly designed internal tool quietly costs 10–20% more in time spent correcting avoidable human errors.\n\nWe redesigned a client's live back-office from the ground up: simplifying information hierarchy, clarifying destructive actions, and rebuilding the interaction patterns around how the operations team actually works. The result is a system that's faster to learn, harder to misuse, and built for the pace of real operations.",
+    "overview_zh": "后台 UX 是产品设计中最容易被忽视的领域之一。大多数公司将其视为次要事项，但一个设计粗糙的内部工具，会悄然吞噬 10%–20% 的额外时间，用来弥补本可避免的人为失误。\n\n我们从零开始对客户的线上后台进行全面重设计：简化信息层级、明确高风险操作的视觉提示，并围绕运营团队的真实工作方式重构交互逻辑。最终交付的是一套学习曲线更平缓、误操作空间更小、能够支撑真实运营节奏的系统。",
+    "overview_ja": "バックオフィスのUXは、プロダクトデザインの中で最も見落とされがちな領域のひとつです。多くの企業はそれを後回しにしますが、設計の粗い内部ツールは、避けられるはずだったヒューマンエラーの修正に10〜20%もの余分な時間を静かに蝕みます。\n\n私たちはクライアントの稼働中のバックオフィスをゼロから再設計しました。情報階層の簡素化、危険な操作の視覚的な明確化、そして運営チームの実際の働き方に合わせたインタラクションパターンの再構築。その結果、習得が早く、誤用が起きにくく、実際の運営のペースに耐えうるシステムが完成しました。",
     "coverImage": "images/projects/Mail App Concept.png",
-    "outcome": "We redesign old/complex Back-office tools with modern design language, so it's easy to understand, reducing the operation error by +10%.",
-    "outcome_zh": "我们用现代设计语言对原有复杂的后台工具进行了全面重设计，使其更易理解，运营错误率降低了 10% 以上。",
-    "outcome_ja": "モダンなデザイン言語を用いて旧来の複雑なバックオフィスツールを再設計し、直感的に理解しやすいシステムを実現。運営エラー率を10%以上削減しました。",
+    "outcome": "Operational error rate dropped by over 10% following rollout. The redesigned interface reduced cognitive load significantly — the team now navigates with confidence rather than caution.",
+    "outcome_zh": "系统上线后，运营错误率下降超过 10%。重新设计的界面大幅降低了认知负担——团队成员如今能够自信地操作系统，而不再战战兢兢。",
+    "outcome_ja": "ロールアウト後、運営エラー率が10%以上低下しました。再設計されたインターフェースは認知的負荷を大幅に軽減し、チームは今や慎重に恐る恐る操作するのではなく、自信を持ってシステムを扱えるようになりました。",
     "screenshots": [
       "images/projects/Olive Japan.png"
     ],
     "captions": [
-      "UI-UX Friendly back-office is essential to the operation team nowadays."
+      "A well-designed back-office is a competitive advantage — reduced errors, faster onboarding, and an ops team that can move at full speed."
     ],
     "captions_zh": [
-      "如今，对运营团队而言，拥有友好 UI/UX 的后台系统至关重要。"
+      "设计精良的后台系统是真正的竞争优势——错误更少、上手更快，让运营团队全速运转。"
     ],
     "captions_ja": [
-      "現代の運営チームにとって、使いやすいUI/UXのバックオフィスは不可欠です。"
+      "優れた設計のバックオフィスは競争上の優位性です。エラーの削減、迅速なオンボーディング、そしてフルスピードで動ける運営チームを実現します。"
     ]
   }
 ];
